@@ -12,12 +12,40 @@ export default function BangDiem() {
   return (
     <>
       <div className="text-center my-24">
-        <h1>Bang Diem</h1>
+        <Link href="/">
+          <button className="bg-blue-500 text-white px-4 py-2 my-12 rounded-md">
+            Ve lai trang chu
+          </button>
+        </Link>
+        <h1 className="text-4xl">Bang Diem {data.length}</h1>
 
-        <div>hello {data.name}!</div>
+        {data.map((item: any) => (
+          <div key={item}>
+            <div className="flex">
+              <p className="mr-2">{item.name}</p>
+              <code>{JSON.stringify(item.data.length)}</code>
+            </div>
+            <div>
+              {item.data.map((player: any) => (
+                <div key={player} className="border">
+                  <p>player: {JSON.stringify(player)}</p>
+                </div>
+              ))}
+            </div>
+            <hr className="my-4" />
+          </div>
+        ))}
 
-        <Link className="text-blue-800" href="/">
-          Ve lai trang chu
+        {/* <code>{JSON.stringify(data)}</code> */}
+
+        {/* {data.map((item: any) => {
+          <p>{JSON.stringify(item)}</p>;
+        })} */}
+
+        <Link href="/">
+          <button className="bg-blue-500 text-white px-4 py-2 my-12 rounded-md">
+            Ve lai trang chu
+          </button>
         </Link>
       </div>
     </>

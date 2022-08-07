@@ -17,5 +17,5 @@ export default async function handler(
 
   const data = xlsx.parse(fileContents);
   console.log(data[0].data[0]);
-  res.status(200).json({ name: JSON.stringify(data[0].data[0]) });
+  res.status(200).json(data);
 }

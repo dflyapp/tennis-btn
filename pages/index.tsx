@@ -21,7 +21,11 @@ const Home: NextPage = () => {
           </h1>
 
           <p>Get started by editing </p>
-          <Link href="bang-diem">Di toi Bang Diem</Link>
+          <Link href="bang-diem">
+            <button className="bg-blue-500 text-white px-4 py-2 my-12 rounded-md">
+              Xem Bang Diem
+            </button>
+          </Link>
         </div>
       </main>
 
