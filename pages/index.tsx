@@ -1,6 +1,7 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import Logo from "./tennis-logo.png";
 
@@ -14,18 +15,25 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="container mx-auto">
-        <h1 className="text-blue-400">
-          Welcome to Dien dan tennis Bac Trung Nam
-        </h1>
+        <div className="my-24 w-full md:w-1/2 mx-auto">
+          <h1 className="text-blue-400">
+            Welcome to Dien dan tennis Bac Trung Nam
+          </h1>
 
-        <p>Get started by editing </p>
+          <p>Get started by editing </p>
+          <Link href="bang-diem">Di toi Bang Diem</Link>
+        </div>
       </main>
 
       <footer>
-        Powered by{" "}
-        <span>
-          <Image src={Logo} alt="Vercel Logo" width={72} height={72} />
-        </span>
+        <div className="flex justify-center">
+          <section>
+            <p>Powered by </p>
+            <span>
+              <Image src={Logo} alt="Vercel Logo" width={72} height={72} />
+            </span>
+          </section>
+        </div>
       </footer>
     </div>
   );
