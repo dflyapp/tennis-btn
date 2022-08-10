@@ -3,7 +3,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import Logo from "./tennis-logo.png";
+import { Header } from "layouts";
+import Logo from "assets/tennis-logo.png";
+import Cover from "assets/cover-main.jpeg";
 
 const Home: NextPage = () => {
   return (
@@ -14,9 +16,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
+
       <main className="container mx-auto">
+        <Image src={Cover} alt="Nhà tài trợ diễn đàn tennis BTN" />
         <div className="my-24 w-full md:w-1/2 mx-auto">
           <h1 className="text-blue-400">
+            Welcome to Dien dan tennis Bac Trung Nam
+          </h1>
+
+          <h1 className="text-blue-200">
             Welcome to Dien dan tennis Bac Trung Nam
           </h1>
 
