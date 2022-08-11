@@ -6,13 +6,14 @@ import Logo from "assets/tennis-logo.png";
 
 export default function Header() {
   return (
-    <header className="bg-primary py-4 flex justify-between px-4">
+    <header className="bg-primary py-4 flex justify-between items-center px-4">
       <MenuButton className="px-0" />
       <Link href="/">
-        <div className="w-16 h-16 cursor-pointer">
+        <div className="-ml-8 w-16 h-16 cursor-pointer">
           <Image src={Logo} alt="logo" />
         </div>
       </Link>
+      <div />
     </header>
   );
 }

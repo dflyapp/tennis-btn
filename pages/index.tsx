@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Header } from "layouts";
+import { Sponsors } from "components";
 import Logo from "assets/tennis-logo.png";
 import Cover from "assets/cover-main.jpeg";
 
@@ -23,19 +24,31 @@ const Home: NextPage = () => {
           src={Cover}
           placeholder="blur"
           alt="Nhà tài trợ diễn đàn tennis BTN"
+          layout="responsive"
         />
-        <div className="my-24 w-full md:w-1/2 mx-auto">
-          <h1 className="text-blue-400">
-            Welcome to Dien dan tennis Bac Trung Nam
-          </h1>
 
-          <h1 className="text-blue-200">
-            Welcome to Dien dan tennis Bac Trung Nam
-          </h1>
+        {/* sponsors */}
+        <Sponsors />
 
-          <p>Get started by editing </p>
+        {/* draft */}
+        <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
+          <h1 className="text-blue-400">Các giải đấu</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+            mollitia. Aliquid eos hic neque voluptatum beatae porro accusamus
+            quae error, et similique asperiores veritatis, nesciunt officia
+            voluptatem. Dolorum, commodi eius?
+          </p>
+
+          <h1 className="text-blue-500 mt-12">Bảng điểm</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, ea?
+            Corrupti sit dicta quod delectus sed quae nihil quos consequuntur
+            natus magni, pariatur doloribus soluta? Modi impedit corrupti hic
+            voluptatibus?
+          </p>
           <Link href="bang-diem">
-            <button className="bg-blue-500 text-white px-4 py-2 my-12 rounded-md">
+            <button className="bg-blue-500 text-white px-4 py-2 mb-12 rounded-md">
               Xem Bang Diem
             </button>
           </Link>

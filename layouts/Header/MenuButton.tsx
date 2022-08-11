@@ -1,5 +1,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { MenuAlt2Icon } from "@heroicons/react/solid";
 
 const solutions = [
   {
@@ -7,12 +8,12 @@ const solutions = [
     href: "/",
   },
   {
-    name: "Bảng Điểm",
-    href: "bang-diem",
-  },
-  {
     name: "Các giải đấu",
     href: "quy-trinh-thi-cong",
+  },
+  {
+    name: "Bảng Điểm",
+    href: "bang-diem",
   },
 ];
 
@@ -25,20 +26,9 @@ export default function MenuButton({ className }: { className: string }) {
             <Popover.Button
               className={`
                 ${open ? "" : "text-opacity-90"}
-                bg-gray-900 group inline-flex items-center rounded-md border px-3 py-2 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group inline-flex items-center rounded-md border p-1 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <MenuAlt2Icon className="w-10 h-10 text-white bg-primary rounded-md" />
             </Popover.Button>
             <Transition
               as={Fragment}
@@ -49,7 +39,7 @@ export default function MenuButton({ className }: { className: string }) {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute top-20 -left-10 z-10 w-screen pl-8">
+              <Popover.Panel className="absolute top-14 -left-10 z-10 w-screen pl-8">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                   <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
                     {solutions.map((item) => (
