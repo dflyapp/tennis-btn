@@ -1,6 +1,8 @@
 import Link from "next/link";
 import useSWR from "swr";
 
+import { Header } from "layouts";
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function BangDiem() {
@@ -11,6 +13,7 @@ export default function BangDiem() {
 
   return (
     <>
+      <Header />
       <div className="text-center my-24">
         <Link href="/">
           <button className="bg-blue-500 text-white px-4 py-2 my-12 rounded-md">

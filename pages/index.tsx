@@ -19,7 +19,11 @@ const Home: NextPage = () => {
       <Header />
 
       <main className="container mx-auto">
-        <Image src={Cover} alt="Nhà tài trợ diễn đàn tennis BTN" />
+        <Image
+          src={Cover}
+          placeholder="blur"
+          alt="Nhà tài trợ diễn đàn tennis BTN"
+        />
         <div className="my-24 w-full md:w-1/2 mx-auto">
           <h1 className="text-blue-400">
             Welcome to Dien dan tennis Bac Trung Nam
