@@ -20,21 +20,17 @@ export default function Sponsors() {
     { name: "nst", logo: Sponsor3 },
     { name: "long-mekong", logo: Sponsor4 },
     { name: "ldt", logo: Sponsor5 },
-    { name: "vg", logo: Sponsor1 },
-    { name: "son-sang", logo: Sponsor2 },
-    { name: "nst", logo: Sponsor3 },
-    { name: "long-mekong", logo: Sponsor4 },
   ];
   return (
     <>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
+        slidesPerView={1}
+        spaceBetween={0}
+        slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
         autoplay={{
-          delay: 2000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -47,7 +43,7 @@ export default function Sponsors() {
         {sponsorList.map((e) => {
           return (
             <SwiperSlide className="mx-0" key={e.name}>
-              <div className="w-48 h-48">
+              <div className="w-48 h-48 mb-6">
                 <Image src={e.logo} alt={e.name} />
               </div>
             </SwiperSlide>

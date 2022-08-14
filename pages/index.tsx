@@ -3,12 +3,17 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
 import { Header } from "layouts";
 import { Sponsors } from "components";
 import Logo from "assets/tennis-logo.png";
 import Cover from "assets/cover-main.jpeg";
+import { sortByDate } from "utils";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ events }: any) => {
   return (
     <div>
       <Head>
@@ -28,17 +33,20 @@ const Home: NextPage = () => {
         />
 
         {/* sponsors */}
+        <div className="mt-6">
+          <h1 className="uppercase text-center text-2xl">Nhà tài trợ</h1>
+        </div>
         <Sponsors />
 
         {/* draft */}
         <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
           <h1 className="text-blue-400">Các giải đấu</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
-            mollitia. Aliquid eos hic neque voluptatum beatae porro accusamus
-            quae error, et similique asperiores veritatis, nesciunt officia
-            voluptatem. Dolorum, commodi eius?
-          </p>
+          {events &&
+            events.map((e: any) => (
+              <div className="mt-4" key={e}>
+                <h1>{e.frontmatter.title}</h1>
+              </div>
+            ))}
 
           <h1 className="text-blue-500 mt-12">Bảng điểm</h1>
           <p>
@@ -70,3 +78,35 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  // Get files from the posts dir
+  const files = fs.readdirSync(path.join("pages/giai-dau/content"));
+
+  // Get slug and frontmatter from posts
+  const posts = files.map((filename) => {
+    // Create slug
+    const slug = filename.replace(".md", "");
+
+    // Get frontmatter
+    const markdownWithMeta = fs.readFileSync(
+      path.join("pages/giai-dau/content", filename),
+      "utf-8"
+    );
+
+    const { data: frontmatter } = matter(markdownWithMeta);
+
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+
+  console.log(posts);
+
+  return {
+    props: {
+      events: posts.sort(sortByDate),
+    },
+  };
+}

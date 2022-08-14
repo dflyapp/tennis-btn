@@ -9,7 +9,7 @@ const solutions = [
   },
   {
     name: "Các giải đấu",
-    href: "quy-trinh-thi-cong",
+    href: "giai-dau",
   },
   {
     name: "Bảng Điểm",
@@ -26,7 +26,7 @@ export default function MenuButton({ className }: { className: string }) {
             <Popover.Button
               className={`
                 ${open ? "" : "text-opacity-90"}
-                group inline-flex items-center rounded-md border p-1 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group inline-flex items-center rounded-md p-1 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <MenuAlt2Icon className="w-10 h-10 text-white bg-primary rounded-md" />
             </Popover.Button>
