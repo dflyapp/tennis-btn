@@ -1,8 +1,8 @@
 ---
-title: 'Collagen chống lão hóa như thế nào?'
-date: 'Sep 11, 2021'
-excerpt: 'Collagen là một loại Protein chiếm khoảng 30% trong cơ thể con người và các động vật có xương sống. Collagen đa số tập trung nhiều ở da'
-cover_image: '/images/posts/img3.jpg'
+title: "GIẢI TENNIS TRANH CÚP LONG MEKONG LẦN 5"
+date: "Jun 18, 2022"
+excerpt: "Collagen là một loại Protein chiếm khoảng 30% trong cơ thể con người và các động vật có xương sống. Collagen đa số tập trung nhiều ở da"
+cover_image: "/giai-dau/long-mekong-lan-5.jpg"
 ---
 
 # 1. Collagen là gì?
@@ -17,7 +17,7 @@ Khi bước sang độ tuổi 35, cơ thể sẽ có những thay đổi rõ r�
 
 # 3. Nên sử dụng Collagen như thế nào để có hiệu quả cao nhất?
 
-Theo các chuyên gia, để tối ưu việc chống lão hóa, chúng ta nên bổ sung collagen cho cơ thể sớm, tốt nhất là từ 22 tuổi. Việc bổ sung sớm collagen không hề vô ích. Điều này giúp cơ thể dự trữ một lượng lớn collagen để khi quá trình lão hóa xảy ra trên toàn cơ thể, cơ thể có đủ collagen để tái tạo tế bào. Collagen mà ta đã dự trữ từ trước sẽ hết sức cần thiết khi cung cấp chất dinh dưỡng cho da, cũng như tránh mất đi độ ẩm và độ đàn hồi của làn da. Đối với hiện tại cuộc sống nhộn nhịp thì công việc áp lực công việc cũng như bụi bẩn và stress sẽ làm cho làn da chúng ta dần mất đi chất dinh dưỡng. Từ đó sẽ xuất hiện sạm, nám và vết nhăn làm da lão hóa sớm nên chúng ta nên bổ sung Collagen từ sớm tầm 22 tuổi thì sẽ giúp cho chúng ta dự trữ Collagen nhiều. Và cung cấp đủ Collagen để làm đẹp, đảy nhanh quá trình tái tạo làn da. 
+Theo các chuyên gia, để tối ưu việc chống lão hóa, chúng ta nên bổ sung collagen cho cơ thể sớm, tốt nhất là từ 22 tuổi. Việc bổ sung sớm collagen không hề vô ích. Điều này giúp cơ thể dự trữ một lượng lớn collagen để khi quá trình lão hóa xảy ra trên toàn cơ thể, cơ thể có đủ collagen để tái tạo tế bào. Collagen mà ta đã dự trữ từ trước sẽ hết sức cần thiết khi cung cấp chất dinh dưỡng cho da, cũng như tránh mất đi độ ẩm và độ đàn hồi của làn da. Đối với hiện tại cuộc sống nhộn nhịp thì công việc áp lực công việc cũng như bụi bẩn và stress sẽ làm cho làn da chúng ta dần mất đi chất dinh dưỡng. Từ đó sẽ xuất hiện sạm, nám và vết nhăn làm da lão hóa sớm nên chúng ta nên bổ sung Collagen từ sớm tầm 22 tuổi thì sẽ giúp cho chúng ta dự trữ Collagen nhiều. Và cung cấp đủ Collagen để làm đẹp, đảy nhanh quá trình tái tạo làn da.
 
 Thông thường chúng ta nên bổ sung khoảng 5g Collagen/ngày và khoảng 2.5g/ngày nếu là Collagen Peptide. Cơ thể con người sẽ hấp thụ được một lượng Collagen nhất định trung bình từ 1000mg – 1500mg, khi vượt qua mức này thì Collagen sẽ bị dào thải ra ngoài gây lãng phí. Thường nhiều người sẽ có thói quen dùng thực phẩm chức năng tùy tiện khi nào nhớ thì uống miễn là trong ngày là được. Tuy nhiên, điều này là không tốt, vì khi uống Collagen khi dang đói sẽ dẫn tới những hiện tượng như là bụng cồn cào, khó chịu ở bụng và sẽ không có cảm giác thèm ăn,… Thời điểm tốt nhất để uống thực phẩm chức năng Collagen là sau bữa ăn 30 phút hoặc trước khi đi ngủ, khi đó cơ thể sẽ tiếp nhận Collagen tốt nhất trong cơ thể. Không những vậy khi bổ sung collagen sau ăn sẽ tránh được các bệnh về đường tiêu hóa đồng thời cung cấp chất dinh dưỡng để làm đẹp da.
 

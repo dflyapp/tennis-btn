@@ -38,28 +38,46 @@ const Home: NextPage = ({ events }: any) => {
         </div>
         <Sponsors />
 
-        {/* draft */}
+        {/* events */}
         <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
           <h1 className="text-blue-400">Các giải đấu</h1>
           {events &&
             events.map((e: any) => (
-              <div className="mt-4" key={e}>
-                <h1>{e.frontmatter.title}</h1>
+              <div className="mt-4" key={e.slug}>
+                <img src={e.frontmatter.cover_image} alt="giai dau" />
+                <a href={`/giai-dau/${e.slug}`}>{e.frontmatter.title}</a>
               </div>
             ))}
+        </div>
 
-          <h1 className="text-blue-500 mt-12">Bảng điểm</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, ea?
-            Corrupti sit dicta quod delectus sed quae nihil quos consequuntur
-            natus magni, pariatur doloribus soluta? Modi impedit corrupti hic
-            voluptatibus?
-          </p>
-          <Link href="bang-diem">
-            <button className="bg-blue-500 text-white px-4 py-2 mb-12 rounded-md">
-              Xem Bang Diem
-            </button>
-          </Link>
+        {/* leader board */}
+        <div className="px-2 bg-gray-200 py-3">
+          <div className="w-1/2 mx-auto">
+            <h1 className="py-2 text-white bg-primary uppercase text-center mt-12">
+              Bảng điểm
+            </h1>
+          </div>
+          <div className="mt-4 mx-auto w-fit">
+            <Link href="bang-diem">
+              <button className="bg-white text-primary px-4 py-2 mb-12">
+                Trình Nam
+              </button>
+            </Link>
+            <Link href="bang-diem">
+              <button className="ml-3 bg-white text-primary px-4 py-2 mb-12">
+                Trình Nữ
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* gallery */}
+        <div className="px-2 py-3">
+          <div className="w-1/2 mx-auto">
+            <h1 className="py-2 text-white bg-primary uppercase text-center mt-12">
+              Hình ảnh
+            </h1>
+          </div>
         </div>
       </main>
 

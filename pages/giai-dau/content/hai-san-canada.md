@@ -1,8 +1,8 @@
 ---
-title: 'Cùng tìm hiểu về collagen'
-date: 'August 8, 2021'
-excerpt: 'Hiện nay, khi xã hội văn minh ngày càng phát triển, con người ngày càng biết làm đẹp cho chính bản thân mình'
-cover_image: '/images/posts/img1.jpg'
+title: "GIẢI  TENNIS TRANH CÚP HẢI SẢN CANADA - MỸ PHẨM ANH NHẬT"
+date: "August 27, 2022"
+excerpt: "Hiện nay, khi xã hội văn minh ngày càng phát triển, con người ngày càng biết làm đẹp cho chính bản thân mình"
+cover_image: "/giai-dau/hai-san-canada.jpg"
 ---
 
 Hiện nay, khi xã hội văn minh ngày càng phát triển, con người ngày càng biết làm đẹp cho chính bản thân mình, và cũng vì như vậy nhiều sản phẩm làm đẹp đã ra đời và đang được phát triển. Trong đó chúng ta đã được nghe nhiều về collagen và các công dụng tuyệt vời của nó vậy để hiểu thêm về nó chúng ta hãy cùng nhau tìm hiểu về collagen:
@@ -17,16 +17,16 @@ Collagen được tạo bởi các axit amin được liên kết với nhau đ�
 
 # 2. CÓ NHỮNG LOẠI COLLAGEN NÀO?
 
-Theo như nghiên cứu của các nhà khoa học thì trong cơ thể chúng ta có rất nhiều loại collagen khác nhau và có các chức năng khác nhau như tạo đàn hồi hoặc liên kết các mô, sụn và từ đó collagen được chia thành 4 nhóm chính sau đây: 
+Theo như nghiên cứu của các nhà khoa học thì trong cơ thể chúng ta có rất nhiều loại collagen khác nhau và có các chức năng khác nhau như tạo đàn hồi hoặc liên kết các mô, sụn và từ đó collagen được chia thành 4 nhóm chính sau đây:
 
 - Nhóm loại I: Chiếm đa số trong cơ thể của chúng ta, tạo nên những sợi collagen dày đặc trong cấu trúc của da, sụn, mô liên kết, gân, xương và răng.
 - Nhóm loại II: Loại II sẽ kém hơn loại I về độ dày đặc, nhóm này sẽ mỏng hơn loại I dùng để tạo độ đàn hồi giữa các khớp với nhau.
 - Nhóm loại III: Là những loại collagen nằm ở cấu trúc của các cơ, các động mạch và mạch máu.
 - Nhóm loại IV: Là các loại collagen nằm sâu bên trong làn da của chúng ta, và loại này cũng sẽ ít sản sinh hơn khi chúng ta lớn tuổi và sẽ làm cho da ta sẽ bị lão hóa và kém đàn hồi.
 
-# 3.	NHỮNG LỢI ÍCH KHI TA BỔ SUNG NHIỀU COLLAGEN VÀO CƠ THỂ.
+# 3. NHỮNG LỢI ÍCH KHI TA BỔ SUNG NHIỀU COLLAGEN VÀO CƠ THỂ.
 
-Đầu tiên là collagen giúp cải thiện là sức khỏe làn da vì đa số các mô da sẽ đều chứa collagen. Khi da chúng ta bị lão hóa và dần mất đi sự đàn hồi của da điều đó cũng có thể hiểu các chất collagen trong da của chúng ta dần mất đi. Do đó, bổ sung thêm collagen sẽ giúp tái tạo làn da, làm chậm quá trình lão hóa cũng như là cải thiện sự đàn hồi của da. 
+Đầu tiên là collagen giúp cải thiện là sức khỏe làn da vì đa số các mô da sẽ đều chứa collagen. Khi da chúng ta bị lão hóa và dần mất đi sự đàn hồi của da điều đó cũng có thể hiểu các chất collagen trong da của chúng ta dần mất đi. Do đó, bổ sung thêm collagen sẽ giúp tái tạo làn da, làm chậm quá trình lão hóa cũng như là cải thiện sự đàn hồi của da.
 
 Thứ hai, collagen giúp giảm đau khớp và cải thiện phần xương bị loãng do tuổi tác. Khi chúng ta lớn tuổi, cơ thể sẽ mất dần đi collagen và nguy cơ mắc các bệnh thoái hóa xương khớp và viêm xương khớp sẽ tăng lên. Vì lý do này, cơ thể cần được bổ sung nhiều collagen cũng như chế độ tập luyện thể dục thể thao điều độ sẽ giúp cho chức năng xương khớp được cải thiện.
 

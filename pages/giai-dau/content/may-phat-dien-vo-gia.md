@@ -1,8 +1,8 @@
 ---
-title: "Cùng tìm hiểu về Estrogen"
-date: 'Sep 12, 2021'
-excerpt: 'Estrogen là nội tiết tố đóng vai trò quan trọng đối với cơ thể người phụ nữ'
-cover_image: '/images/posts/img4.jpg'
+title: "GIẢI TENNIS TRANH CÚP MÁY PHÁT ĐIỆN VÕ GIA "
+date: "Jul 30, 2022"
+excerpt: "Estrogen là nội tiết tố đóng vai trò quan trọng đối với cơ thể người phụ nữ"
+cover_image: "/giai-dau/may-phat-dien-vo-gia.jpg"
 ---
 
 # 1. Estrogen là gì?

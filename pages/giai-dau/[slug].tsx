@@ -4,8 +4,10 @@ import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
+import { Header } from "layouts";
+
 export default function PostPage({
-  frontmatter: { title1, date, cover_image, excerpt },
+  frontmatter: { title: title2, date, cover_image, excerpt },
   slug,
   content,
 }: any) {
@@ -16,6 +18,7 @@ export default function PostPage({
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <div>
         <div className="container mx-auto">
           <div className="w-3/4 mx-auto mt-24">
@@ -24,7 +27,7 @@ export default function PostPage({
           <strong className="text-xs text-accent text-center my-8 block">
             Posted on {date}
           </strong>
-          <h1 className="text-center">{JSON.stringify(title1)}</h1>
+          <h1 className="text-center">{title2}</h1>
         </div>
       </div>
       <div className="container mx-auto px-4">
