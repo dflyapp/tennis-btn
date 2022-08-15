@@ -4,6 +4,7 @@ import matter from "gray-matter";
 
 import Head from "next/head";
 import Post from "components/Post";
+import { Header, Footer } from "layouts";
 
 import { sortByDate } from "utils";
 
@@ -11,7 +12,7 @@ export default function Blog({ posts }: any) {
   return (
     <div>
       <Head>
-        <title>Youngerist Blogs</title>
+        <title>Các giải đấu</title>
         <meta
           name="description"
           content="Những mẹo nhỏ giúp bạn chăm sóc làn da của mình tốt hơn."
@@ -19,19 +20,7 @@ export default function Blog({ posts }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <div className="container mx-auto">
-          <div className="flex flex-wrap pt-24">
-            <div className="w-full md:w-1/2 px-8 md:px-0">
-              <h3>Skin From Within</h3>
-              <h4 className="text-accent my-4">Our natureal skincare blog</h4>
-            </div>
-            <div className="w-full md:w-1/2 px-8 md:px-0">
-              <h1>image goes here</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Header />
 
       <h3 className="text-dark text-center mt-24">Sundaily Essentials</h3>
       <p className="text-center text-accent mt-4 w-1/2 mx-auto">
@@ -48,6 +37,7 @@ export default function Blog({ posts }: any) {
       </div>
 
       {/* footer */}
+      <Footer />
     </div>
   );
 }
