@@ -8,12 +8,12 @@ import path from "path";
 import matter from "gray-matter";
 
 import { Header, Footer } from "layouts";
-import { Sponsors } from "components";
-import Logo from "assets/tennis-logo.png";
+import { Sponsors, Players } from "components";
 import Cover from "assets/cover-main.jpeg";
 import { sortByDate } from "utils";
 
-const Home: NextPage = ({ events }: any) => {
+const Home: NextPage = ({ events, players }: any) => {
+  console.log(players);
   return (
     <div>
       <Head>
@@ -42,11 +42,9 @@ const Home: NextPage = ({ events }: any) => {
 
         {/* events */}
         <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
-          <div className="w-1/2 mx-auto">
-            <h1 className="py-2 text-white bg-primary uppercase text-center mt-12">
-              Thông tin giải đấu mới
-            </h1>
-          </div>
+          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+            Thông tin giải đấu mới
+          </h1>
           {events &&
             events.map((e: any) => (
               <div className="mt-4" key={e.slug}>
@@ -58,11 +56,9 @@ const Home: NextPage = ({ events }: any) => {
 
         {/* leader board */}
         <div className="px-2 bg-gray-200 py-3">
-          <div className="w-1/2 mx-auto">
-            <h1 className="py-2 text-white bg-primary uppercase text-center mt-12">
-              Bảng điểm
-            </h1>
-          </div>
+          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+            Bảng điểm
+          </h1>
           <div className="mt-4 mx-auto w-fit">
             <Link href="bang-diem">
               <button className="bg-white text-primary px-4 py-2 mb-12">
@@ -79,11 +75,10 @@ const Home: NextPage = ({ events }: any) => {
 
         {/* gallery */}
         <div className="px-2 py-3">
-          <div className="w-1/2 mx-auto">
-            <h1 className="py-2 text-white bg-primary uppercase text-center mt-12">
-              Hình ảnh
-            </h1>
-          </div>
+          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+            Hình ảnh
+          </h1>
+          <Players players={players} />
         </div>
       </main>
 
@@ -118,10 +113,12 @@ export async function getStaticProps() {
     };
   });
 
-  console.log(posts);
+  const hinhAnh = fs.readdirSync(path.join("public/hinh-anh"));
+  const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
 
   return {
     props: {
+      players,
       events: posts.sort(sortByDate),
     },
   };
