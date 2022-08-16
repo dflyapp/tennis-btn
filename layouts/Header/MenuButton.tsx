@@ -15,6 +15,10 @@ const solutions = [
     name: "Bảng Điểm",
     href: "bang-diem",
   },
+  {
+    name: "Hình Ảnh",
+    href: "hinh-anh",
+  },
 ];
 
 export default function MenuButton({ className }: { className: string }) {
