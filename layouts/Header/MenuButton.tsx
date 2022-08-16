@@ -1,6 +1,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
+import Link from "next/link";
 
 const solutions = [
   {
@@ -9,15 +10,15 @@ const solutions = [
   },
   {
     name: "Các giải đấu",
-    href: "giai-dau",
+    href: "/giai-dau",
   },
   {
     name: "Bảng Điểm",
-    href: "bang-diem",
+    href: "/bang-diem",
   },
   {
     name: "Hình Ảnh",
-    href: "hinh-anh",
+    href: "/hinh-anh",
   },
 ];
 
