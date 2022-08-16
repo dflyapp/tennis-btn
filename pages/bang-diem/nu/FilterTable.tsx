@@ -25,7 +25,7 @@ import {
   compareItems,
 } from "@tanstack/match-sorter-utils";
 
-import { makeData, Person } from "./makeData";
+import { makeData, Person } from "utils/makeData";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
