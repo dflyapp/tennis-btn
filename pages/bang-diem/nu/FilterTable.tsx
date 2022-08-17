@@ -94,11 +94,11 @@ export default function FilterTable({ dataSet }: Props) {
         header: () => <span>Điểm Min</span>,
         footer: (props) => props.column.id,
       },
-      {
-        accessorKey: "mobile",
-        header: () => <span>Số điện thoại</span>,
-        footer: (props) => props.column.id,
-      },
+      // {
+      //   accessorKey: "mobile",
+      //   header: () => <span>Số điện thoại</span>,
+      //   footer: (props) => props.column.id,
+      // },
     ],
     []
   );
@@ -106,6 +106,7 @@ export default function FilterTable({ dataSet }: Props) {
   const result = dataSet ? [...dataSet] : makeData(1000);
   const [data, setData] = React.useState<Person[]>(() => result);
   const refreshData = () => setData((old) => makeData(50000));
+  const [searchText, setSearchText] = React.useState("");
 
   const table = useReactTable({
     data,
@@ -143,16 +144,50 @@ export default function FilterTable({ dataSet }: Props) {
 
   return (
     <div className="p-2">
-      <div className="flex justify-center my-8">
+      {/* <div className="flex justify-center my-8">
         <DebouncedInput
           value={globalFilter ?? ""}
           onChange={(value) => setGlobalFilter(String(value))}
           className="p-2 font-lg shadow border border-block"
           placeholder=""
         />
+      </div> */}
+      <div className="flex mx-auto w-fit my-4">
+        <input
+          type="text"
+          className="border px-2"
+          onChange={(e) => setSearchText(e.target.value)}
+          value={searchText}
+        />
+        <button
+          className="bg-primary text-white p-4"
+          onClick={() => {
+            if (searchText === "") {
+              return;
+            }
+            const newData = data.filter(
+              (e) =>
+                e.nickName !== null &&
+                e.nickName.toLowerCase().includes(searchText.toLowerCase())
+            );
+            setData(newData);
+            console.log(searchText);
+            setSearchText("");
+          }}
+        >
+          Tìm
+        </button>
+        <button
+          onClick={() => {
+            setData(result);
+          }}
+          className="border bg-white text-primary p-4"
+        >
+          Tải lại
+        </button>
       </div>
       <div className="h-2" />
-      <table>
+      <table className="mx-auto">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -178,11 +213,11 @@ export default function FilterTable({ dataSet }: Props) {
                             desc: " 🔽",
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
-                        {header.column.getCanFilter() ? (
+                        {/* {header.column.getCanFilter() ? (
                           <div>
                             <Filter column={header.column} table={table} />
                           </div>
-                        ) : null}
+                        ) : null} */}
                       </>
                     )}
                   </th>
@@ -210,7 +245,7 @@ export default function FilterTable({ dataSet }: Props) {
           })}
         </tbody>
       </table>
-      <div className="h-2" />
+      <div className="h-12" />
       <div className="flex flex-col items-center gap-2">
         <div>
           <button
@@ -243,7 +278,7 @@ export default function FilterTable({ dataSet }: Props) {
           </button>
         </div>
 
-        <div className="flex">
+        <div className="flex mt-4">
           <span className="flex items-center gap-1">
             <div>Page</div>
             <strong>

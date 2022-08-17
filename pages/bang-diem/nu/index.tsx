@@ -1,9 +1,8 @@
-import Link from "next/link";
 import useSWR from "swr";
 
 import { Header } from "layouts";
-import Table from "./Table";
 import FilterTable from "./FilterTable";
+import Link from "next/link";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -32,24 +31,23 @@ export default function BangDiem() {
       mobile: e[5],
     });
   });
-  console.log(result);
 
   return (
     <>
       <Header />
-
-      <FilterTable dataSet={result} />
-      {/* <FilterTable /> */}
-
-      <div className="text-center my-24">
-        <Link href="/bang-diem">
-          <button className="bg-primary text-white px-4 py-2 my-12">
-            Ve lai Bang diem
+      <div className="flex my-4 w-fit mx-auto">
+        <Link href="/bang-diem/nam">
+          <button className="p-4 border bg-white text-primary">
+            Trình Nam
           </button>
         </Link>
-        <h1 className="text-4xl">Bang Diem Nữ</h1>
-        <Table dataSet={result} />
+        <Link href="/bang-diem/nu">
+          <button className="ml-3 p-4 border bg-primary text-white">
+            Trình Nữ
+          </button>
+        </Link>
       </div>
+      <FilterTable dataSet={result} />
     </>
   );
 }
