@@ -3,8 +3,25 @@ import Image from "next/image";
 import LogoZalo from "./logo-zalo.png";
 import LogoFacebook from "./logo-facebook.png";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) {
+      setUrl(
+        "fb://profile/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613"
+      );
+    } else if (/iPad|iPhone|iPod/.test(ua) || navigator.maxTouchPoints > 1) {
+      setUrl("fb://page/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613");
+    }
+    setUrl(
+      "https://www.facebook.com/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613"
+    );
+  }, []);
+
   return (
     <>
       <div className="text-center text-primary bg-gray-200 py-12">
@@ -16,18 +33,18 @@ export default function Footer() {
           <Link href="https://zalo.me/0903371177">
             <Image
               className="cursor-pointer"
-              width={30}
-              height={30}
+              width={40}
+              height={40}
               src={LogoZalo}
               alt="zalo"
             />
           </Link>
-          <div className="w-4"></div>
-          <Link href="https://www.facebook.com/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613">
+          <div className="w-8"></div>
+          <Link href={url}>
             <Image
               className="cursor-pointer"
-              width={30}
-              height={30}
+              width={40}
+              height={40}
               src={LogoFacebook}
               alt="facebook"
             />

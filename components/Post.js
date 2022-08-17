@@ -1,17 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import dayjs from "dayjs";
 
 export default function Post({ post }) {
   return (
     <Link href={`/giai-dau/${post.slug}`}>
-      <div className="w-full md:w-1/2 lg:w-1/3 p-4 cursor-pointer">
+      <div className="mb-12 w-full md:w-1/2 lg:w-1/3 p-4 cursor-pointer">
         <img src={post.frontmatter.cover_image} alt="" />
 
-        <strong className="text-sm text-dark mt-4">
-          Posted on {post.frontmatter.date}
-        </strong>
+        <p className="text-sm text-dark mt-4">
+          Ngày đăng: {dayjs(post.frontmatter.date).date()}
+          {" tháng "}
+          {dayjs(post.frontmatter.date).month() + 1}
+        </p>
 
-        <h4 className="mt-4">{post.frontmatter.title}</h4>
+        <h4 className="mt-4 text-2xl font-bold text-primary underline">
+          {post.frontmatter.title}
+        </h4>
         <p className="mt-4 text-accent">{post.frontmatter.excerpt}</p>
       </div>
     </Link>
