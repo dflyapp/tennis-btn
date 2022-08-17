@@ -22,11 +22,9 @@ export default function Blog({ posts }: any) {
 
       <Header />
 
-      <h3 className="text-dark text-center mt-24">Sundaily Essentials</h3>
-      <p className="text-center text-accent mt-4 w-1/2 mx-auto">
-        The why, what, and how behind Sundaily gummies. Start here to get the
-        101 on how we’ve made skincare way tastier than your daily moisturizer.
-      </p>
+      <h3 className="text-dark text-center mt-24 uppercase text-primary font-bold text-4xl">
+        Các giải đấu
+      </h3>
 
       <div className="container mx-auto my-24">
         <div className="flex flex-wrap">

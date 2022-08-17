@@ -14,7 +14,7 @@ const solutions = [
   },
   {
     name: "Bảng Điểm",
-    href: "/bang-diem",
+    href: "/bang-diem/nam",
   },
   {
     name: "Hình Ảnh",

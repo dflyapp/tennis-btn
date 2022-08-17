@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import dayjs from "dayjs";
 
 import fs from "fs";
 import path from "path";
@@ -49,7 +50,30 @@ const Home: NextPage = ({ events, players }: any) => {
             events.map((e: any) => (
               <div className="mt-4" key={e.slug}>
                 <img src={e.frontmatter.cover_image} alt="giai dau" />
-                <a href={`/giai-dau/${e.slug}`}>{e.frontmatter.title}</a>
+                <div className="bg-gray-300 py-4 flex flex-wrap">
+                  <div className="w-1/4 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white">
+                      <div className="bg-primary text-white text-center">
+                        <p className="text-xs">
+                          Tháng {dayjs(e.frontmatter.date).month() + 1}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-3xl text-center mt-1">
+                          {dayjs(e.frontmatter.date).date()}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-3/4 mt-2">
+                    <p className="uppercase font-bold pr-4">
+                      {e.frontmatter.title}
+                    </p>
+                    <button className="bg-white py-1 px-2 my-2 underline">
+                      <a href={`/giai-dau/${e.slug}`}>Xem thêm</a>
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
         </div>
@@ -60,12 +84,12 @@ const Home: NextPage = ({ events, players }: any) => {
             Bảng điểm
           </h1>
           <div className="mt-4 mx-auto w-fit">
-            <Link href="bang-diem">
+            <Link href="bang-diem/nam">
               <button className="bg-white text-primary px-4 py-2 mb-12">
                 Trình Nam
               </button>
             </Link>
-            <Link href="bang-diem">
+            <Link href="bang-diem/nu">
               <button className="ml-3 bg-white text-primary px-4 py-2 mb-12">
                 Trình Nữ
               </button>
