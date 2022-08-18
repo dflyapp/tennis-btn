@@ -1,35 +1,81 @@
 ---
 title: "GIẢI TENNIS TRANH CÚP NHÔM HEFINE"
 date: "May 26, 2022"
-excerpt: "Lợi ích đầu tiên cũng là lợi ích quan trọng nhất mà collagen mang lại đó chính là tái tạo làn da"
+excerpt: "TENNIS LƯU ĐỨC TÀI TRANH CÚP NHÔM HEFINE LẦN I vào ngày 26-29/05/2022 tại cụm sân Trung Thiện (40 trần thị do phường hiệp thành quận 12 TP.HCM), sân Cộng Đồng, sân Khang An"
 cover_image: "/giai-dau/nhom-hefine.jpg"
 ---
 
-# 1. Những lợi ích khi bổ sung collagen cho cơ thể?
+ĐIỀU LỆ GIẢI TENNIS LƯU ĐỨC TÀI TRANH CÚP NHÔM HEFINE LẦN I (26-29/05/2022)
 
-Lợi ích đầu tiên cũng là lợi ích quan trọng nhất mà collagen mang lại đó chính là tái tạo làn da, làm chậm quá trình lão hóa của làn da, giúp da có tính đàn hồi cũng như căng mịn và chắc khỏe hơn. Collagen tác động sâu vào lớp mô da làm cho da chắc khỏe từ bên trong, cũng do đó mà collagen có thể tái tạo làn da đã bị hỏng, làm mờ sẹo, cải thiện các vết thâm, nám. Collagen giống như một chất kết dính trong cơ thể chúng ta, giúp da ít bị khô và giảm đi các vết nhăn khi lớn tuổi. Khi càng lớn tuổi thì cơ thể của chúng ta sẽ ít sản sinh collagen. Với sự thiếu hụt này nên làn da dần mất sự đàn hồi, làm cho da dễ xuất hiện các nếp nhăn và các vết thâm, nám. Do đó, khi cơ thể chậm sản sinh ra collagen thì chúng ta nên tự bổ sung từ thức ăn chứa nhiều collagen như trứng, thịt, cá cũng như sử dụng các thực phẩm chức năng chuyên bổ sung collagen.
+Được sự đồng ý của ban Quản Trị Diễn Đàn Tennis BTN tại Thành Phố Hồ Chí Minh. Nhằm mục đích tổ chức các giải tennis phong trào thể dục thể thao tăng cường rèn luyện sức khỏe, tạo điều kiện gặp gỡ giao lưu các vận động viên các hội các danh nghiệp trong TP.HCM và các tỉnh lân cận, trao đổi kinh nghiệm tăng cường hợp tác kinh doanh và giao lưu trái bóng Nỉ BTC quyết định tổ chức giải TENNIS LƯU ĐỨC TÀI TRANH CÚP NHÔM HEFINE LẦN I vào ngày 26-29/05/2022 tại cụm sân Trung Thiện (40 trần thị do phường hiệp thành quận 12 TP.HCM), sân Cộng Đồng, sân Khang An.
 
-Collagen còn giúp giảm đau khớp và cải thiện bệnh loãng xương ở tuổi già. Theo các nghiên cứu thì trong xương và khớp đều có một phần là collagen để tạo nên sự kết dính cũng như là tạo sự dẻo dai để cơ thể có thể vận động. Vì thế khi chúng ta lớn tuổi, collagen sản sinh ngày càng ít dẫn đến các bệnh về xương khớp dễ xảy ra. Do đó, khi lớn tuổi, cơ thể cần được bổ sung các thực phẩm chức năng có chứa nhiều collagen cũng như là các dưỡng chất khác như protein, sắt,…
-Thêm một lợi ích khác của collagen là ngăn chặn các bệnh về tim cũng như là làm giảm nguy cơ mắc bệnh tắc nghẽn mạch máu. Có rất nhiều nghiên cứu cho thấy lợi ích khi bổ sung collagen hàng ngày, khi bổ sung collagen thường xuyên sẽ giảm bớt tắc nghẽn cũng như xơ cứng mạch máu, và tránh được nguy cơ cao mắc bệnh về tim. Cũng theo một nghiên cứu cho thấy khi bổ sung collagen sẽ tăng cường cơ bắp cũng như là chữa bệnh mất cơ do tuổi tác.
+Đại diện ban tổ chức:
+Ông Nguyễn Ngọc Lưu- Công Ty Lưu Đức Tài. (Trưởng ban tổ chức) – ĐT:0909.397.123
+Ông Tào Văn Sơn – Công Ty Nhà Tây Sơn. (Chủ tịch diễn đàn BTN) – ĐT:0903.371.177
+Ông Trương Việt Dũng – Công ty Long Mekong. (Phó chủ tịch diễn đàn BTN) – ĐT:0889.056.789
+Ông Võ Văn Quý – Công ty Võ Gia. (Phó chủ tịch diễn đàn BTN) – ĐT:0909.968.122
+Ông Văng Trúc Minh – Công Ty Sơn Sang. (Phó chủ tịch diễn đàn BTN) – ĐT:0908.398.413
+Điều I: Thời gian và đối tượng thi đấu.
 
-# 2. Đối tượng nào cần bổ sung collagen?
+Nội dung Nam Nữ 1300 vào ngày 26/05/2022 điểm trình max
+Nội dung Đôi Nam 1450 vào ngày 27/05/2022 điểm trình max
+Nội dung Đôi Nam 1350 vào ngày 28/05/2022 Điểm Trình Max
+Nội dung Đôi Nam 1250 vào ngày 29/05/2022 Điểm Trình Max
 
-Đối tượng cần cung cấp collagen là người cao tuổi, phụ nữ từ 22 tuổi, cũng như nhóm đối tượng muốn chăm sóc cơ thể để có một làn da khỏe đẹp và cơ bắp săn chắc.
+Điểm dựa trên diễn đàn tennis BTN nếu VĐV chưa có điểm BTC sẽ xét duyệt sau khi a/e VĐV đăng ký và thông báo điểm cho VĐV đăng ký.
+Dự kiến trình mỗi nội dung tương đương 43 cặp VĐV.
 
-## Người cao tuổi:
+Điều II: Nội dung- Thể thức thi đấu.
 
-Khi chúng ta lớn tuổi thì sự sản sinh collagen dần mất đi và điều này cũng gây ra sự lão hóa của xương cũng như ở mô sụng các khớp, làm giảm khả năng vận động, cũng như là tăng nguy cơ mắc các bệnh về xương khớp. Nên khi lớn tuổi chúng ta nên thường xuyên bổ sung collagen cũng như canxi và protein cho cơ thể và điều này sẽ giúp cải thiện rất nhiều về xương khớp, tim mạch,… Và đi kèm với sự bổ sung collagen là tập thể dục thường xuyên để chúng ta có thể bảo vệ sức khỏe cũng như là giữ cho cơ thể chúng ta luôn mạnh khỏe cũng như xương khớp trở nên chắc khỏe, dẻo dai hơn.
+Nội dung.
 
-## Phụ nữ:
+Các VĐV tự chọn cặp có tổng số điểm tương ứng với giải dung sai 5 điểm không cần đóng phí quá điểm. Các cặp có tổng số điểm dư 10-15 điểm đóng thêm 1 triệu lệ phí tính riêng. Các cặp có tổng điểm cao hơn 20-25 điểm đóng thêm 2 triệu lệ phí tính riêng.
 
-Quá trình lão hóa của phụ nữ thường diễn ra nhanh hơn so với đàn ông, đặc biệt là sau khi sinh. Độ tuổi bắt lão hóa nhanh là từ 35 tuổi. Với sự thiếu hụt collagen của cơ thể, làn da của phái đẹp sẽ dễ xuất hiện các nếp nhăn và các vết nám, đồi mồi hơn. Do đó, việc bổ sung collagen cho cơ thể là rất cần thiết. Collagen có tác dụng giúp tái tạo các mô da, làm chậm quá trình lão hóa ở da và giúp da căng mịn. Để làm chậm quá trình lão hóa da một cách tốt nhất, phái đẹp nên bổ sung collagen sớm, tốt nhất là từ 22 tuổi. Việc bổ sung collagen nên duy trì điều độ và dài hạn để đảm bảo hiệu quả tốt nhất.
+2.  Thể thức thi đấu:
+    Bốc thăm xếp cặp thì đấu theo thể thức play off các đội thua sẽ tiếp tục thi đấu để dành vé vào vòng trong nếu có ít nhất 2 cặp VĐV bỏ cuộc sau khi bốc thăm trước khi thi đấu vòng loại BTC được quyền xếp các cặp đội còn lại thì đấu với nhau cho phù hợp với giải đấu.
+    Thi đấu loại trực tiếp theo sơ đồ thi đấu đó BTC công bố trước khi thi đấu có cặp VĐV bỏ cuộc cặp VĐV còn lại vào vòng
+    Thi đấu tối đa một ván là 11 bàn, đội nào đến 6 trước là thắng áp dụng luật bàn thắng vàng (tức đội nào đến 50 trước là thắng). Nếu hai đội đạt 5-5 sẽ đánh tie- break chạm 7 max
+    ĐIỂU III: Lệ phí giải và quyền lợi của VĐV.
+    Lệ phí tham dự giải: 000.000đ/VĐV.
+    Vận động viên đả đăng ký thi đấu nếu bỏ cuộc phải tự tìm người thay thế cho mình trước khi bốc thăm.
+    Sau khi đả bốc thăm nếu bỏ cuộc phải đóng lệ phí tham gia giải,và giải sau không được ưu tiên đăng ký trước.
+    Các khoản thu tài trợ và lệ phí trên được phục vụ cho việc thuê sân, trọng tài, truyền thông, cúp, băng-rôn, kỷ niệm chương, tiền thưởng giải, nước uống, trái cây, ăn nhẹ cơm trưa văn phòng tại sân… và liên hoan đêm gala múa hát ,phát cúp trao giải và bế mạc giao lưu kết nối mối quan hệ.
+    Thời gian bế mạc giải : 18h ngày 29/05/2022
+    ĐIỂU IV: Thời gian bốc thăm và thi đấu.
+    Thời gian bốc thăm.
+    – Bốc thăm xếp lịch thi đấu vào lúc 9h30 ngày 22/05/2022 tại sân tennis Trung Thiện.
 
-## Nhóm đối tượng trẻ:
+3.  Quy định với VĐV.
+    Các VĐV đăng ký thi đấu phải gửi đầy đủ thông tin như số điện thoại, nick name (nếu có).
+    VĐV đến trễ giờ thi đấu 20 phút xem như tự ý bỏ cuộc.
+    VĐV tự ý bỏ cuộc sau khi bốc thăm (Đôi vận động viên) phải đóng lệ phí thi đấu, nếu không đóng BTC báo BQT Diển đàn tước quyền thi đấu ở các Giải
+    VĐV không thực hiện đúng theo các quy định của điều lệ thi đấu Giải thì Ban tổ chức sẽ hủy bỏ thành tích của cá nhân VĐV đó.
+    VĐV phải tự đảm bảo sức khỏe khi tham gia thi đấu.
+    VĐV có hành vi phi thể thao trong thi đấu như: nói tục, chửi thề, quăn vợt hay có những hành vi không tôn trọng các quyết định của Ban tổ chức, Trọng tài, thì Ban tổ chức sẽ truất quyền thi đấu của VĐV đó.
+    Đối với CĐV không được vỗ tay, la hét kích động 1 chiều khi VĐV đang thi đấu. Nếu CĐV vi phạm BTC có quyền mời CĐV ra khỏi sân.
 
-Nhiều bạn trẻ đang gặp phải vấn đề về da thâm, nám do mụn cũng có thể bổ sung collagen. Ngoài ra, collagen còn giúp hỗ trợ làm cơ săn chắc. Việc bổ sung collagen có thể từ thức ăn hoặc dùng các thực phẩm chức năng. Một số thức ăn giàu collagen và protein có thể kể đến như lòng trắng trứng, thịt gà, cá hồi, cá ngừ và các loại trái cây chứa nhiều vitamin C. Thêm vào đó, việc kết hợp các bài tập thể dục thể thao là hết sức quan trọng. Vận động điều độ giúp cơ thể sản sinh nội tiết tố cũng như tăng cường khả năng miễn dịch.
+Ban tổ chức có quyền sửa đổi một số điều trong bản điều lệ và kế hoạch tổ chức này cho phù hợp trong trường hợp có phát sinh ngoài dự kiến.
 
-# 3. Dùng collagen bao lâu thì có hiệu quả?
+ĐIỀU V: KHEN THƯỞNG.
+Nội Dung Đôi Nam Nữ 1300
+Giải Vô Địch: Cúp + 20 triệu + quà tặng (nếu có).
+Giải Nhì: Cúp + 10 triệu + quà tặng (nếu có).
+Hai cặp đồng hạng ba: Cúp + 12 triệu/2 cặp + quà tặng (nếu có).
+II. Nội Dung Đôi Nam 1450
+Giải Vô Địch: Cúp + 20 triệu + quà tặng (nếu có).
+Giải Nhì: Cúp + 10 triệu + quà tặng (nếu có).
+Hai cặp đồng hạng ba: Cúp + 12 triệu/2 cặp + quà tặng (nếu có).
+III. Nội Dung Đôi Nam 1350
+Giải Vô Địch: Cúp + 20 triệu + quà tặng (nếu có).
+Giải Nhì: Cúp + 10 triệu + quà tặng (nếu có).
+Hai cặp đồng hạng ba: Cúp + 12 triệu/2 cặp + quà tặng (nếu có).
+IV. Nội Dung Đôi Nam 1250
+Giải Vô Địch: Cúp + 20 triệu + quà tặng (nếu có).
+Giải Nhì: Cúp + 10 triệu + quà tặng (nếu có).
+Hai cặp đồng hạng ba: Cúp + 12 triệu/2 cặp + quà tặng (nếu có).
+Trường hợp có nhà tài trợ giải thưởng bằng hiện vật có giá trị thì Ban tổ chức sẽ có thể trao giải thưởng bằng hiện vật có giá trị chuyển đổi thành hiện kim với giá trị tương đương.
+Tất cả các VĐV tham dự giải được Ban tổ chức mời dự buổi GALA tiệc giao lưu phát giải.
+Các quy định khác.
 
-Khi dùng thực phẩm chức năng từ collagen, người dùng nên sử dụng theo liều lượng của đơn vị sản xuất để đạt hiệu quả cao nhất. Về hiệu quả làm đẹp, thường thì khi liên tục bổ sung collagen trong 3 tháng sẽ dần thấy hiệu quả. Sau 3 tháng bổ sung collagen, chúng ta có thể ngưng sử dụng 1 tháng để giảm bớt chi phí. Với các vết nám và các vùng da bị tổn thương nặng thì cần thời gian lâu hơn – từ 6 tháng để có kết quả tốt nhất.
-
-Vì Collagen là một hợp chất từ tự nhiên nên chúng cần thời gian để tái tạo và sản sinh trong cơ thể. Tin dùng các thực phẩm chức năng collagen là điều đúng đắn vì không có các chất gây hại tác động mạnh vào da mà collagen sẽ sản sinh và thẩm thấu vào cơ thể giúp cải thiện làn da từ bên trong và điều này rất an toàn. Ngoài việc chăm sóc da từ bên ngoài như việc dùng các mỹ phẩm làm đẹp thì làm đẹp từ bên trong cơ thể là vô cùng quan trọng.
+Đăng ký:
+Hạn chót đăng ký tham dự giải, đóng phí đến ngày 22/05/2022
