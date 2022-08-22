@@ -130,7 +130,7 @@ export default function FilterTable({ dataSet }: Props) {
       },
       {
         accessorKey: "mobile",
-        header: () => <span>Số điện thoại</span>,
+        header: () => <span>SĐT</span>,
         footer: (props) => props.column.id,
       },
     ],

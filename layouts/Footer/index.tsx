@@ -24,7 +24,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="text-center text-primary bg-gray-200 py-12">
+      <div className="text-center text-primary bg-gray-200 py-12 px-4 md:px-0">
         <h2 className="font-bold">
           LIÊN HỆ ĐĂNG KÝ THAM GIA GIẢI ĐẤU VÀ QUẢNG CÁO
         </h2>

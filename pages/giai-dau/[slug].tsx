@@ -20,7 +20,7 @@ export default function PostPage({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div>
+      <div className="giai-dau">
         <div className="container mx-auto">
           <div className="w-3/4 mx-auto mt-24">
             <img src={cover_image} alt="" />

@@ -50,8 +50,8 @@ const Home: NextPage = ({ events, players }: any) => {
             events.map((e: any) => (
               <div className="mt-4" key={e.slug}>
                 <img src={e.frontmatter.cover_image} alt="giai dau" />
-                <div className="bg-gray-300 py-4 flex flex-wrap">
-                  <div className="w-1/4 flex items-center justify-center">
+                <div className="bg-gray-200 py-4 flex items-start flex-wrap">
+                  <div className="w-1/4 pt-1 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white">
                       <div className="bg-primary text-white text-center">
                         <p className="text-xs">
@@ -65,7 +65,7 @@ const Home: NextPage = ({ events, players }: any) => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-3/4 mt-2">
+                  <div className="w-3/4">
                     <p className="uppercase font-bold pr-4">
                       {e.frontmatter.title}
                     </p>
