@@ -1,5 +1,5 @@
 import useSWR from "swr";
-
+import { Loading } from "components";
 import { Header } from "layouts";
 import FilterTable from "./FilterTable";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default function BangDiem() {
   const { data, error } = useSWR("/api/score", fetcher);
 
   if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (!data) return <Loading />;
 
   const x = data[1].data.filter((e: any) => e.length >= 5 && e[0] > 0);
   // console.log(x);
