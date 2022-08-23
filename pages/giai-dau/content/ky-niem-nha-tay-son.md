@@ -1,0 +1,77 @@
+---
+title: "GIẢI TENNIS TRANH CUP KỶ NIỆM NGÀY THÀNH LẬP CÔNG TY TNHH XD TM NHÀ TÂY SƠN"
+date: "September 23, 2022"
+excerpt: "Đang cập nhật"
+cover_image: "/giai-dau/ky-niem-nha-tay-son.jpg"
+---
+
+DIỄN ĐÀN TENNIS BTN- GIẢI TENNIS TRANH CUP KỶ NIỆM NGÀY THÀNH LẬP CÔNG TY TNHH XD TM NHÀ TÂY SƠN.
+
+CÔNG TY TNHH XD TM NHÀ TÂY SƠN tổ chức ngày 23-24-25/ 9/2022.
+
+### Ban Tổ Chức Giải Gồm:
+
+1. Ông Tào Văn Sơn - GĐ Công Ty Nhà Tây Sơn, Chủ tịch diễn đàn tennis BTN , Trưởng Ban Tổ Chức Giải
+2. Ông Thành Lê - Giám Đốc Nhà Phân Phối Xe Zamaha - Nhà Tài Trợ Kim Cương.
+3. Ông Trương Việt Dũng - GĐ Cty LongMekong. Phó BTC phụ trách chung.
+4. Ông Lưu Đức Tài - GĐ Công ty Lưu Đức Tài P.CT diễn đàn tennis BTN - Phụ trách chung cho giải.
+5. Ông Võ Văn Quý - GĐ Công ty MPĐ Võ Gia, P. CT diễn đàn tennis BTN - Phụ trách chung giải.
+   6.Ông Văng Trúc Minh - GĐ cty Sơn Sang, phụ trách chung giải.
+6. Ông Phạm Vinh Thọ-Liên đoàn quần vợt tphcm-TB Trọng Tài giải.
+   Mục đích của giải thi đấu lần này nhằm tăng cường rèn luyện sức khỏe đặc biệt với các lão tướng, sống vui, sống khoẻ, có ích cho xã hội.
+   Tạo điều kiện gặp gỡ giao lưu các VđV các hội các danh nghiệp trong TPHCM và các tỉnh lân cận, trao đổi kinh nghiệm tăng cường hợp tác kết nối.
+   BTC quyết định tổ chức giải vào ngày 23-24-25/9/2022 tại cụm sân trung thiện 40 trần thị do phường hiệp thành quận 12 TPHCM, cụm sân Cộng Đồng, cụm sân Điện Lực, cụm sân Vạn Hà...
+7. Nội dung Đôi Nam Nữ 1300 vào ngày 23/9/2022
+8. Nội dung Đôi Nam 1375 vào ngày 24/9/2022
+9. Nội dung Đôi Nam 1250 vào ngày 25/9/2022
+   Điểm dựa trên diễn đàn tennis BTN, nếu vđv chưa có điểm, BTC sẽ xét duyệt sau khi ae vđv đăng ký và thông báo điểm cho vđv đăng ký.
+   THỂ THỨC - NỘI DUNG:
+   Các VđV tự chọn cặp có tổng số điểm tương ứng với giải dung sai 5 điểm vđv không cần đóng phí lố điểm .
+
+- Lệ Phí 2triệu vnđ/ 1 cặp vđv
+- Các cặp có tổng số điểm dư 10-15 điểm đóng phí tài trợ lố điểm 1 triệu lệ phí giải tính riêng.
+- Các cặp có tổng điểm cao hơn 20-25 điểm đóng phí tài trợ lố điểm 2 triệu lệ phí giải tính riêng.
+
+### Thể thức thi đấu:
+
+- Bốc thăm cặp thi đấu theo thể thức playoff, nếu có ít nhất 2 cặp VđV bỏ cuộc sau khi bốc thăm trước khi thi đấu vòng loại btc được quyền xếp các cặp đội còn lại thì đấu với nhau cho phù hợp với giải đấu.
+- Thi đấu loại trực tiếp theo sơ đồ thi đấu do BTC công bố trước khi thi đấu có cặp VđV bỏ cuộc cặp VđV còn lại vào vòng trong. Thi đấu tối đa một ván là 11 bàn. Đội nào đến 6 trước là thắng áp dụng luật bàn thắng vàng tức đội nào đến 50 trước là thắng. Nếu hai đội đạt 5-5 sẽ đánh tie-break chạm 7 max 10.
+
+### Ghi chú:
+
+1. Tất cả các vận động viên có trách nhiệm về sức khoẻ của mình trong quá trình thi đấu tại giải. BTC có quyền sử dụng hình ảnh của vđv tham gia giải cho mục đích của BTC và diễn đàn tennis BTN
+2. Mọi quyết định cuối cùng thuộc về Ban Tổ Chức.
+   DIỄN ĐÀN TENNIS BTN- GIẢI TENNIS TRANH CUP KỶ NIỆM NGÀY THÀNH LẬP CÔNG TY TNHH XD TM NHÀ TÂY SƠN .  
+   CÔNG TY TNHH XD TM NHÀ TÂY SƠN tổ chức ngày 23-24-25/ 9/2022.
+   Ban Tổ Chức Giải Gồm:
+3. Ông Tào Văn Sơn - GĐ Công Ty Nhà Tây Sơn, Chủ tịch diễn đàn tennis BTN , Trưởng Ban Tổ Chức Giải
+4. Ông Thành Lê - Giám Đốc Nhà Phân Phối Xe Zamaha - Nhà Tài Trợ Kim Cương.
+5. Ông Trương Việt Dũng - GĐ Cty LongMekong. Phó BTC phụ trách chung.
+6. Ông Lưu Đức Tài - GĐ Công ty Lưu Đức Tài P.CT diễn đàn tennis BTN - Phụ trách chung cho giải.
+7. Ông Võ Văn Quý - GĐ Công ty MPĐ Võ Gia, P. CT diễn đàn tennis BTN - Phụ trách chung giải.
+8. Ông Văng Trúc Minh - GĐ cty Sơn Sang, phụ trách chung giải.
+9. Ông Phạm Vinh Thọ-Liên đoàn quần vợt tphcm-TB Trọng Tài giải.
+   Mục đích của giải thi đấu lần này nhằm tăng cường rèn luyện sức khỏe đặc biệt với các lão tướng, sống vui, sống khoẻ, có ích cho xã hội.
+   Tạo điều kiện gặp gỡ giao lưu các VđV các hội các danh nghiệp trong TPHCM và các tỉnh lân cận, trao đổi kinh nghiệm tăng cường hợp tác kết nối.
+   BTC quyết định tổ chức giải vào ngày 23-24-25/9/2022 tại cụm sân trung thiện 40 trần thị do phường hiệp thành quận 12 TPHCM, cụm sân Cộng Đồng, cụm sân Điện Lực, cụm sân Vạn Hà...
+10. Nội dung Đôi Nam Nữ 1300 vào ngày 23/9/2022
+11. Nội dung Đôi Nam 1375 vào ngày 24/9/2022
+12. Nội dung Đôi Nam 1250 vào ngày 25/9/2022
+    Điểm dựa trên diễn đàn tennis BTN, nếu vđv chưa có điểm, BTC sẽ xét duyệt sau khi ae vđv đăng ký và thông báo điểm cho vđv đăng ký.
+    THỂ THỨC - NỘI DUNG:
+    Các VđV tự chọn cặp có tổng số điểm tương ứng với giải dung sai 5 điểm vđv không cần đóng phí lố điểm .
+
+- Lệ Phí 2triệu vnđ/ 1 cặp vđv
+- Các cặp có tổng số điểm dư 10-15 điểm đóng phí tài trợ lố điểm 1 triệu lệ phí giải tính riêng.
+- Các cặp có tổng điểm cao hơn 20-25 điểm đóng phí tài trợ lố điểm 2 triệu lệ phí giải tính riêng.
+
+### Thể thức thi đấu:
+
+Bốc thăm cặp thi đấu theo thể thức playoff, nếu có ít nhất 2 cặp VđV bỏ cuộc sau khi bốc thăm trước khi thi đấu vòng loại btc được quyền xếp các cặp đội còn lại thì đấu với nhau cho phù hợp với giải đấu.
+
+Thi đấu loại trực tiếp theo sơ đồ thi đấu do BTC công bố trước khi thi đấu có cặp VđV bỏ cuộc cặp VđV còn lại vào vòng trong. Thi đấu tối đa một ván là 11 bàn. Đội nào đến 6 trước là thắng áp dụng luật bàn thắng vàng tức đội nào đến 50 trước là thắng. Nếu hai đội đạt 5-5 sẽ đánh tie-break chạm 7 max 10.
+
+### Ghi chú:
+
+1. Tất cả các vận động viên có trách nhiệm về sức khoẻ của mình trong quá trình thi đấu tại giải. BTC có quyền sử dụng hình ảnh của vđv tham gia giải cho mục đích của BTC và diễn đàn tennis BTN
+2. Mọi quyết định cuối cùng thuộc về Ban Tổ Chức.
