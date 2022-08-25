@@ -10,12 +10,11 @@ import path from "path";
 import matter from "gray-matter";
 
 import { Header, Footer } from "layouts";
-import { Sponsors, Players } from "components";
+import { Sponsors, Players, DialogEvent } from "components";
 import Cover from "assets/cover-main.jpeg";
 import { sortByDate } from "utils";
 
 const Home: NextPage = ({ events, players }: any) => {
-  console.log(players);
   return (
     <div>
       <Head>
@@ -44,20 +43,14 @@ const Home: NextPage = ({ events, players }: any) => {
 
         {/* events */}
         <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
-          <h2 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
-            Thông tin giải đấu mới
-          </h2>
+          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+            Các giải đấu mới
+          </h1>
           {events &&
             events.map((e: any) => (
               <div className="mt-4" key={e.slug}>
-                <Link href={`/giai-dau/${e.slug}`}>
-                  <img
-                    className="cursor-pointer"
-                    src={e.frontmatter.cover_image}
-                    alt="giai dau"
-                  />
-                </Link>
-                <div className="bg-gray-200 py-4 flex items-start flex-wrap">
+                <img src={e.frontmatter.cover_image} alt="giai dau" />
+                <div className="bg-gray-200 py-4 flex items-center flex-wrap">
                   <div className="w-1/4 pt-1 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white">
                       <div className="bg-primary text-white text-center">
@@ -73,14 +66,13 @@ const Home: NextPage = ({ events, players }: any) => {
                     </div>
                   </div>
                   <div className="w-3/4">
-                    <Link href={`/giai-dau/${e.slug}`}>
-                      <p className="uppercase font-bold pr-4 cursor-pointer">
-                        {e.frontmatter.title}
-                      </p>
-                    </Link>
-                    <button className="bg-white py-1 px-2 my-2 underline">
-                      <a href={`/giai-dau/${e.slug}`}>Xem thêm</a>
-                    </button>
+                    <p className="uppercase font-bold pr-4 mb-4">
+                      {e.frontmatter.title}
+                    </p>
+
+                    <DialogEvent content={e}>
+                      <h1>---</h1>
+                    </DialogEvent>
                   </div>
                 </div>
               </div>
@@ -138,11 +130,12 @@ export async function getStaticProps() {
       "utf-8"
     );
 
-    const { data: frontmatter } = matter(markdownWithMeta);
+    const { data: frontmatter, content } = matter(markdownWithMeta);
 
     return {
       slug,
       frontmatter,
+      content,
     };
   });
 

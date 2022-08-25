@@ -8,7 +8,7 @@ import Sponsor5 from "assets/sponsors/sponsor-5.jpeg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import Dialog from "./Dialog";
+import Dialog from "./DialogBrand";
 
 // Import Swiper styles
 import "swiper/css";
