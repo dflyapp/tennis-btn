@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import classNames from "classnames";
 
 import { Header, Footer } from "layouts";
 import { Sponsors, Players, DialogEvent } from "components";
@@ -35,7 +36,7 @@ const Home: NextPage = ({ events, players }: any) => {
 
         {/* sponsors */}
         <div className="mt-6">
-          <h1 className="uppercase text-center text-primary font-bold text-xl">
+          <h1 className="uppercase text-center font-bold text-xl">
             Nhà tài trợ
           </h1>
         </div>
@@ -43,23 +44,41 @@ const Home: NextPage = ({ events, players }: any) => {
 
         {/* events */}
         <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
-          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+          <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Các giải đấu mới
           </h1>
           {events &&
             events.map((e: any) => (
               <div className="mt-4" key={e.slug}>
                 <img src={e.frontmatter.cover_image} alt="giai dau" />
-                <div className="bg-gray-200 py-4 flex items-center flex-wrap">
+                <div className="bg-gray-100 py-4 flex items-center flex-wrap rounded-bl-lg rounded-br-lg">
                   <div className="w-1/4 pt-1 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white">
-                      <div className="bg-primary text-white text-center">
+                    <div className="w-16 h-16 bg-white rounded-md">
+                      <div
+                        className={classNames(
+                          "text-white text-center rounded-tl-sm rounded-tr-sm",
+                          {
+                            "bg-red-500": dayjs(e.frontmatter.date).isAfter(
+                              dayjs(new Date())
+                            ),
+                            "bg-gray-400": dayjs(e.frontmatter.date).isBefore(
+                              dayjs(new Date())
+                            ),
+                          }
+                        )}
+                      >
                         <p className="text-xs">
                           Tháng {dayjs(e.frontmatter.date).month() + 1}
                         </p>
                       </div>
                       <div>
-                        <p className="text-3xl text-center mt-1">
+                        <p
+                          className={classNames("text-3xl text-center mt-1", {
+                            "opacity-50": dayjs(e.frontmatter.date).isBefore(
+                              dayjs(new Date())
+                            ),
+                          })}
+                        >
                           {dayjs(e.frontmatter.date).date()}
                         </p>
                       </div>
@@ -80,18 +99,18 @@ const Home: NextPage = ({ events, players }: any) => {
         </div>
 
         {/* leader board */}
-        <div className="px-2 bg-gray-200 py-3">
-          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+        <div className="px-2 bg-gray-100 py-3">
+          <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Bảng điểm
           </h1>
           <div className="mt-4 mx-auto w-fit">
             <Link href="bang-diem/nam">
-              <button className="bg-white text-primary px-4 py-2 mb-12">
+              <button className="bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
                 Trình Nam
               </button>
             </Link>
             <Link href="bang-diem/nu">
-              <button className="ml-3 bg-white text-primary px-4 py-2 mb-12">
+              <button className="ml-3 bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
                 Trình Nữ
               </button>
             </Link>
@@ -100,7 +119,7 @@ const Home: NextPage = ({ events, players }: any) => {
 
         {/* gallery */}
         <div className="px-2 py-3">
-          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+          <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Hình ảnh
           </h1>
           <Players players={players} />

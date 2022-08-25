@@ -6,7 +6,7 @@ export default function BangDiem() {
     <>
       <Header />
       {/* leader board */}
-      <div className="px-2 bg-gray-200 py-3">
+      <div className="px-2 bg-gray-100 py-3">
         <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
           Bảng điểm
         </h1>
