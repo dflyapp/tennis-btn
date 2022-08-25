@@ -35,7 +35,7 @@ export default function PostPage({
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4">
+      <div className="giai-dau container mx-auto px-4">
         <div className="my-12 mx-auto px-4 w-full md:w-1/2 blog-content">
           <ReactMarkdown>{content}</ReactMarkdown>
           {/* <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div> */}

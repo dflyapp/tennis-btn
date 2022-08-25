@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -43,13 +44,19 @@ const Home: NextPage = ({ events, players }: any) => {
 
         {/* events */}
         <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
-          <h1 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
+          <h2 className="w-fit mx-auto px-3 py-2 text-white bg-primary uppercase text-center mt-12">
             Thông tin giải đấu mới
-          </h1>
+          </h2>
           {events &&
             events.map((e: any) => (
               <div className="mt-4" key={e.slug}>
-                <img src={e.frontmatter.cover_image} alt="giai dau" />
+                <Link href={`/giai-dau/${e.slug}`}>
+                  <img
+                    className="cursor-pointer"
+                    src={e.frontmatter.cover_image}
+                    alt="giai dau"
+                  />
+                </Link>
                 <div className="bg-gray-200 py-4 flex items-start flex-wrap">
                   <div className="w-1/4 pt-1 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white">
@@ -66,9 +73,11 @@ const Home: NextPage = ({ events, players }: any) => {
                     </div>
                   </div>
                   <div className="w-3/4">
-                    <p className="uppercase font-bold pr-4">
-                      {e.frontmatter.title}
-                    </p>
+                    <Link href={`/giai-dau/${e.slug}`}>
+                      <p className="uppercase font-bold pr-4 cursor-pointer">
+                        {e.frontmatter.title}
+                      </p>
+                    </Link>
                     <button className="bg-white py-1 px-2 my-2 underline">
                       <a href={`/giai-dau/${e.slug}`}>Xem thêm</a>
                     </button>

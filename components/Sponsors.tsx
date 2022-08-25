@@ -8,6 +8,7 @@ import Sponsor5 from "assets/sponsors/sponsor-5.jpeg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
+import Dialog from "./Dialog";
 
 // Import Swiper styles
 import "swiper/css";
@@ -43,9 +44,11 @@ export default function Sponsors() {
         {sponsorList.map((e) => {
           return (
             <SwiperSlide className="mx-0" key={e.name}>
-              <div className="w-48 h-48 mb-6">
+              <Dialog content={e}>
+                <h1>Giới thiệu về công ty</h1>
                 <Image src={e.logo} alt={e.name} />
-              </div>
+                <p>hello {JSON.stringify(e)}</p>
+              </Dialog>
             </SwiperSlide>
           );
         })}
