@@ -47,55 +47,121 @@ const Home: NextPage = ({ events, players }: any) => {
           <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Các giải đấu mới
           </h1>
+          {/* hot events */}
           {events &&
-            events.map((e: any) => (
-              <div className="mt-4" key={e.slug}>
-                <img src={e.frontmatter.cover_image} alt="giai dau" />
-                <div className="bg-gray-100 py-4 flex items-center flex-wrap rounded-bl-lg rounded-br-lg">
-                  <div className="w-1/4 pt-1 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white rounded-md">
-                      <div
-                        className={classNames(
-                          "text-white text-center rounded-tl-sm rounded-tr-sm",
-                          {
-                            "bg-red-500": dayjs(e.frontmatter.date).isAfter(
-                              dayjs(new Date())
-                            ),
-                            "bg-gray-400": dayjs(e.frontmatter.date).isBefore(
-                              dayjs(new Date())
-                            ),
-                          }
-                        )}
-                      >
-                        <p className="text-xs">
-                          Tháng {dayjs(e.frontmatter.date).month() + 1}
-                        </p>
+            events.map((e: any) => {
+              if (e.frontmatter.hot) {
+                return (
+                  <div className="mt-4" key={e.slug}>
+                    <img src={e.frontmatter.cover_image} alt="giai dau" />
+                    <div className="bg-gray-100 py-4 flex items-center flex-wrap rounded-bl-lg rounded-br-lg">
+                      <div className="w-1/4 pt-1 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-white rounded-md">
+                          <div
+                            className={classNames(
+                              "text-white text-center rounded-tl-sm rounded-tr-sm",
+                              {
+                                "bg-red-500": dayjs(e.frontmatter.date).isAfter(
+                                  dayjs(new Date())
+                                ),
+                                "bg-gray-400": dayjs(
+                                  e.frontmatter.date
+                                ).isBefore(dayjs(new Date())),
+                              }
+                            )}
+                          >
+                            <p className="text-xs">
+                              Tháng {dayjs(e.frontmatter.date).month() + 1}
+                            </p>
+                          </div>
+                          <div>
+                            <p
+                              className={classNames(
+                                "text-3xl text-center mt-1",
+                                {
+                                  "opacity-50": dayjs(
+                                    e.frontmatter.date
+                                  ).isBefore(dayjs(new Date())),
+                                }
+                              )}
+                            >
+                              {dayjs(e.frontmatter.date).date()}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <p
-                          className={classNames("text-3xl text-center mt-1", {
-                            "opacity-50": dayjs(e.frontmatter.date).isBefore(
-                              dayjs(new Date())
-                            ),
-                          })}
-                        >
-                          {dayjs(e.frontmatter.date).date()}
+                      <div className="w-3/4">
+                        <p className="uppercase font-bold pr-4 mb-4">
+                          {e.frontmatter.title}
                         </p>
+
+                        <DialogEvent content={e}>
+                          <h1>---</h1>
+                        </DialogEvent>
                       </div>
                     </div>
                   </div>
-                  <div className="w-3/4">
-                    <p className="uppercase font-bold pr-4 mb-4">
-                      {e.frontmatter.title}
-                    </p>
+                );
+              }
+            })}
 
-                    <DialogEvent content={e}>
-                      <h1>---</h1>
-                    </DialogEvent>
+          {/* normal events */}
+          {events &&
+            events.map((e: any) => {
+              if (!e.frontmatter.hot) {
+                return (
+                  <div className="mt-4" key={e.slug}>
+                    <img src={e.frontmatter.cover_image} alt="giai dau" />
+                    <div className="bg-gray-100 py-4 flex items-center flex-wrap rounded-bl-lg rounded-br-lg">
+                      <div className="w-1/4 pt-1 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-white rounded-md">
+                          <div
+                            className={classNames(
+                              "text-white text-center rounded-tl-sm rounded-tr-sm",
+                              {
+                                "bg-red-500": dayjs(e.frontmatter.date).isAfter(
+                                  dayjs(new Date())
+                                ),
+                                "bg-gray-400": dayjs(
+                                  e.frontmatter.date
+                                ).isBefore(dayjs(new Date())),
+                              }
+                            )}
+                          >
+                            <p className="text-xs">
+                              Tháng {dayjs(e.frontmatter.date).month() + 1}
+                            </p>
+                          </div>
+                          <div>
+                            <p
+                              className={classNames(
+                                "text-3xl text-center mt-1",
+                                {
+                                  "opacity-50": dayjs(
+                                    e.frontmatter.date
+                                  ).isBefore(dayjs(new Date())),
+                                }
+                              )}
+                            >
+                              {dayjs(e.frontmatter.date).date()}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="w-3/4">
+                        <p className="uppercase font-bold pr-4 mb-4">
+                          {e.frontmatter.title}
+                        </p>
+
+                        <DialogEvent content={e}>
+                          <h1>---</h1>
+                        </DialogEvent>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                );
+              }
+            })}
         </div>
 
         {/* leader board */}
@@ -150,6 +216,7 @@ export async function getStaticProps() {
     );
 
     const { data: frontmatter, content } = matter(markdownWithMeta);
+    console.log(frontmatter);
 
     return {
       slug,

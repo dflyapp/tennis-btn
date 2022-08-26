@@ -4,7 +4,7 @@ import Image from "next/image";
 import { XCircleIcon } from "@heroicons/react/solid";
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode | JSX.Element;
   content: any;
 }
 
@@ -60,48 +60,6 @@ export default function MyModal({ children, content }: Props) {
                     />
                   </div>
                   {children}
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Hic esse, cumque non voluptatibus cum laboriosam similique
-                    minus tenetur nisi vero doloremque omnis provident illo.
-                    Unde facere accusantium vel neque consectetur!
-                  </p>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

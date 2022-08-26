@@ -165,6 +165,12 @@ export default function FilterTable({ dataSet }: Props) {
     debugTable: true,
     debugHeaders: true,
     debugColumns: false,
+    initialState: {
+      sorting: [{ id: "max", desc: true }],
+      pagination: {
+        pageSize: 30,
+      },
+    },
   });
 
   React.useEffect(() => {
@@ -188,13 +194,14 @@ export default function FilterTable({ dataSet }: Props) {
       </div> */}
       <div className="flex mx-auto my-4">
         <input
+          placeholder="nhập tên cần tìm"
           type="text"
           className="border px-2 w-full"
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
         <button
-          className="bg-primary text-white p-4 w-48"
+          className="shadow-md bg-white text-primary border border-gray-200 rounded-tr-md rounded-br-md p-4 w-48"
           onClick={() => {
             if (searchText === "") {
               return;
@@ -209,7 +216,7 @@ export default function FilterTable({ dataSet }: Props) {
             setSearchText("");
           }}
         >
-          Tìm tên
+          Tìm Tên
         </button>
       </div>
       <div className="h-2" />

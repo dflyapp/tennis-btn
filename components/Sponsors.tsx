@@ -16,11 +16,11 @@ import "swiper/css/pagination";
 
 export default function Sponsors() {
   const sponsorList = [
-    { name: "vg", logo: Sponsor1 },
-    { name: "son-sang", logo: Sponsor2 },
-    { name: "nst", logo: Sponsor3 },
-    { name: "long-mekong", logo: Sponsor4 },
-    { name: "ldt", logo: Sponsor5 },
+    { name: "vg", logo: Sponsor1, content: NTS },
+    { name: "son-sang", logo: Sponsor2, content: NTS },
+    { name: "nst", logo: Sponsor3, content: NTS },
+    { name: "long-mekong", logo: Sponsor4, content: NTS },
+    { name: "ldt", logo: Sponsor5, content: NTS },
   ];
   return (
     <>
@@ -45,14 +45,28 @@ export default function Sponsors() {
           return (
             <SwiperSlide className="mx-0" key={e.name}>
               <Dialog content={e}>
-                <h1>Giới thiệu về công ty</h1>
+                <h1>Giới thiệu về công ty {e.name}</h1>
                 <Image src={e.logo} alt={e.name} />
-                <p>hello {JSON.stringify(e)}</p>
+                <div>{e.content()}</div>
               </Dialog>
             </SwiperSlide>
           );
         })}
       </Swiper>
     </>
+  );
+}
+
+function NTS() {
+  return (
+    <div>
+      <p>
+        Vinamilk được thành lập vào ngày 20/08/1976, dựa trên cơ sở tiếp quản 3
+        nhà máy sữa do chế độ cũ để lại:Nhà máy sữa Thống Nhất (tiền thân là nhà
+        máy Foremost); Nhà máy sữa Trường Thọ (tiền thân là nhà máy Cosuvina);
+        Nhà máy sữa Bột Dielac.Vào tháng 3 năm 1994, Vinamilk chính thức khánh
+        thành Nhà máy sữa đầu tiên ở Hà Nội.
+      </p>
+    </div>
   );
 }

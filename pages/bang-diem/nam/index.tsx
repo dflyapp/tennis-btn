@@ -3,7 +3,7 @@ import useSWR from "swr";
 
 import { Header } from "layouts";
 import { Loading } from "components";
-import FilterTable from "../nu/FilterTable";
+import FilterTable from "../FilterTable";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -36,14 +36,14 @@ export default function BangDiem() {
   return (
     <>
       <Header />
-      <div className="flex my-4 w-fit mx-auto">
+      <div className="flex my-12 w-fit mx-auto">
         <Link href="/bang-diem/nam">
-          <button className="p-4 border bg-primary text-white">
+          <button className="p-4 rounded-md shadow-md border bg-primary text-white">
             Trình Nam
           </button>
         </Link>
         <Link href="/bang-diem/nu">
-          <button className="ml-3 p-4 border bg-white text-primary">
+          <button className="ml-3 rounded-md shadow-md p-4 border bg-white text-primary">
             Trình Nữ
           </button>
         </Link>
