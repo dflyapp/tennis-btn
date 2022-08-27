@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@font-face {
+  font-family: myFonts;
+  src: url(/fonts/BeVietnamPro-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: myFonts;
+  src: url(/fonts/BeVietnamPro-SemiBold.ttf);
+  font-weight: 700;
+}
 
 body {
-  font-family: "Rototo", sans-serif;
+  font-family: myFonts, sans-serif;
   padding-top: 96px;
 }
 
