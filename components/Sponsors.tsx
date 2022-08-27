@@ -72,7 +72,7 @@ export default function Sponsors() {
               <Dialog content={e}>
                 <h1>Giới thiệu về công ty {e.vnName}</h1>
                 <Image src={e.logo} alt={e.name} />
-                <div>{e.content()}</div>
+                <div className="sponsors">{e.content()}</div>
               </Dialog>
             </SwiperSlide>
           );

@@ -177,14 +177,14 @@ const Home: NextPage = ({ events, players }: any) => {
           <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Bảng điểm
           </h1>
-          <div className="mt-4 flex justify-between px-24">
+          <div className="mt-4 mx-auto w-fit">
             <Link href="bang-diem/nam">
               <button className="bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
                 Trình Nam
               </button>
             </Link>
             <Link href="bang-diem/nu">
-              <button className="bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
+              <button className="ml-8 bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
                 Trình Nữ
               </button>
             </Link>

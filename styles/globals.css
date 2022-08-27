@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   font-weight: 700;
 }
@@ -85,6 +85,10 @@ ol {
 }
 
 .giai-dau p {
+  margin-top: 16px;
+}
+
+.sponsors p {
   margin-top: 16px;
 }
 

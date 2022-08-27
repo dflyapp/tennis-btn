@@ -12,7 +12,7 @@ CÔNG TY TNHH XD TM NHÀ TÂY SƠN tổ chức ngày 23-24-25/9/2022.
 ### Ban Tổ Chức Giải Gồm:
 
 1. Ông Tào Văn Sơn - GĐ Công Ty Nhà Tây Sơn, Chủ tịch diễn đàn tennis BTN , Trưởng Ban Tổ Chức Giải
-2. Ông Thành Lê - Giám Đốc Nhà Phân Phối Xe Zamaha - Nhà Tài Trợ Kim Cương.
+2. Ông Thành Lê - Giám Đốc Nhà Phân Phối Xe Yamaha - Nhà Tài Trợ Kim Cương.
 3. Ông Trương Việt Dũng - GĐ Cty LongMekong. Phó BTC phụ trách chung.
 4. Ông Lưu Đức Tài - GĐ Công ty Lưu Đức Tài P.CT diễn đàn tennis BTN - Phụ trách chung cho giải.
 5. Ông Võ Văn Quý - GĐ Công ty MPĐ Võ Gia, P. CT diễn đàn tennis BTN - Phụ trách chung giải.
