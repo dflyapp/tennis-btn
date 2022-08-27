@@ -13,6 +13,7 @@ import classNames from "classnames";
 import { Header, Footer } from "layouts";
 import { Sponsors, Players, DialogEvent } from "components";
 import Cover from "assets/cover-main.jpeg";
+import LeaderboardBg from "assets/leaderboard-bg.jpg";
 import { sortByDate } from "utils";
 
 const Home: NextPage = ({ events, players }: any) => {
@@ -173,8 +174,16 @@ const Home: NextPage = ({ events, players }: any) => {
         </div>
 
         {/* leader board */}
-        <div className="px-2 bg-gray-100 py-3">
-          <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
+        <div
+          className="px-2 bg-gray-100 py-3"
+          style={{
+            background: `url(${LeaderboardBg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "bottom right",
+            opacity: 1,
+          }}
+        >
+          <h1 className="w-fit mx-auto px-3 text-white py-2 uppercase text-center mt-12">
             Bảng điểm
           </h1>
           <div className="mt-4 mx-auto w-fit">
