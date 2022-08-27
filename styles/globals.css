@@ -76,8 +76,16 @@ ol {
   margin-left: 1rem;
 }
 
-.giai-dau li {
+.giai-dau ul li {
   list-style-type: circle;
+}
+
+.giai-dau ol li {
+  list-style-type: decimal;
+}
+
+.giai-dau p {
+  margin-top: 16px;
 }
 
 .swiper {

@@ -16,6 +16,7 @@ import Cover from "assets/cover-main.jpeg";
 import { sortByDate } from "utils";
 
 const Home: NextPage = ({ events, players }: any) => {
+  const todaySubtract3 = dayjs(new Date()).subtract(3, "day");
   return (
     <div>
       <Head>
@@ -43,8 +44,8 @@ const Home: NextPage = ({ events, players }: any) => {
         <Sponsors />
 
         {/* events */}
-        <div className="px-4 my-24 w-full md:w-1/2 mx-auto">
-          <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
+        <div className="px-4 mt-4 mb-24 w-full md:w-1/2 mx-auto">
+          <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center">
             Các giải đấu mới
           </h1>
           {/* hot events */}
@@ -62,11 +63,11 @@ const Home: NextPage = ({ events, players }: any) => {
                               "text-white text-center rounded-tl-sm rounded-tr-sm",
                               {
                                 "bg-red-500": dayjs(e.frontmatter.date).isAfter(
-                                  dayjs(new Date())
+                                  dayjs(todaySubtract3)
                                 ),
                                 "bg-gray-400": dayjs(
                                   e.frontmatter.date
-                                ).isBefore(dayjs(new Date())),
+                                ).isBefore(dayjs(todaySubtract3)),
                               }
                             )}
                           >
@@ -81,7 +82,7 @@ const Home: NextPage = ({ events, players }: any) => {
                                 {
                                   "opacity-50": dayjs(
                                     e.frontmatter.date
-                                  ).isBefore(dayjs(new Date())),
+                                  ).isBefore(dayjs(todaySubtract3)),
                                 }
                               )}
                             >
@@ -162,6 +163,13 @@ const Home: NextPage = ({ events, players }: any) => {
                 );
               }
             })}
+          <div className="flex justify-center mt-8">
+            <Link href="/giai-dau">
+              <button className="underline text-primary">
+                Xem tất cả giải đấu
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* leader board */}
@@ -169,14 +177,14 @@ const Home: NextPage = ({ events, players }: any) => {
           <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Bảng điểm
           </h1>
-          <div className="mt-4 mx-auto w-fit">
+          <div className="mt-4 flex justify-between px-24">
             <Link href="bang-diem/nam">
               <button className="bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
                 Trình Nam
               </button>
             </Link>
             <Link href="bang-diem/nu">
-              <button className="ml-3 bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
+              <button className="bg-white rounded-md border border-gray-200 shadow-md text-primary px-4 py-2 mb-12">
                 Trình Nữ
               </button>
             </Link>

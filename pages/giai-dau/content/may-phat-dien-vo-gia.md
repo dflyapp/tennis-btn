@@ -5,4 +5,8 @@ excerpt: "Đang cập nhật"
 cover_image: "/giai-dau/may-phat-dien-vo-gia.jpg"
 ---
 
-Đang cập nhật
+![Điều lệ giải](/giai-dau/vg-dieu-le-1.jpg)
+
+![Điều lệ giải](/giai-dau/vg-dieu-le-2.jpg)
+
+![Điều lệ giải](/giai-dau/vg-dieu-le-3.jpg)

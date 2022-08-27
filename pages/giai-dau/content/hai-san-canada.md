@@ -6,4 +6,4 @@ cover_image: "/giai-dau/hai-san-canada.jpg"
 hot: true
 ---
 
-Đang cập nhật
+![Điều lệ giải](/giai-dau/hai-san-canada-dieu-le.jpg)
