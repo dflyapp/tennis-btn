@@ -327,7 +327,7 @@ export default function FilterTable({ dataSet }: Props) {
             </strong>
           </span>
           <span className="flex items-center gap-1 ml-2">
-            | Đến trang:
+            | Đến:
             <input
               type="number"
               defaultValue={table.getState().pagination.pageIndex + 1}

@@ -1,7 +1,7 @@
 ---
 title: "GIẢI TENNIS TRANH CUP KỶ NIỆM NGÀY THÀNH LẬP CÔNG TY TNHH XD TM NHÀ TÂY SƠN"
 date: "September 23, 2022"
-excerpt: "Đang cập nhật"
+excerpt: "Giải tennis tranh cúp kỷ niệm ngày thành lập công ty TNHH XD TM Nhà Tây Sơn"
 cover_image: "/giai-dau/ky-niem-nha-tay-son.jpg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "GIẢI TENNIS TRANH CÚP RA MẮT DIỄN ĐÀN"
 date: "May 26, 2022"
-excerpt: "Đang cập nhật"
+excerpt: "Giải tennis tranh cúp ra mắt diễn đàn"
 cover_image: "/giai-dau/ra-mat-dien-dan.jpg"
 ---
 
