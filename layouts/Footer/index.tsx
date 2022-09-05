@@ -28,7 +28,7 @@ export default function Footer() {
         <h2 className="font-bold">
           LIÊN HỆ ĐĂNG KÝ THAM GIA GIẢI ĐẤU VÀ QUẢNG CÁO
         </h2>
-        <p>Mr. Sơn Tào (+84) 903 371 177</p>
+        <p>Mr. Sơn Tào 0903 371 177</p>
         <div className="flex w-fit mx-auto mt-4">
           <Link href="https://zalo.me/0903371177">
             <Image

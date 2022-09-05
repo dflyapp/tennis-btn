@@ -36,7 +36,7 @@ export default function BangDiem() {
   return (
     <>
       <Header />
-      <div className="flex my-12 w-fit mx-auto">
+      {/* <div className="flex my-12 w-fit mx-auto">
         <Link href="/bang-diem/nam">
           <button className="p-4 rounded-md shadow-md border bg-primary text-white">
             Trình Nam
@@ -47,7 +47,9 @@ export default function BangDiem() {
             Trình Nữ
           </button>
         </Link>
-      </div>
+      </div> */}
+
+      <h1 className="text-center my-8">Bảng điểm nam</h1>
 
       <FilterTable dataSet={result} />
     </>

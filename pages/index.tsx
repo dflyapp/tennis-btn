@@ -36,16 +36,29 @@ const Home: NextPage = ({ events, players }: any) => {
           layout="responsive"
         />
 
-        {/* sponsors */}
+        {/* admin */}
         <div className="mt-6">
           <h1 className="uppercase text-center font-bold text-xl">
-            Nhà tài trợ
+            Thành viên ban quản trị
           </h1>
         </div>
         <Sponsors />
 
+        {/* sponsors */}
+        <div className="mt-6 mb-4">
+          <h1 className="uppercase text-center font-bold text-xl">
+            Nhà tài trợ
+          </h1>
+        </div>
+        <div className="h-48 w-full bg-primary flex justify-center items-center">
+          <div>
+            <p className="text-white text-center">Liên hệ quảng cáo</p>
+            <p className="text-white text-center">Mr. Sơn Tào 0903 371 177</p>
+          </div>
+        </div>
+
         {/* events */}
-        <div className="px-4 mt-4 mb-24 w-full md:w-1/2 mx-auto">
+        <div className="px-4 mt-8 mb-24 w-full md:w-1/2 mx-auto">
           <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center">
             Các giải đấu mới
           </h1>
