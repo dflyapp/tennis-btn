@@ -13,6 +13,7 @@ import Dialog from "./DialogBrand";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 export default function Sponsors() {
   const sponsorList = [
@@ -85,6 +86,9 @@ export default function Sponsors() {
 function ContentVoGia() {
   return (
     <>
+      <Link href="https://mayphatdienvogia.com/">
+        https://mayphatdienvogia.com/
+      </Link>
       <p>
         Công ty Võ Gia tự hào là công ty chuyên nhập khẩu máy phát điện công
         nghiệp chính hãng, giá rẻ. Với đầy đủ thương hiệu máy phát điện khác
@@ -144,7 +148,34 @@ function ContentLongMK() {
 function ContentLDTWindows() {
   return (
     <>
-      <p>đang cập nhật nội dung</p>
+      <Link href="http://luuductai.com/">http://luuductai.com/</Link>
+      <p>
+        Trong nền kinh tế hội nhập và phát triển đã mang lại cho Doanh nghiệp
+        biết bao cơ hội và không thiếu sự cạnh tranh đòi hỏi Doanh nghiệp phải
+        không ngừng đầu tư và phát triển sản phẩm cho mình.
+      </p>
+      <p>
+        LƯU ĐỨC TÀI đã chinh phục khách hàng bằng sự vượt trội về chất lượng
+        cũng như mẫu mã sản phẩm. Vì thế quý khách hàng hoàn toàn yên tâm khi
+        đến với sản phẩm của LƯU ĐỨC TÀI.
+      </p>
+      <p>Sản phẩm của LƯU ĐỨC TÀI đa dạng chủng loại nét đẹp phong phú:</p>
+      <ul>
+        <li>
+          Cửa cuốn LƯU ĐỨC TÀI sản xuất theo công nghệ Đức, cửa cuốn siêu khe
+          thoáng vận hành êm ái có độ vận hành cao, có độ dày 0.8 - 1.6 ly và hệ
+          phụ kiện đi kèm được nhập khẩu từ các nhà sản xuất có uy tín.
+        </li>
+        <li>
+          Cửa nhôm LƯU ĐỨC TÀI có độ dày 1.5 - 2.0 ly được sản xuất và lắp ráp
+          theo công nghệ Châu Âu, sản phẩm được thiết kế đồng bộ với phụ kiện
+          được nhập khẩu từ Đức.
+        </li>
+        <li>
+          Cửa nhựa lõi thép LƯU ĐỨC TÀI được nhập khẩu thanh profiles từ tập
+          đoàn REHAU, DIMEX Cộng Hòa Liên Bang Đức. Sản phẩm chất lượng cao.
+        </li>
+      </ul>
     </>
   );
 }
