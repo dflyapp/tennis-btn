@@ -8,6 +8,11 @@ export default function Header() {
   return (
     <header className="bg-primary py-4 flex justify-between items-center px-4 fixed top-0 left-0 w-full z-10">
       {/* <MenuButton className="px-0" /> */}
+      <Link href="/giai-dau">
+        <button className="text-white border border-white rounded-md px-2 py-1">
+          <span className="text-xs">Sự Kiện</span>
+        </button>
+      </Link>
       <Link href="/bang-diem/nam">
         <button className="text-white border border-white rounded-md px-2 py-1">
           <span className="text-xs">Bảng điểm</span> <br />
@@ -23,6 +28,11 @@ export default function Header() {
         <button className="text-white border border-white rounded-md px-2 py-1">
           <span className="text-xs">Bảng điểm</span> <br />
           <span className="text-xl">NỮ</span>
+        </button>
+      </Link>
+      <Link href="/hinh-anh">
+        <button className="text-white border border-white rounded-md px-2 py-1">
+          <span className="text-xs">Hình ảnh</span>
         </button>
       </Link>
     </header>
