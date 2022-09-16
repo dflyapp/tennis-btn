@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 
 export type Person = {
+  id: number;
   nickName: string;
   max: number;
   min: number;
