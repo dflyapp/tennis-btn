@@ -37,7 +37,7 @@ export default function Sponsors() {
     },
     {
       name: "long-mekong",
-      vnName: "Công ty TNHH TV DT XD Long Mekong", //cty tnhh tv dt xd long mekong
+      vnName: "Công ty TNHH TV ĐT XD Long Mekong", //cty tnhh tv dt xd long mekong
       logo: Sponsor4,
       content: ContentLongMK,
     },
