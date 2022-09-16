@@ -171,7 +171,7 @@ export default function FilterTable({ dataSet }: Props) {
     debugHeaders: true,
     debugColumns: false,
     initialState: {
-      sorting: [{ id: "max", desc: true }],
+      // sorting: [{ id: "max", desc: true }],
       pagination: {
         pageSize: 30,
       },
