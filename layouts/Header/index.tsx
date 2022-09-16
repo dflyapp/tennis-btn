@@ -15,7 +15,7 @@ export default function Header() {
       </Link>
       <Link href="/bang-diem/nam">
         <button className="flex flex-col items-center text-white border border-white rounded-md px-2 py-1">
-          <span className="text-xs">Bảng điểm</span>
+          <span style={{ fontSize: "0.5rem" }}>Bảng điểm</span>
           <span className="text-xl">NAM</span>
         </button>
       </Link>
@@ -26,7 +26,7 @@ export default function Header() {
       </Link>
       <Link href="/bang-diem/nu">
         <button className="flex flex-col items-center text-white border border-white rounded-md px-2 py-1">
-          <span className="text-xs">Bảng điểm</span>
+          <span style={{ fontSize: "0.5rem" }}>Bảng điểm</span>
           <span className="text-xl">NỮ</span>
         </button>
       </Link>
