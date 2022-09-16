@@ -140,7 +140,26 @@ function ContentNTS() {
 function ContentLongMK() {
   return (
     <>
-      <p>đang cập nhật nội dung</p>
+      <p>Chuyên thi công hạ tầng và san lấp mặt bằng.</p>
+      <p>
+        Chúng tôi có kinh nghiệp hơn 15 năm trong lĩnh vực hạ tầng, san lấp
+        trong các khu công nghiệp, cụm công nghiệp, khu dân cư...
+      </p>
+      <p>Các công trình đã thực hiện trọng điểm tại các khu:</p>
+      <ul>
+        <li>1. Khu công nghiệp Linh Trung 3 - Trảng Bàng - Tây Ninh</li>
+        <li>2. Khu công nghiệp Bourbon An Hoà - Trảng Bàng - Tây Nịn</li>
+        <li>3. Khu công nghiệp Xuyên Á - Long An</li>
+        <li>4. Khu công nghiệp Long Giang - Tiền Giang</li>
+        <li>5. Khu dân cư Bà Rịa - Vũng Tàu</li>
+        <li>6. Cảng bourbon Bến Lức</li>
+        <li>7. Khu Dân Cư The Palm - Novaland Quận 9 - TPHCM</li>
+        <li>Và nhiều công trình khác..</li>
+      </ul>
+      <p>
+        Với tiêu chí đảm bảo chất lượng, tiến độ, thẩm mỹ với mọi công trình.
+        Rất mong có được sự tin cậy, hợp tác từ mọi khách hàng.
+      </p>
     </>
   );
 }
