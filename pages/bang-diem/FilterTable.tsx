@@ -79,6 +79,11 @@ export default function FilterTable({ dataSet }: Props) {
   const columns = React.useMemo<ColumnDef<Person, any>[]>(
     () => [
       {
+        accessorKey: "id",
+        header: () => <span>STT</span>,
+        footer: (props) => props.column.id,
+      },
+      {
         accessorKey: "nickName",
         cell: (info) => (
           <div className="flex">

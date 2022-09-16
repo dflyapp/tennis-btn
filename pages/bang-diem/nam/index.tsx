@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Head from "next/head";
 import useSWR from "swr";
 
 import { Header } from "layouts";
@@ -8,6 +8,7 @@ import FilterTable from "../FilterTable";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type Person = {
+  id: number;
   nickName: string;
   max: number;
   min: number;
@@ -25,7 +26,7 @@ export default function BangDiem() {
   let result: Person[] = [];
   x.forEach((e: any) => {
     result.push({
-      // id: e[0],
+      id: e[0],
       nickName: e[2],
       max: e[3],
       min: e[4],
@@ -35,6 +36,10 @@ export default function BangDiem() {
 
   return (
     <>
+      <Head>
+        <title>Bảng điểm: Nam</title>
+        <meta name="description" content="Bảng điểm dành cho nam" />
+      </Head>
       <Header />
       {/* <div className="flex my-12 w-fit mx-auto">
         <Link href="/bang-diem/nam">
