@@ -219,6 +219,13 @@ const Home: NextPage = ({ events, players }: any) => {
             Hình ảnh
           </h1>
           <Players players={players} />
+          <div className="flex justify-center mt-4 mb-8">
+            <Link href="/hinh-anh">
+              <button className="underline text-primary">
+                Xem tất cả hình ảnh
+              </button>
+            </Link>
+          </div>
         </div>
       </main>
 
@@ -256,8 +263,10 @@ export async function getStaticProps() {
   });
 
   const hinhAnh = fs.readdirSync(path.join("public/hinh-anh"));
-  const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
-
+  let players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
+  console.log(players);
+  players = players.filter((filename) => filename.includes("player"));
+  console.log(players);
   return {
     props: {
       players,
