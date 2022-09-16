@@ -21,7 +21,7 @@ const Home: NextPage = ({ events, players }: any) => {
   return (
     <div>
       <Head>
-        <title>Diễn đàn tennis BTN</title>
+        <title>Diễn đàn tennis Bắc Trung Nam</title>
         <meta name="description" content="Diễn đàn tennis Bắc Trung Nam" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
