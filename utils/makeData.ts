@@ -18,6 +18,7 @@ const range = (len: number) => {
 
 const newPerson = (): Person => {
   return {
+    id: faker.datatype.number(1000),
     nickName: faker.name.firstName(),
     max: faker.datatype.number(1000),
     min: faker.datatype.number(100),

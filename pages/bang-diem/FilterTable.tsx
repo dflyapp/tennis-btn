@@ -89,9 +89,9 @@ export default function FilterTable({ dataSet }: Props) {
       {
         accessorKey: "nickName",
         cell: (info) => (
-          <div className="flex">
+          <div className="flex items-center">
             {info.cell.row.original.id == 5 ? (
-              <div className="w-7 h-7">
+              <div className="w-8 h-8 -ml-1">
                 <Image className="rounded-full" src={Avatar5} alt="avatar" />
               </div>
             ) : (
