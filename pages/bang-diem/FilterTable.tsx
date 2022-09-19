@@ -199,10 +199,12 @@ export default function FilterTable({ dataSet }: Props) {
           }}
           value={searchText}
         />
+      </div>
+      <div className="flex">
         <input
           placeholder="tìm điểm max"
           type="text"
-          className="border px-2 py-2 w-full ml-2 rounded-sm"
+          className="border px-2 py-2 w-full rounded-sm"
           onChange={(event) => {
             const input = event.target.value.toString();
             if (event.target.value !== "") {
