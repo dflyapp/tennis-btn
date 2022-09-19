@@ -127,7 +127,6 @@ export default function FilterTable({ dataSet }: Props) {
   const result = dataSet ? [...dataSet] : makeData(1000);
   const [data, setData] = React.useState<Person[]>(() => result);
   const refreshData = () => setData((old) => makeData(50000));
-  const [searchText, setSearchText] = React.useState("");
 
   const table = useReactTable({
     data,
@@ -171,73 +170,46 @@ export default function FilterTable({ dataSet }: Props) {
 
   return (
     <div className="p-2">
-      {/* <div className="flex justify-center my-8">
-        <DebouncedInput
-          value={globalFilter ?? ""}
-          onChange={(value) => setGlobalFilter(String(value))}
-          className="p-2 font-lg shadow border border-block"
-          placeholder=""
-        />
-      </div> */}
       <div className="flex mx-auto my-4">
         <input
-          placeholder="tìm tên"
+          placeholder="tìm tên, điểm"
           type="text"
           className="border px-2 py-2 w-full rounded-sm"
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            if (e.target.value !== "") {
+          onChange={(event) => {
+            if (event.target.value === "") {
+              setData(result);
+            } else if (Number(event.target.value) > 0) {
+              const newDataMax = result.filter(
+                (e) =>
+                  e.max !== null &&
+                  e.max
+                    .toString()
+                    .toLowerCase()
+                    .includes(event.target.value.toLowerCase())
+              );
+              const newDataMin = result.filter(
+                (e) =>
+                  e.min !== null &&
+                  e.min
+                    .toString()
+                    .toLowerCase()
+                    .includes(event.target.value.toLowerCase())
+              );
+              setData([...newDataMax, ...newDataMin]);
+            } else {
               const newData = result.filter(
                 (e) =>
                   e.nickName !== null &&
-                  e.nickName.toLowerCase().includes(searchText.toLowerCase())
+                  e.nickName
+                    .toLowerCase()
+                    .includes(event.target.value.toLowerCase())
               );
               setData(newData);
-            } else {
-              setData(result);
-            }
-          }}
-          value={searchText}
-        />
-      </div>
-      <div className="flex">
-        <input
-          placeholder="tìm điểm max"
-          type="text"
-          className="border px-2 py-2 w-full rounded-sm"
-          onChange={(event) => {
-            const input = event.target.value.toString();
-            if (event.target.value !== "") {
-              const newData = result.filter(
-                (e) =>
-                  e.max !== null &&
-                  e.max.toString().toLowerCase().includes(input)
-              );
-              setData(newData);
-            } else {
-              setData(result);
-            }
-          }}
-        />
-        <input
-          placeholder="tìm điểm min"
-          type="text"
-          className="border px-2 py-2 w-full ml-2 rounded-sm"
-          onChange={(event) => {
-            const input = event.target.value.toString();
-            if (event.target.value !== "") {
-              const newData = result.filter(
-                (e) =>
-                  e.min !== null &&
-                  e.min.toString().toLowerCase().includes(input)
-              );
-              setData(newData);
-            } else {
-              setData(result);
             }
           }}
         />
       </div>
+
       <div className="h-2" />
       <table className="min-w-full divide-y divide-gray-300">
         <thead className="bg-gray-50">
