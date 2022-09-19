@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://diendantennisbtn.com/
+
+# Sitemaps
+Sitemap: https://diendantennisbtn.com/sitemap.xml
