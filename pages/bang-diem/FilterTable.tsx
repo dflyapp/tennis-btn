@@ -181,30 +181,60 @@ export default function FilterTable({ dataSet }: Props) {
       </div> */}
       <div className="flex mx-auto my-4">
         <input
-          placeholder="nhập tên cần tìm"
+          placeholder="tìm tên"
           type="text"
-          className="border px-2 w-full"
-          onChange={(e) => setSearchText(e.target.value)}
+          className="border px-2 py-2 w-full rounded-sm"
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            if (e.target.value !== "") {
+              const newData = result.filter(
+                (e) =>
+                  e.nickName !== null &&
+                  e.nickName.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setData(newData);
+            } else {
+              setData(result);
+            }
+          }}
           value={searchText}
         />
-        <button
-          className="shadow-md bg-white text-primary border border-gray-200 rounded-tr-md rounded-br-md p-4 w-48"
-          onClick={() => {
-            if (searchText === "") {
-              return;
+        <input
+          placeholder="tìm điểm max"
+          type="text"
+          className="border px-2 py-2 w-full ml-2 rounded-sm"
+          onChange={(event) => {
+            const input = event.target.value.toString();
+            if (event.target.value !== "") {
+              const newData = result.filter(
+                (e) =>
+                  e.max !== null &&
+                  e.max.toString().toLowerCase().includes(input)
+              );
+              setData(newData);
+            } else {
+              setData(result);
             }
-            const newData = result.filter(
-              (e) =>
-                e.nickName !== null &&
-                e.nickName.toLowerCase().includes(searchText.toLowerCase())
-            );
-            setData(newData);
-            console.log(searchText);
-            setSearchText("");
           }}
-        >
-          Tìm Tên
-        </button>
+        />
+        <input
+          placeholder="tìm điểm min"
+          type="text"
+          className="border px-2 py-2 w-full ml-2 rounded-sm"
+          onChange={(event) => {
+            const input = event.target.value.toString();
+            if (event.target.value !== "") {
+              const newData = result.filter(
+                (e) =>
+                  e.min !== null &&
+                  e.min.toString().toLowerCase().includes(input)
+              );
+              setData(newData);
+            } else {
+              setData(result);
+            }
+          }}
+        />
       </div>
       <div className="h-2" />
       <table className="min-w-full divide-y divide-gray-300">
