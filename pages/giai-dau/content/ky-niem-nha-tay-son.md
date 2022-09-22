@@ -9,6 +9,8 @@ DIỄN ĐÀN TENNIS BTN-GIẢI TENNIS TRANH CUP KỶ NIỆM NGÀY THÀNH LẬP C
 
 CÔNG TY TNHH XD TM NHÀ TÂY SƠN tổ chức ngày 23-24-25/9/2022.
 
+![Nhà tài trợ kim cương](/giai-dau/ky-niem-nha-tay-son-diamond.jpg)
+
 ### Ban Tổ Chức Giải Gồm:
 
 1. Ông Tào Văn Sơn - GĐ Công Ty Nhà Tây Sơn, Chủ tịch diễn đàn tennis BTN , Trưởng Ban Tổ Chức Giải
