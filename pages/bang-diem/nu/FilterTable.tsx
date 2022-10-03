@@ -93,13 +93,16 @@ export default function FilterTable({ dataSet }: Props) {
           <div className="flex items-center">
             <ImageWithFallback
               className="rounded-full"
-              width={25}
-              height={25}
+              width={40}
+              height={40}
               key={info.cell.row.original.id}
               src={`/avatar-nu/${info.cell.row.original.id}.jpg`}
               fallbackSrc={Ball}
             />
-            <strong className="ml-2">{info.getValue()}</strong>
+            <div className="ml-3">
+              <strong>{info.getValue()}</strong>
+              <p className="text-xs">{info.cell.row.original.mobile}</p>
+            </div>
           </div>
         ),
         header: () => <span>Nick Name</span>,
@@ -115,11 +118,11 @@ export default function FilterTable({ dataSet }: Props) {
         header: () => <span>Min</span>,
         footer: (props) => props.column.id,
       },
-      {
-        accessorKey: "mobile",
-        header: () => <span>SĐT</span>,
-        footer: (props) => props.column.id,
-      },
+      // {
+      //   accessorKey: "mobile",
+      //   header: () => <span>SĐT</span>,
+      //   footer: (props) => props.column.id,
+      // },
     ],
     []
   );
