@@ -1,8 +1,7 @@
 import React from "react";
 
-import Image from "next/image";
 import Ball from "./avatars/ball.svg";
-import Avatar5 from "./avatars/5.png";
+
 import {
   Column,
   Table,
@@ -29,6 +28,7 @@ import {
 } from "@tanstack/match-sorter-utils";
 
 import { makeData, Person } from "utils/makeData";
+import ImageWithFallback from "components/ImageWithFallback";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -90,16 +90,18 @@ export default function FilterTable({ dataSet }: Props) {
         accessorKey: "nickName",
         cell: (info) => (
           <div className="flex items-center">
-            {info.cell.row.original.nickName.includes("Tào Sơn ") ? (
-              <div className="w-8 h-8 -ml-1">
-                <Image className="rounded-full" src={Avatar5} alt="avatar" />
-              </div>
-            ) : (
-              <>
-                <Image src={Ball} alt="ball" />
-              </>
-            )}
-            <strong className="ml-2">{info.getValue()}</strong>
+            <ImageWithFallback
+              className="rounded-full"
+              width={40}
+              height={40}
+              key={info.cell.row.original.id}
+              src={`/avatar-nam/${info.cell.row.original.id}.jpg`}
+              fallbackSrc={Ball}
+            />
+            <div className="ml-3">
+              <strong>{info.getValue()}</strong>
+              <p className="text-xs">{info.cell.row.original.mobile}</p>
+            </div>
           </div>
         ),
         header: () => <span>Nick Name</span>,
@@ -115,11 +117,11 @@ export default function FilterTable({ dataSet }: Props) {
         header: () => <span>Min</span>,
         footer: (props) => props.column.id,
       },
-      {
-        accessorKey: "mobile",
-        header: () => <span>SĐT</span>,
-        footer: (props) => props.column.id,
-      },
+      //   {
+      //     accessorKey: "mobile",
+      //     header: () => <span>SĐT</span>,
+      //     footer: (props) => props.column.id,
+      //   },
     ],
     []
   );
