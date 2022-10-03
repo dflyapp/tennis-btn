@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { Loading } from "components";
 import { Header } from "layouts";
-import FilterTable from "../FilterTable";
+import FilterTable from "./FilterTable";
 import Head from "next/head";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());

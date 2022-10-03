@@ -29,6 +29,7 @@ import {
 } from "@tanstack/match-sorter-utils";
 
 import { makeData, Person } from "utils/makeData";
+import ImageWithFallback from "components/ImageWithFallback";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -90,15 +91,14 @@ export default function FilterTable({ dataSet }: Props) {
         accessorKey: "nickName",
         cell: (info) => (
           <div className="flex items-center">
-            {info.cell.row.original.nickName.includes("Tào Sơn ") ? (
-              <div className="w-8 h-8 -ml-1">
-                <Image className="rounded-full" src={Avatar5} alt="avatar" />
-              </div>
-            ) : (
-              <>
-                <Image src={Ball} alt="ball" />
-              </>
-            )}
+            <ImageWithFallback
+              className="rounded-full"
+              width={25}
+              height={25}
+              key={info.cell.row.original.id}
+              src={`/avatar-nu/${info.cell.row.original.id}.jpg`}
+              fallbackSrc={Ball}
+            />
             <strong className="ml-2">{info.getValue()}</strong>
           </div>
         ),
