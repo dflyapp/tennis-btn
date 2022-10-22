@@ -100,7 +100,11 @@ export default function FilterTable({ dataSet }: Props) {
             />
             <div className="ml-3">
               <strong>{info.getValue()}</strong>
-              <p className="text-xs">{info.cell.row.original.mobile}</p>
+              {info.cell.row.original.mobile && (
+                <p className="text-xs">{`${0}${
+                  info.cell.row.original.mobile
+                }`}</p>
+              )}
             </div>
           </div>
         ),
