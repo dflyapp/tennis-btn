@@ -3,7 +3,7 @@ title: "KỶ NIỆM 15 NĂM MỘT CHẶN ĐƯỜNG MỸ PHẨM NGỌC TRÂM THƯ
 date: "October 22, 2022"
 excerpt: "Kỷ niệm 15 năm một chặn đường Mỹ Phẩm Ngọc Trâm"
 cover_image: "/giai-dau/2022-10-my-pham-ngoc-tram.jpg"
-hot: true
+# hot: true
 ---
 
 KỶ NIỆM 15 NĂM MỘT CHẶN ĐƯỜNG MỸ PHẨM NGỌC TRÂM
