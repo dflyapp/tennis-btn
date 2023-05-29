@@ -15,7 +15,7 @@ export default function Blog({ posts }: any) {
         <title>Các giải đấu</title>
         <meta
           name="description"
-          content="Những mẹo nhỏ giúp bạn chăm sóc làn da của mình tốt hơn."
+          content="Cập nhật các giải đấu tennis nhanh nhất tại đây!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
