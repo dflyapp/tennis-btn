@@ -7,6 +7,7 @@ import Sponsor4 from "assets/sponsors/happy-home.jpg";
 import Sponsor5 from "assets/sponsors/my-pham-anhnhat.jpg";
 import Sponsor6 from "assets/sponsors/tuan-phat.jpg";
 import Sponsor7 from "assets/sponsors/ve-may-bay.jpg";
+import Sponsor8 from "assets/sponsors/tp.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
@@ -127,6 +128,25 @@ export default function Sponsors() {
       content: () => (
         <>
           <p>Nội dung đang được cập nhật</p>
+        </>
+      ),
+    },
+    {
+      name: "sponsor-8",
+      vnName: "Công ty Vé Máy Bay Hạnh Phúc",
+      logo: Sponsor8,
+      content: () => (
+        <>
+          <p className="flex gap-x-2">
+            <span>Địa chỉ website:</span>
+            <Link href="http://ttpcorp.vn/">ttpcorp.vn/</Link>
+          </p>
+          <p>
+            CÔNG TY TNHH THIẾT BỊ CÔNG NGHIỆP TOÀN THỊNH PHÁT Xin gửi lời cảm ơn
+            chân thành nhất tới những khách hàng đã, đang và sẽ cho phép chúng
+            tôi được trở thành người bạn đồng hành và ủng hộ đối với các sản
+            phẩm và dịch vụ công ty cung cấp.
+          </p>
         </>
       ),
     },
