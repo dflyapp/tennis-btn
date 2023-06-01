@@ -1,8 +1,6 @@
 import React from "react";
 
-import Image from "next/image";
 import Ball from "./avatars/ball.svg";
-import Avatar5 from "./avatars/5.png";
 import {
   Column,
   Table,
