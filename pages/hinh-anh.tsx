@@ -7,15 +7,18 @@ export default function HinhAnh({ players }: any) {
   return (
     <>
       <Header />
-      <div className="flex flex-wrap justify-center">
-        {players.map((e: any) => {
-          return (
-            <div className="my-8" key={e}>
-              <img src={e} alt={e} />
-            </div>
-          );
-        })}
+      <div className="max-w-lg mx-auto">
+        <div className="flex flex-wrap justify-center">
+          {players.map((e: any) => {
+            return (
+              <div className="my-8" key={e}>
+                <img src={e} alt={e} />
+              </div>
+            );
+          })}
+        </div>
       </div>
+
     </>
   );
 }

@@ -10,7 +10,7 @@ import { sortByDate } from "utils";
 
 export default function Blog({ posts }: any) {
   return (
-    <div>
+    <div className="max-w-lg mx-auto">
       <Head>
         <title>Các giải đấu</title>
         <meta

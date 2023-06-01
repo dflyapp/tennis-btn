@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 export default function Post({ post }) {
   return (
     <Link href={`/giai-dau/${post.slug}`}>
-      <div className="mb-12 w-full md:w-1/2 lg:w-1/3 p-4 cursor-pointer">
+      <div className="mb-12 w-full p-4 cursor-pointer">
         <img src={post.frontmatter.cover_image} alt="" />
 
         <p className="text-sm text-dark mt-4">

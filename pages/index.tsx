@@ -20,7 +20,7 @@ import Founders from "components/Founders";
 const Home: NextPage = ({ events, players }: any) => {
   const todaySubtract3 = dayjs(new Date()).subtract(3, "day");
   return (
-    <div>
+    <div className="max-w-lg mx-auto">
       <Head>
         <title>Diễn đàn tennis Bắc Trung Nam</title>
         <meta name="description" content="Diễn đàn tennis Bắc Trung Nam" />
@@ -54,7 +54,7 @@ const Home: NextPage = ({ events, players }: any) => {
         <Sponsors />
 
         {/* events */}
-        <div className="px-4 mt-8 mb-24 w-full md:w-1/2 mx-auto">
+        <div className="px-4 mt-8 mb-24 w-full">
           <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center">
             Các giải đấu mới
           </h1>

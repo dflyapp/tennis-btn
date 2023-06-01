@@ -170,7 +170,7 @@ export default function FilterTable({ dataSet }: Props) {
   }, [table.getState().columnFilters[0]?.id]);
 
   return (
-    <div className="p-2">
+    <div className="max-w-lg mx-auto">
       <div className="flex mx-auto my-4">
         <input
           placeholder="tìm tên, điểm"
