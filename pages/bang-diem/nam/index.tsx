@@ -24,7 +24,6 @@ export default function BangDiem() {
   if (!data) return <Loading />;
 
   const x = data[0].data.filter((e: any) => e.length >= 5 && e[0] > 0);
-  // console.log(x);
   let result: Person[] = [];
   x.forEach((e: any) => {
     result.push({
