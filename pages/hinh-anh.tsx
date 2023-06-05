@@ -26,7 +26,6 @@ export default function HinhAnh({ players }: any) {
 export async function getStaticProps() {
   const hinhAnh = fs.readdirSync(path.join("public/hinh-anh"));
   const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
-  console.log(players);
 
   return {
     props: {

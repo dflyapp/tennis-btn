@@ -249,8 +249,6 @@ export async function getStaticProps() {
     );
 
     const { data: frontmatter, content } = matter(markdownWithMeta);
-    console.log(frontmatter);
-
     return {
       slug,
       frontmatter,
@@ -260,9 +258,7 @@ export async function getStaticProps() {
 
   const hinhAnh = fs.readdirSync(path.join("public/hinh-anh"));
   let players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
-  console.log(players);
   players = players.filter((filename) => filename.includes("player"));
-  console.log(players);
   return {
     props: {
       players,
