@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
@@ -16,16 +15,16 @@ import Cover from "assets/cover-main.jpeg";
 import LeaderboardBg from "assets/leaderboard-bg.jpg";
 import { sortByDate } from "utils";
 import Founders from "components/Founders";
+import { NextSeo } from "next-seo";
 
 const Home: NextPage = ({ events, players }: any) => {
   const todaySubtract3 = dayjs(new Date()).subtract(3, "day");
   return (
     <div className="max-w-lg mx-auto">
-      <Head>
-        <title>Diễn đàn tennis Bắc Trung Nam</title>
-        <meta name="description" content="Diễn đàn tennis Bắc Trung Nam" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo
+        title="Diễn đàn tennis Bắc Trung Nam"
+        description="Tennis BTN là sân chơi, nơi trao đổi kinh nghiệm và giao lưu kiến thức về tennis. Tinh thần đoàn kết Bắc Trung Nam chung một mái nhà"
+      />
 
       <Header />
 

@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { Loading } from "components";
 import { Header } from "layouts";
 import FilterTable from "./FilterTable";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -34,25 +34,12 @@ export default function BangDiem() {
 
   return (
     <>
-      <Head>
-        <title>Bảng điểm: Nữ</title>
-        <meta name="description" content="Bảng điểm dành cho nữ" />
-      </Head>
+      <NextSeo
+        title="Tennis BTN - Bảng điểm Nữ"
+        description="Thông tin bảng điểm nữ"
+      />
       <Header />
-      {/* <div className="flex my-12 w-fit mx-auto">
-        <Link href="/bang-diem/nam">
-          <button className="p-4 rounded-md shadow-md border bg-white text-primary">
-            Trình Nam
-          </button>
-        </Link>
-        <Link href="/bang-diem/nu">
-          <button className="ml-3 rounded-md shadow-md p-4 border bg-primary text-white">
-            Trình Nữ
-          </button>
-        </Link>
-      </div> */}
       <h1 className="text-center my-8">Bảng điểm nữ</h1>
-
       <FilterTable dataSet={result} />
     </>
   );

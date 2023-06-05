@@ -1,7 +1,5 @@
-import Head from "next/head";
 import useSWR from "swr";
-import fs from "fs";
-import path from "path";
+import { NextSeo } from "next-seo";
 
 import { Header } from "layouts";
 import { Loading } from "components";
@@ -37,10 +35,10 @@ export default function BangDiem() {
 
   return (
     <>
-      <Head>
-        <title>Bảng điểm: Nam</title>
-        <meta name="description" content="Bảng điểm dành cho nam" />
-      </Head>
+      <NextSeo
+        title="Tennis BTN - Bảng điểm Nam"
+        description="Thông tin bảng điểm nam"
+      />
       <Header />
 
       <h1 className="text-center my-8">Bảng điểm nam</h1>

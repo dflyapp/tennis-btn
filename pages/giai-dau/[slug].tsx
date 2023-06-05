@@ -2,10 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import Head from "next/head";
 import dayjs from "dayjs";
 
 import { Header } from "layouts";
+import { NextSeo } from "next-seo";
 
 export default function PostPage({
   frontmatter: { title: title2, date, cover_image, excerpt },
@@ -14,11 +14,7 @@ export default function PostPage({
 }: any) {
   return (
     <>
-      <Head>
-        <title>Bài viết</title>
-        <meta name="description" content={excerpt} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo title={title2} description={excerpt} />
       <Header />
       <div className="giai-dau">
         <div className="container mx-auto">
