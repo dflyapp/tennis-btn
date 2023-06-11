@@ -26,6 +26,10 @@ export default function Sponsors() {
       logo: Sponsor1,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span>032 7466868</span>
+          </h1>
           <p className="flex gap-x-2">
             <span>Địa chỉ website:</span>
             <Link href="http://chieusangducphat.com/gioi-thieu.html">
@@ -50,6 +54,10 @@ export default function Sponsors() {
       logo: Sponsor2,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span>0909029898</span>
+          </h1>
           <p className="flex gap-x-2">
             <span>Địa chỉ website:</span>
             <Link href="http://thannamhai.com/">thannamhai.com</Link>
@@ -78,6 +86,10 @@ export default function Sponsors() {
       logo: Sponsor3,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span>090 8809973</span>
+          </h1>
           <p className="flex gap-x-2">
             <span>Địa chỉ website:</span>
             <Link href="https://dongduongvina.com.vn/gioi-thieu/gioi-thieu">
@@ -97,6 +109,10 @@ export default function Sponsors() {
       logo: Sponsor4,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span>090 8506097 (Duy)</span>
+          </h1>
           <p>Nội dung đang được cập nhật</p>
         </>
       ),
@@ -107,6 +123,10 @@ export default function Sponsors() {
       logo: Sponsor5,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span>093 7940904</span>
+          </h1>
           <p>Nội dung đang được cập nhật</p>
         </>
       ),
@@ -117,6 +137,10 @@ export default function Sponsors() {
       logo: Sponsor6,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span> 093 1331661 (Mr. Nghĩa)</span>
+          </h1>
           <p>Nội dung đang được cập nhật</p>
         </>
       ),
@@ -127,13 +151,17 @@ export default function Sponsors() {
       logo: Sponsor7,
       content: () => (
         <>
+          <h1 className="flex gap-x-2">
+            <span>SĐT Liên Hệ:</span>
+            <span>0986683508 (Ngát)</span>
+          </h1>
           <p>Nội dung đang được cập nhật</p>
         </>
       ),
     },
     {
       name: "sponsor-8",
-      vnName: "Công ty Vé Máy Bay Hạnh Phúc",
+      vnName: "Công ty Toàn Thịnh Phát",
       logo: Sponsor8,
       content: () => (
         <>
