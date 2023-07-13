@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/dflyapp/tennis-btn/compare/v1.0.0...v1.0.1) (2023-07-13)
+
+
+### Bug Fixes
+
+* 2 players score ([f5d55e5](https://github.com/dflyapp/tennis-btn/commit/f5d55e5502c87f243ea7efd491ece4d28322b674))
+* update score jul 13 ([920a065](https://github.com/dflyapp/tennis-btn/commit/920a06521ea84d1795542f68a6879ef614a3d0d8))
+
 ## 1.0.0 (2023-06-29)
 
 
