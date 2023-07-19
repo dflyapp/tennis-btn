@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0 (2023-07-19)
+
+## What's Changed
+* feat: use github api to release by @duongital in https://github.com/dflyapp/tennis-btn/pull/8
+
+
+**Full Changelog**: https://github.com/dflyapp/tennis-btn/compare/v1.0.1...v1.1.0
+
 ## [1.0.1](https://github.com/dflyapp/tennis-btn/compare/v1.0.0...v1.0.1) (2023-07-13)
 
 
