@@ -17,4 +17,4 @@ jobs:
         with:
           release-type: node
           package-name: release-please-action
-          changelog-notes-type: github
+          # changelog-notes-type: github
