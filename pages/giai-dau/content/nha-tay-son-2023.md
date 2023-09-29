@@ -3,7 +3,7 @@ title: 'KỶ NIỆM 16 NĂM THÀNH LẬP CÔNG TY XÂY DỰNG NHÀ TÂY SƠN'
 date: 'September 16, 2023'
 excerpt: 'Kỷ niệm 16 năm thành lập'
 cover_image: '/giai-dau/nha-tay-son-2023.jpg'
-hot: true
+# hot: true
 ---
 
 KỶ NIỆM 16 NĂM THÀNH LẬP CÔNG TY XÂY DỰNG NHÀ TÂY SƠN
