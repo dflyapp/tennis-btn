@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/dflyapp/tennis-btn/compare/v1.1.0...v1.2.0) (2023-10-07)
+
+
+### Features
+
+* score jul 20 ([9a7e065](https://github.com/dflyapp/tennis-btn/commit/9a7e0653344bb4f92d03e9705203e87c192a2e85))
+* update player images ([038df26](https://github.com/dflyapp/tennis-btn/commit/038df268698aa4974970081e706cd4fb57276a6b))
+* update score jul 28 ([42570a4](https://github.com/dflyapp/tennis-btn/commit/42570a445ba582fd7b4c4cf458f072d8a1e4a004))
+
 ## 1.1.0 (2023-07-19)
 
 ## What's Changed
