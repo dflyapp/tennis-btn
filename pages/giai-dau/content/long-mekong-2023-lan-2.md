@@ -1,7 +1,7 @@
 ---
-title: 'GIẢI TENNIS TRANH CÚP LONG MEKONG VÀ CỬA NHỰA COMPOSITE CPT'
+title: 'GIẢI TENNIS TRANH CÚP LONG MEKONG VÀ QUÀ TẶNG ĐỨC ĐẠT'
 date: 'November 17, 2023'
-excerpt: 'Giải tranh cúp Long Mekong và Cửa nhựa Composite CPT'
+excerpt: 'Giải tranh cúp Long Mekong và Quà tặng Đức Đạt'
 cover_image: '/giai-dau/2023-11-long-mekong.jpg'
 # hot: true
 ---
