@@ -1,22 +1,22 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, ReactNode, useState } from "react";
-import Image from "next/image";
-import { XCircleIcon } from "@heroicons/react/solid";
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, ReactNode, useState } from 'react'
+import Image from 'next/image'
+import { XCircleIcon } from '@heroicons/react/solid'
 
 interface Props {
-  children: ReactNode | JSX.Element;
-  content: any;
+  children: ReactNode | JSX.Element
+  content: any
 }
 
 export default function MyModal({ children, content }: Props) {
-  let [isOpen, setIsOpen] = useState(false);
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   return (
@@ -67,5 +67,5 @@ export default function MyModal({ children, content }: Props) {
         </Dialog>
       </Transition>
     </>
-  );
+  )
 }

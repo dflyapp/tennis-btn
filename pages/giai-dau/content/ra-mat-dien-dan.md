@@ -1,8 +1,8 @@
 ---
-title: "GIẢI TENNIS TRANH CÚP RA MẮT DIỄN ĐÀN"
-date: "May 26, 2022"
-excerpt: "Giải tennis tranh cúp ra mắt diễn đàn"
-cover_image: "/giai-dau/ra-mat-dien-dan.jpg"
+title: 'GIẢI TENNIS TRANH CÚP RA MẮT DIỄN ĐÀN'
+date: 'May 26, 2022'
+excerpt: 'Giải tennis tranh cúp ra mắt diễn đàn'
+cover_image: '/giai-dau/ra-mat-dien-dan.jpg'
 ---
 
 ### ĐIỀU LỆ GIẢI THÀNH LẬP DIỄN ĐÀN TENNIS BTN

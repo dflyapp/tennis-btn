@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: "standalone",
+  output: 'standalone',
   i18n: {
-    locales: ["vi"],
-    defaultLocale: "vi",
+    locales: ['vi'],
+    defaultLocale: 'vi',
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

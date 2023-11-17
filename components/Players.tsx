@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper'
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 export default function Players({ players }: any) {
   return (
@@ -34,9 +34,9 @@ export default function Players({ players }: any) {
                 <img src={e} alt={e} />
               </div>
             </SwiperSlide>
-          );
+          )
         })}
       </Swiper>
     </>
-  );
+  )
 }

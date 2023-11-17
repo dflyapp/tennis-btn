@@ -3,7 +3,7 @@ title: 'GIẢI TENNIS TRANH CÚP CAMERA TẤN PHÁT LẦN 2 - NĂM 2023'
 date: 'October 14, 2023'
 excerpt: 'Camera Tấn Phát'
 cover_image: '/giai-dau/may-phat-dien-2023.jpg'
-hot: true
+# hot: true
 ---
 
 GIẢI TENNIS TRANH CÚP CAMERA TẤN PHÁT LẦN 2 - NĂM 2023

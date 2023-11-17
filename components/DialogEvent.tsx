@@ -1,23 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, ReactNode, useState } from "react";
-import { XCircleIcon } from "@heroicons/react/solid";
-import ReactMarkdown from "react-markdown";
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, ReactNode, useState } from 'react'
+import { XCircleIcon } from '@heroicons/react/solid'
+import ReactMarkdown from 'react-markdown'
 
 interface Props {
-  children: ReactNode;
-  content: any;
+  children: ReactNode
+  content: any
 }
 
 export default function DialogEvent({ children, content }: Props) {
-  let [isOpen, setIsOpen] = useState(false);
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   return (
@@ -75,5 +75,5 @@ export default function DialogEvent({ children, content }: Props) {
         </Dialog>
       </Transition>
     </>
-  );
+  )
 }

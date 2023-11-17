@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Header } from "layouts";
-import { NextSeo } from "next-seo";
+import Link from 'next/link'
+import { Header } from 'layouts'
+import { NextSeo } from 'next-seo'
 
 export default function BangDiem() {
   return (
@@ -29,5 +29,5 @@ export default function BangDiem() {
         </div>
       </div>
     </>
-  );
+  )
 }

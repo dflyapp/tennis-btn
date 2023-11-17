@@ -1,24 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-import { NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import dayjs from "dayjs";
+import { NextPage } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import dayjs from 'dayjs'
 
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import classNames from "classnames";
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import classNames from 'classnames'
 
-import { Header, Footer } from "layouts";
-import { Sponsors, Players, DialogEvent } from "components";
-import Cover from "assets/cover-main.jpeg";
-import LeaderboardBg from "assets/leaderboard-bg.jpg";
-import { sortByDate } from "utils";
-import Founders from "components/Founders";
-import { NextSeo } from "next-seo";
+import { Header, Footer } from 'layouts'
+import { Sponsors, Players, DialogEvent } from 'components'
+import Cover from 'assets/cover-main.jpeg'
+import LeaderboardBg from 'assets/leaderboard-bg.jpg'
+import { sortByDate } from 'utils'
+import Founders from 'components/Founders'
+import { NextSeo } from 'next-seo'
 
 const Home: NextPage = ({ events, players }: any) => {
-  const todaySubtract3 = dayjs(new Date()).subtract(3, "day");
+  const todaySubtract3 = dayjs(new Date()).subtract(3, 'day')
   return (
     <div className="max-w-lg mx-auto">
       <NextSeo
@@ -69,12 +69,12 @@ const Home: NextPage = ({ events, players }: any) => {
                         <div className="w-16 h-16 bg-white rounded-md">
                           <div
                             className={classNames(
-                              "text-white text-center rounded-tl-sm rounded-tr-sm",
+                              'text-white text-center rounded-tl-sm rounded-tr-sm',
                               {
-                                "bg-red-500": dayjs(e.frontmatter.date).isAfter(
+                                'bg-red-500': dayjs(e.frontmatter.date).isAfter(
                                   dayjs(todaySubtract3)
                                 ),
-                                "bg-gray-400": dayjs(
+                                'bg-gray-400': dayjs(
                                   e.frontmatter.date
                                 ).isBefore(dayjs(todaySubtract3)),
                               }
@@ -87,9 +87,9 @@ const Home: NextPage = ({ events, players }: any) => {
                           <div>
                             <p
                               className={classNames(
-                                "text-3xl text-center mt-1",
+                                'text-3xl text-center mt-1',
                                 {
-                                  "opacity-50": dayjs(
+                                  'opacity-50': dayjs(
                                     e.frontmatter.date
                                   ).isBefore(dayjs(todaySubtract3)),
                                 }
@@ -111,7 +111,7 @@ const Home: NextPage = ({ events, players }: any) => {
                       </div>
                     </div>
                   </div>
-                );
+                )
               }
             })}
 
@@ -127,12 +127,12 @@ const Home: NextPage = ({ events, players }: any) => {
                         <div className="w-16 h-16 bg-white rounded-md">
                           <div
                             className={classNames(
-                              "text-white text-center rounded-tl-sm rounded-tr-sm",
+                              'text-white text-center rounded-tl-sm rounded-tr-sm',
                               {
-                                "bg-red-500": dayjs(e.frontmatter.date).isAfter(
+                                'bg-red-500': dayjs(e.frontmatter.date).isAfter(
                                   dayjs(new Date())
                                 ),
-                                "bg-gray-400": dayjs(
+                                'bg-gray-400': dayjs(
                                   e.frontmatter.date
                                 ).isBefore(dayjs(new Date())),
                               }
@@ -145,9 +145,9 @@ const Home: NextPage = ({ events, players }: any) => {
                           <div>
                             <p
                               className={classNames(
-                                "text-3xl text-center mt-1",
+                                'text-3xl text-center mt-1',
                                 {
-                                  "opacity-50": dayjs(
+                                  'opacity-50': dayjs(
                                     e.frontmatter.date
                                   ).isBefore(dayjs(new Date())),
                                 }
@@ -169,7 +169,7 @@ const Home: NextPage = ({ events, players }: any) => {
                       </div>
                     </div>
                   </div>
-                );
+                )
               }
             })}
           <div className="flex justify-center mt-8">
@@ -186,8 +186,8 @@ const Home: NextPage = ({ events, players }: any) => {
           className="px-2 bg-gray-100 py-3"
           style={{
             background: `url(${LeaderboardBg.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "bottom right",
+            backgroundSize: 'cover',
+            backgroundPosition: 'bottom right',
             opacity: 1,
           }}
         >
@@ -227,41 +227,41 @@ const Home: NextPage = ({ events, players }: any) => {
       {/* footer */}
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 export async function getStaticProps() {
   // Get files from the posts dir
-  const files = fs.readdirSync(path.join("pages/giai-dau/content"));
+  const files = fs.readdirSync(path.join('pages/giai-dau/content'))
 
   // Get slug and frontmatter from posts
   const posts = files.map((filename) => {
     // Create slug
-    const slug = filename.replace(".md", "");
+    const slug = filename.replace('.md', '')
 
     // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
-      path.join("pages/giai-dau/content", filename),
-      "utf-8"
-    );
+      path.join('pages/giai-dau/content', filename),
+      'utf-8'
+    )
 
-    const { data: frontmatter, content } = matter(markdownWithMeta);
+    const { data: frontmatter, content } = matter(markdownWithMeta)
     return {
       slug,
       frontmatter,
       content,
-    };
-  });
+    }
+  })
 
-  const hinhAnh = fs.readdirSync(path.join("public/hinh-anh"));
-  let players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
-  players = players.filter((filename) => filename.includes("player"));
+  const hinhAnh = fs.readdirSync(path.join('public/hinh-anh'))
+  let players = hinhAnh.map((filename) => `/hinh-anh/${filename}`)
+  players = players.filter((filename) => filename.includes('player'))
   return {
     props: {
       players,
       events: posts.sort(sortByDate),
     },
-  };
+  }
 }

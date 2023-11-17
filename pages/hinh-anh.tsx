@@ -1,8 +1,8 @@
-import fs from "fs";
-import path from "path";
+import fs from 'fs'
+import path from 'path'
 
-import { Header } from "layouts";
-import { NextSeo } from "next-seo";
+import { Header } from 'layouts'
+import { NextSeo } from 'next-seo'
 
 export default function HinhAnh({ players }: any) {
   return (
@@ -19,21 +19,21 @@ export default function HinhAnh({ players }: any) {
               <div className="my-8" key={e}>
                 <img src={e} alt={e} />
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const hinhAnh = fs.readdirSync(path.join("public/hinh-anh"));
-  const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`);
+  const hinhAnh = fs.readdirSync(path.join('public/hinh-anh'))
+  const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`)
 
   return {
     props: {
       players,
     },
-  };
+  }
 }

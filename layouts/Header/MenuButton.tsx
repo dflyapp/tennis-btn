@@ -1,26 +1,26 @@
-import { Popover, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { MenuAlt2Icon } from "@heroicons/react/solid";
-import Link from "next/link";
+import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { MenuAlt2Icon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
 const solutions = [
   {
-    name: "Trang chủ",
-    href: "/",
+    name: 'Trang chủ',
+    href: '/',
   },
   {
-    name: "Các giải đấu",
-    href: "/giai-dau",
+    name: 'Các giải đấu',
+    href: '/giai-dau',
   },
   {
-    name: "Bảng Điểm",
-    href: "/bang-diem/nam",
+    name: 'Bảng Điểm',
+    href: '/bang-diem/nam',
   },
   {
-    name: "Hình Ảnh",
-    href: "/hinh-anh",
+    name: 'Hình Ảnh',
+    href: '/hinh-anh',
   },
-];
+]
 
 export default function MenuButton({ className }: { className: string }) {
   return (
@@ -30,7 +30,7 @@ export default function MenuButton({ className }: { className: string }) {
           <>
             <Popover.Button
               className={`
-                ${open ? "" : "text-opacity-90"}
+                ${open ? '' : 'text-opacity-90'}
                 group inline-flex items-center rounded-md p-1 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <MenuAlt2Icon className="w-10 h-10 text-white bg-primary rounded-md" />
@@ -68,5 +68,5 @@ export default function MenuButton({ className }: { className: string }) {
         )}
       </Popover>
     </div>
-  );
+  )
 }

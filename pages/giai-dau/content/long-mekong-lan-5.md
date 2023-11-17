@@ -1,8 +1,8 @@
 ---
-title: "GIẢI TENNIS TRANH CÚP LONG MEKONG LẦN 5"
-date: "Jun 18, 2022"
-excerpt: "Giải Tennis LMK lần 5, nhằm mục đích tổ chức các giải tennis phong trào thể dục thể thao tăng cường rèn luyện sức khỏe"
-cover_image: "/giai-dau/long-mekong-lan-5.jpg"
+title: 'GIẢI TENNIS TRANH CÚP LONG MEKONG LẦN 5'
+date: 'Jun 18, 2022'
+excerpt: 'Giải Tennis LMK lần 5, nhằm mục đích tổ chức các giải tennis phong trào thể dục thể thao tăng cường rèn luyện sức khỏe'
+cover_image: '/giai-dau/long-mekong-lan-5.jpg'
 ---
 
 ### ĐIỀU LỆ GIẢI DIỄN ĐÀN TENNIS BTN-TRANH CUP LONG MEKONG LẦN 5

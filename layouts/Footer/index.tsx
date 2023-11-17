@@ -1,26 +1,26 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import LogoZalo from "./logo-zalo.png";
-import LogoFacebook from "./logo-facebook.png";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import LogoZalo from './logo-zalo.png'
+import LogoFacebook from './logo-facebook.png'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function Footer() {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState('')
 
   useEffect(() => {
-    const ua = navigator.userAgent;
+    const ua = navigator.userAgent
     if (/android/i.test(ua)) {
       setUrl(
-        "fb://profile/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613"
-      );
+        'fb://profile/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613'
+      )
     } else if (/iPad|iPhone|iPod/.test(ua) || navigator.maxTouchPoints > 1) {
-      setUrl("fb://page/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613");
+      setUrl('fb://page/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613')
     }
     setUrl(
-      "https://www.facebook.com/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613"
-    );
-  }, []);
+      'https://www.facebook.com/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613'
+    )
+  }, [])
 
   return (
     <>
@@ -52,5 +52,5 @@ export default function Footer() {
         </div>
       </div>
     </>
-  );
+  )
 }

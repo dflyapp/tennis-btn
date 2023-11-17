@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
-import dayjs from "dayjs";
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import ReactMarkdown from 'react-markdown'
+import dayjs from 'dayjs'
 
-import { Header } from "layouts";
-import { NextSeo } from "next-seo";
+import { Header } from 'layouts'
+import { NextSeo } from 'next-seo'
 
 export default function PostPage({
   frontmatter: { title: title2, date, cover_image, excerpt },
@@ -24,7 +24,7 @@ export default function PostPage({
           <div className="px-2">
             <p className="text-sm text-dark mt-4 text-center">
               Ngày đăng: {dayjs(date).date()}
-              {" tháng "}
+              {' tháng '}
               {dayjs(date).month() + 1}
             </p>
             <h1 className="text-center text-2xl">{title2}</h1>
@@ -40,31 +40,31 @@ export default function PostPage({
 
       {/* footer */}
     </>
-  );
+  )
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("pages/giai-dau/content"));
+  const files = fs.readdirSync(path.join('pages/giai-dau/content'))
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
     },
-  }));
+  }))
 
   return {
     paths,
     fallback: false,
-  };
+  }
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
   const markdownWithMeta = fs.readFileSync(
-    path.join("pages/giai-dau/content", slug + ".md"),
-    "utf-8"
-  );
+    path.join('pages/giai-dau/content', slug + '.md'),
+    'utf-8'
+  )
 
-  const { data: frontmatter, content } = matter(markdownWithMeta);
+  const { data: frontmatter, content } = matter(markdownWithMeta)
 
   return {
     props: {
@@ -72,5 +72,5 @@ export async function getStaticProps({ params: { slug } }: any) {
       slug,
       content,
     },
-  };
+  }
 }

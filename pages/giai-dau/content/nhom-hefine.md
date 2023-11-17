@@ -1,8 +1,8 @@
 ---
-title: "GIẢI TENNIS TRANH CÚP NHÔM HEFINE"
-date: "May 26, 2022"
-excerpt: "TENNIS LƯU ĐỨC TÀI TRANH CÚP NHÔM HEFINE LẦN I vào ngày 26-29/05/2022 tại cụm sân Trung Thiện (40 trần thị do phường hiệp thành quận 12 TP.HCM), sân Cộng Đồng, sân Khang An"
-cover_image: "/giai-dau/nhom-hefine.jpg"
+title: 'GIẢI TENNIS TRANH CÚP NHÔM HEFINE'
+date: 'May 26, 2022'
+excerpt: 'TENNIS LƯU ĐỨC TÀI TRANH CÚP NHÔM HEFINE LẦN I vào ngày 26-29/05/2022 tại cụm sân Trung Thiện (40 trần thị do phường hiệp thành quận 12 TP.HCM), sân Cộng Đồng, sân Khang An'
+cover_image: '/giai-dau/nhom-hefine.jpg'
 ---
 
 **ĐIỀU LỆ GIẢI TENNIS LƯU ĐỨC TÀI TRANH CÚP NHÔM HEFINE LẦN I (26-29/05/2022)**

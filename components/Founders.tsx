@@ -1,53 +1,53 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import Founder1 from "assets/founders/sponsor-1.jpeg";
-import Founder2 from "assets/founders/sponsor-2.jpeg";
-import Founder3 from "assets/founders/sponsor-3.jpeg";
-import Founder4 from "assets/founders/sponsor-4.jpeg";
-import Founder5 from "assets/founders/sponsor-5.jpeg";
+import Founder1 from 'assets/founders/sponsor-1.jpeg'
+import Founder2 from 'assets/founders/sponsor-2.jpeg'
+import Founder3 from 'assets/founders/sponsor-3.jpeg'
+import Founder4 from 'assets/founders/sponsor-4.jpeg'
+import Founder5 from 'assets/founders/sponsor-5.jpeg'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
-import Dialog from "./DialogBrand";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper'
+import Dialog from './DialogBrand'
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import Link from "next/link";
+import 'swiper/css'
+import 'swiper/css/pagination'
+import Link from 'next/link'
 
 export default function Founders() {
   const sponsorList = [
     {
-      name: "vg",
-      vnName: "Công ty TNHH Máy Phát Điện Võ Gia",
+      name: 'vg',
+      vnName: 'Công ty TNHH Máy Phát Điện Võ Gia',
       logo: Founder1,
       content: ContentVoGia,
     },
     {
-      name: "son-sang",
-      vnName: "Công ty TNHH Sơn Sang",
+      name: 'son-sang',
+      vnName: 'Công ty TNHH Sơn Sang',
       logo: Founder2,
       content: ContentSS,
     },
     {
-      name: "nst",
-      vnName: "Công ty TNHH XD-TM Nhà Tây Sơn",
+      name: 'nst',
+      vnName: 'Công ty TNHH XD-TM Nhà Tây Sơn',
       logo: Founder3,
       content: ContentNTS,
     },
     {
-      name: "long-mekong",
-      vnName: "Công ty TNHH TV ĐT XD Long Mekong", //cty tnhh tv dt xd long mekong
+      name: 'long-mekong',
+      vnName: 'Công ty TNHH TV ĐT XD Long Mekong', //cty tnhh tv dt xd long mekong
       logo: Founder4,
       content: ContentLongMK,
     },
     {
-      name: "ldt",
-      vnName: "Công ty TNHH LDT Windows",
+      name: 'ldt',
+      vnName: 'Công ty TNHH LDT Windows',
       logo: Founder5,
       content: ContentLDTWindows,
     },
-  ];
+  ]
   return (
     <>
       <Swiper
@@ -76,11 +76,11 @@ export default function Founders() {
                 <div className="sponsors">{e.content()}</div>
               </Dialog>
             </SwiperSlide>
-          );
+          )
         })}
       </Swiper>
     </>
-  );
+  )
 }
 
 function ContentVoGia() {
@@ -100,7 +100,7 @@ function ContentVoGia() {
         kiện trực tiếp từ các thương hiệu lớn trên thế giới.
       </p>
     </>
-  );
+  )
 }
 
 function ContentSS() {
@@ -118,7 +118,7 @@ function ContentSS() {
         người sử dụng.
       </p>
     </div>
-  );
+  )
 }
 
 function ContentNTS() {
@@ -134,7 +134,7 @@ function ContentNTS() {
         mang lại trải nghiệm tuyệt vời cho gia đình Việt Nam.
       </p>
     </div>
-  );
+  )
 }
 
 function ContentLongMK() {
@@ -161,7 +161,7 @@ function ContentLongMK() {
         Rất mong có được sự tin cậy, hợp tác từ mọi khách hàng.
       </p>
     </>
-  );
+  )
 }
 
 function ContentLDTWindows() {
@@ -196,5 +196,5 @@ function ContentLDTWindows() {
         </li>
       </ul>
     </>
-  );
+  )
 }

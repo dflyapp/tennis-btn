@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import dayjs from "dayjs";
+import Link from 'next/link'
+import dayjs from 'dayjs'
 
 export default function Post({ post }) {
   return (
@@ -10,7 +10,7 @@ export default function Post({ post }) {
 
         <p className="text-sm text-dark mt-4">
           Ngày đăng: {dayjs(post.frontmatter.date).date()}
-          {" tháng "}
+          {' tháng '}
           {dayjs(post.frontmatter.date).month() + 1}
         </p>
 
@@ -20,5 +20,5 @@ export default function Post({ post }) {
         <p className="mt-4 text-accent">{post.frontmatter.excerpt}</p>
       </div>
     </Link>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import "styles/globals.css";
-import "swiper/css/bundle";
-import Script from "next/script";
+import 'styles/globals.css'
+import 'swiper/css/bundle'
+import Script from 'next/script'
 
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Script>
       <Component {...pageProps} />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
