@@ -12,6 +12,7 @@ type Person = {
   max: number
   min: number
   mobile: string
+  isActive: number
 }
 
 export default function BangDiem() {
@@ -29,8 +30,12 @@ export default function BangDiem() {
       max: e[3],
       min: e[4],
       mobile: e[5],
+      isActive: e[6],
     })
   })
+
+  // only show members is active and has value 1, 0 means hidden
+  result = result.filter((e) => e.isActive === 1)
 
   return (
     <>
