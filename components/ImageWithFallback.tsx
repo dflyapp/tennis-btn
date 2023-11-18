@@ -12,6 +12,7 @@ const ImageWithFallback = (props: any) => {
       onError={() => {
         setImgSrc(fallbackSrc)
       }}
+      alt="avatar"
     />
   )
 }
