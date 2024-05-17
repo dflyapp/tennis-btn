@@ -16,11 +16,17 @@ type Person = {
   isActive: number
 }
 
-export const getStaticProps = async () => {
+type ServerData = {
+  hideScore: boolean
+}
+
+export const getStaticProps = (async (context) => {
   const res = await fetch(`${process.env.BACKEND_API_ENDPOINT}/score`)
   const serverData = await res.json()
   return { props: { serverData } }
-}
+}) satisfies GetStaticProps<{
+  serverData: ServerData
+}>
 
 export default function BangDiem({
   serverData,
