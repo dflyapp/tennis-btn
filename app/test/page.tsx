@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <>
-      <h1>Hello Next App Router 13</h1>
+      <h1>Hello Next App Router 13.4</h1>
     </>
   )
 }

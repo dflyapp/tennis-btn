@@ -3,6 +3,7 @@ import { Loading } from 'components'
 import { Header } from 'layouts'
 import FilterTable from './FilterTable'
 import { NextSeo } from 'next-seo'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -15,11 +16,39 @@ type Person = {
   isActive: number
 }
 
-export default function BangDiem() {
+export const getStaticProps = () => {
+  return {
+    props: {
+      BACKEND_API_ENDPOINT: process.env.BACKEND_API_ENDPOINT,
+      HIDE: process.env.HIDE,
+    },
+  }
+}
+
+export default function BangDiem({
+  BACKEND_API_ENDPOINT,
+  HIDE,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { data, error } = useSWR('/api/score', fetcher)
 
   if (error) return <div>failed to load</div>
   if (!data) return <Loading />
+
+  if (HIDE === 'true') {
+    return (
+      <>
+        <NextSeo
+          title="Tennis BTN - Bảng điểm Nữ"
+          description="Thông tin bảng điểm nữ"
+        />
+        <Header />
+        <h1 className="text-center my-8">Bảng điểm nữ</h1>
+        <p className="text-center">
+          Điểm đang được cập nhật. Vui lòng quay lại sau.
+        </p>
+      </>
+    )
+  }
 
   const x = data[1].data.filter((e: any) => e.length >= 5 && e[0] > 0)
   let result: Person[] = []
