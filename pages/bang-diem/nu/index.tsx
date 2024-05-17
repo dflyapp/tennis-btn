@@ -16,21 +16,25 @@ type Person = {
   isActive: number
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.BACKEND_API_ENDPOINT}/score`)
-  const serverData = await res.json()
-  return { props: { serverData } }
+export const getStaticProps = () => {
+  return {
+    props: {
+      BACKEND_API_ENDPOINT: process.env.BACKEND_API_ENDPOINT,
+      HIDE: process.env.HIDE,
+    },
+  }
 }
 
 export default function BangDiem({
-  serverData,
+  BACKEND_API_ENDPOINT,
+  HIDE,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { data, error } = useSWR('/api/score', fetcher)
 
   if (error) return <div>failed to load</div>
   if (!data) return <Loading />
 
-  if (serverData?.hideScore) {
+  if (HIDE === 'true') {
     return (
       <>
         <NextSeo
