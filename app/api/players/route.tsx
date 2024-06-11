@@ -1,13 +1,8 @@
-export async function GET() {
-  //   const res = await fetch('https://data.mongodb-api.com/...', {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'API-Key': process.env.DATA_API_KEY,
-  //     },
-  //   })
-  const data = {
-    res: 'Hello World',
-  }
+import { createClient } from 'utils/supabase/server'
 
-  return Response.json({ data })
+export async function GET() {
+  const supabase = createClient()
+  const { data: players } = await supabase.from('players').select()
+
+  return Response.json({ players })
 }
