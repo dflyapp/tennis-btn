@@ -14,5 +14,5 @@ export async function GET() {
   const res = await getPostsForLast24Hours()
   console.log('demo res: ', res)
 
-  return Response.json({ data })
+  return Response.json({ res })
 }
