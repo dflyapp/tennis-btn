@@ -35,7 +35,7 @@ export default function BangDiem({
   if (error) return <div>failed to load</div>
   if (!data) return <Loading />
 
-  if (HIDE === 'true') {
+  if (false && HIDE === 'true') {
     return (
       <>
         <NextSeo
