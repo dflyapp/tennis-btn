@@ -20,14 +20,12 @@ type Person = {
 export const getStaticProps = () => {
   return {
     props: {
-      BACKEND_API_ENDPOINT: process.env.BACKEND_API_ENDPOINT,
       HIDE: process.env.HIDE,
     },
   }
 }
 
 export default function BangDiem({
-  BACKEND_API_ENDPOINT,
   HIDE,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { data, error } = useSWR('/api/score', fetcher)
