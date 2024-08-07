@@ -1,6 +1,22 @@
 import { asc, between, count, eq, getTableColumns, sql } from 'drizzle-orm'
 import { db } from './db'
-import { InsertUser, SelectUser, postsTable, usersTable } from './schema'
+import {
+  SelectCount,
+  SelectUser,
+  postsTable,
+  usersTable,
+  countsTable,
+} from './schema'
+
+export async function getCountsById(id: SelectCount['id']): Promise<
+  Array<{
+    id: number
+    title: string
+    count: number | null
+  }>
+> {
+  return db.select().from(countsTable).where(eq(countsTable.id, id))
+}
 
 export async function getUserById(id: SelectUser['id']): Promise<
   Array<{

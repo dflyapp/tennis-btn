@@ -1,0 +1,1 @@
+ALTER TABLE "counts_table" ADD COLUMN "age" integer NOT NULL;

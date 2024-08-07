@@ -20,8 +20,21 @@ export const postsTable = pgTable('posts_table', {
     .$onUpdate(() => new Date()),
 })
 
+export const countsTable = pgTable('counts_table', {
+  id: serial('id').primaryKey(),
+  title: text('title').notNull(),
+  count: integer('count'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
+})
+
 export type InsertUser = typeof usersTable.$inferInsert
 export type SelectUser = typeof usersTable.$inferSelect
 
 export type InsertPost = typeof postsTable.$inferInsert
 export type SelectPost = typeof postsTable.$inferSelect
+
+export type InsertCount = typeof countsTable.$inferInsert
+export type SelectCount = typeof countsTable.$inferSelect

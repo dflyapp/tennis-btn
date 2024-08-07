@@ -4,6 +4,7 @@ import LogoZalo from './logo-zalo.png'
 import LogoFacebook from './logo-facebook.png'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import CountVisit from 'components/CountVisit'
 
 export default function Footer() {
   const [url, setUrl] = useState('')
@@ -29,7 +30,7 @@ export default function Footer() {
           LIÊN HỆ ĐĂNG KÝ THAM GIA GIẢI ĐẤU VÀ QUẢNG CÁO
         </h2>
         <p>Mr. Sơn Tào 0903 371 177</p>
-        <div className="flex w-fit mx-auto mt-4">
+        <div className="flex w-fit mx-auto my-4">
           <Link href="https://zalo.me/0903371177">
             <Image
               className="cursor-pointer"
@@ -50,6 +51,7 @@ export default function Footer() {
             />
           </Link>
         </div>
+        <CountVisit />
       </div>
     </>
   )
