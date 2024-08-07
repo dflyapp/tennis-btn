@@ -18,6 +18,16 @@ export async function getCountsById(id: SelectCount['id']): Promise<
   return db.select().from(countsTable).where(eq(countsTable.id, id))
 }
 
+export async function increaseCountsById(id: SelectCount['id']) {
+  const countRes = await db
+    .select()
+    .from(countsTable)
+    .where(eq(countsTable.id, id))
+
+  const count = countRes[0]?.count ? countRes[0]?.count + 1 : 0
+  await db.update(countsTable).set({ count }).where(eq(countsTable.id, id))
+}
+
 export async function getUserById(id: SelectUser['id']): Promise<
   Array<{
     id: number
