@@ -175,7 +175,7 @@ export default function FilterTable({ dataSet }: Props) {
         <input
           placeholder="Tìm tên, điểm"
           type="text"
-          className="input input-bordered input-primary w-full"
+          className="input input-bordered input-primary w-full mx-2 md:mx-0"
           onChange={(event) => {
             if (event.target.value === '') {
               setData(result)
