@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { Header } from 'layouts'
+import { Footer, Header } from 'layouts'
 import { NextSeo } from 'next-seo'
 
 export default function HinhAnh({ players }: any) {
@@ -23,6 +23,9 @@ export default function HinhAnh({ players }: any) {
           })}
         </div>
       </div>
+
+      <div className="my-12" />
+      <Footer />
     </>
   )
 }

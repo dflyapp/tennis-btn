@@ -14,10 +14,10 @@ export default function Post({ post }) {
           {dayjs(post.frontmatter.date).month() + 1}
         </p>
 
-        <h4 className="mt-4 text-2xl font-bold text-primary underline">
+        <h4 className="mt-4 text-2xl font-bold text-secondary underline hover:opacity-80">
           {post.frontmatter.title}
         </h4>
-        <p className="mt-4 text-accent">{post.frontmatter.excerpt}</p>
+        <p className="mt-4">{post.frontmatter.excerpt}</p>
       </div>
     </Link>
   )

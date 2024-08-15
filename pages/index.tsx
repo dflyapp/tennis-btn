@@ -173,10 +173,8 @@ const Home: NextPage = ({ events, players }: any) => {
               }
             })}
           <div className="flex justify-center mt-8">
-            <Link href="/giai-dau">
-              <button className="underline text-primary">
-                Xem tất cả giải đấu
-              </button>
+            <Link className="link link-secondary" href="/giai-dau">
+              Xem tất cả giải đấu
             </Link>
           </div>
         </div>
@@ -214,11 +212,9 @@ const Home: NextPage = ({ events, players }: any) => {
             Hình ảnh
           </h1>
           <Players players={players} />
-          <div className="flex justify-center mt-4 mb-8">
-            <Link href="/hinh-anh">
-              <button className="underline text-primary">
-                Xem tất cả hình ảnh
-              </button>
+          <div className="flex justify-center mt-2 mb-4">
+            <Link className="link link-secondary" href="/hinh-anh">
+              Xem tất cả hình ảnh
             </Link>
           </div>
         </div>

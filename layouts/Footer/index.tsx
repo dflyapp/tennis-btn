@@ -13,13 +13,15 @@ export default function Footer() {
     const ua = navigator.userAgent
     if (/android/i.test(ua)) {
       setUrl(
-        'fb://profile/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613'
+        'fb://profile/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-B%E1%BA%AFc-Trung-Nam-61550725257652'
       )
     } else if (/iPad|iPhone|iPod/.test(ua) || navigator.maxTouchPoints > 1) {
-      setUrl('fb://page/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613')
+      setUrl(
+        'fb://page/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-B%E1%BA%AFc-Trung-Nam-61550725257652'
+      )
     }
     setUrl(
-      'https://www.facebook.com/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-BTN-104833428859613'
+      'https://www.facebook.com/p/Di%E1%BB%85n-%C4%90%C3%A0n-Tennis-B%E1%BA%AFc-Trung-Nam-61550725257652/'
     )
   }, [])
 
@@ -41,7 +43,7 @@ export default function Footer() {
             />
           </Link>
           <div className="w-8"></div>
-          <Link href={url}>
+          <Link href={url} target="_blank">
             <Image
               className="cursor-pointer"
               width={40}

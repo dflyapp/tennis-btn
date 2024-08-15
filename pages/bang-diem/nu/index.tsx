@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import { Loading } from 'components'
-import { Header } from 'layouts'
+import { Footer, Header } from 'layouts'
 import FilterTable from './FilterTable'
 import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -73,6 +73,9 @@ export default function BangDiem({
       <Header />
       <h1 className="text-center my-8">Bảng điểm nữ</h1>
       <FilterTable dataSet={result} />
+
+      <div className="my-12" />
+      <Footer />
     </>
   )
 }

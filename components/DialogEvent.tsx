@@ -23,7 +23,7 @@ export default function DialogEvent({ children, content }: Props) {
   return (
     <>
       <div className="cursor-pointer" onClick={openModal}>
-        <button className="bg-white border border-gray-300 rounded-md p-2 text-sm shadow-md text-primary hover:opacity-80">
+        <button className="btn btn-primary text-white font-light">
           Xem thêm
         </button>
       </div>

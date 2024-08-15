@@ -173,9 +173,9 @@ export default function FilterTable({ dataSet }: Props) {
     <div className="max-w-lg mx-auto">
       <div className="flex mx-auto my-4">
         <input
-          placeholder="tìm tên, điểm"
+          placeholder="Tìm tên, điểm"
           type="text"
-          className="border px-2 py-2 w-full rounded-sm"
+          className="input input-bordered input-primary w-full"
           onChange={(event) => {
             if (event.target.value === '') {
               setData(result)
@@ -310,39 +310,40 @@ export default function FilterTable({ dataSet }: Props) {
           </button>
         </div>
 
-        <div className="flex mt-4">
-          <span className="flex items-center gap-1">
+        <div className="flex flex-col mt-4">
+          <div className="flex items-center gap-1">
             <div>Trang</div>
             <strong>
-              {table.getState().pagination.pageIndex + 1} của{' '}
+              {table.getState().pagination.pageIndex + 1} /{' '}
               {table.getPageCount()}
             </strong>
-          </span>
-          <span className="flex items-center gap-1 ml-2">
-            | Đến:
-            <input
-              type="number"
-              defaultValue={table.getState().pagination.pageIndex + 1}
-              onChange={(e) => {
-                const page = e.target.value ? Number(e.target.value) - 1 : 0
-                table.setPageIndex(page)
-              }}
-              className="border p-1 rounded w-16"
-            />
-          </span>
-          <select
-            value={table.getState().pagination.pageSize}
-            onChange={(e) => {
-              table.setPageSize(Number(e.target.value))
-            }}
-          >
-            {[10, 20, 30, 40, 50].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                Xem {pageSize}
-              </option>
-            ))}
-          </select>
+            <span className="flex items-center gap-1 ml-2">
+              | Đến trang:
+              <input
+                type="number"
+                defaultValue={table.getState().pagination.pageIndex + 1}
+                onChange={(e) => {
+                  const page = e.target.value ? Number(e.target.value) - 1 : 0
+                  table.setPageIndex(page)
+                }}
+                className="input input-bordered w-16 ml-2 mr-2 text-center"
+              />
+            </span>
+          </div>
         </div>
+        <select
+          className="select select-bordered"
+          value={table.getState().pagination.pageSize}
+          onChange={(e) => {
+            table.setPageSize(Number(e.target.value))
+          }}
+        >
+          {[10, 20, 30, 40, 50].map((pageSize) => (
+            <option key={pageSize} value={pageSize}>
+              Xem {pageSize} vđv một trang
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   )
