@@ -1,9 +1,9 @@
 import useSWR from 'swr'
 import { Loading } from 'components'
 import { Footer, Header } from 'layouts'
-import FilterTable from './FilterTable'
 import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import FilterTableNu from 'components/FilterTableNu'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -72,7 +72,7 @@ export default function BangDiem({
       />
       <Header />
       <h1 className="text-center my-8">Bảng điểm nữ</h1>
-      <FilterTable dataSet={result} />
+      <FilterTableNu dataSet={result} />
 
       <div className="my-12" />
       <Footer />

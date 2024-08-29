@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Ball from './avatars/ball.svg'
-
 import {
   Column,
   Table,
@@ -71,7 +70,7 @@ interface Props {
   dataSet?: Person[]
 }
 
-export default function FilterTable({ dataSet }: Props) {
+export default function FilterTableNu({ dataSet }: Props) {
   const rerender = React.useReducer(() => ({}), {})[1]
 
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -95,14 +94,12 @@ export default function FilterTable({ dataSet }: Props) {
               width={40}
               height={40}
               key={info.cell.row.original.id}
-              src={`/avatar-nam/${info.cell.row.original.id}.jpg`}
+              src={`/avatar-nu/${info.cell.row.original.id}.jpg`}
               fallbackSrc={Ball}
             />
             <div className="ml-3">
               <strong>{info.getValue()}</strong>
-              {info.cell.row.original.mobile && (
-                <p className="text-xs">{info.cell.row.original.mobile}</p>
-              )}
+              <p className="text-xs">{info.cell.row.original.mobile}</p>
             </div>
           </div>
         ),
@@ -119,11 +116,11 @@ export default function FilterTable({ dataSet }: Props) {
         header: () => <span>Min</span>,
         footer: (props) => props.column.id,
       },
-      //   {
-      //     accessorKey: "mobile",
-      //     header: () => <span>SĐT</span>,
-      //     footer: (props) => props.column.id,
-      //   },
+      // {
+      //   accessorKey: "mobile",
+      //   header: () => <span>SĐT</span>,
+      //   footer: (props) => props.column.id,
+      // },
     ],
     []
   )
@@ -335,7 +332,7 @@ export default function FilterTable({ dataSet }: Props) {
           </div>
         </div>
         <select
-          className="select select-bordered w-30"
+          className="select select-bordered"
           value={table.getState().pagination.pageSize}
           onChange={(e) => {
             table.setPageSize(Number(e.target.value))

@@ -3,8 +3,8 @@ import { NextSeo } from 'next-seo'
 
 import { Footer, Header } from 'layouts'
 import { Loading } from 'components'
-import FilterTable from './FilterTable'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import FilterTableNam from 'components/FilterTableNam'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -75,7 +75,7 @@ export default function BangDiem({
 
       <h1 className="text-center my-8">Bảng điểm nam</h1>
 
-      <FilterTable dataSet={result} />
+      <FilterTableNam dataSet={result} />
 
       <div className="my-12" />
       <Footer />
