@@ -90,13 +90,20 @@ export default function FilterTableNam({ dataSet }: Props) {
         accessorKey: 'nickName',
         cell: (info) => (
           <div className="flex items-center">
-            <ImageWithFallback
+            {/* <ImageWithFallback
               className="rounded-full"
               width={40}
               height={40}
               key={info.cell.row.original.id}
               src={`/avatar-nam/${info.cell.row.original.id}.jpg`}
               fallbackSrc={Ball}
+            /> */}
+            <img
+              className="rounded-full"
+              width={40}
+              height={40}
+              key={info.cell.row.original.id}
+              src={Ball?.src}
             />
             <div className="ml-3">
               <strong>{info.getValue()}</strong>
