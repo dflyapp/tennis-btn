@@ -10,8 +10,7 @@ const nextConfig = {
   experimental: {
     serverActions: {
       allowedOrigins: [
-        'my-proxy.com',
-        '*.my-proxy.com',
+        '*.netlify.app',
         'diendantennisbtn.com',
         '*.diendantennisbtn.com'
       ],
