@@ -22,7 +22,7 @@ export async function login(formData: FormData) {
   }
 
   revalidatePath('/', 'layout')
-  redirect('/private')
+  redirect('/dasboard')
 }
 
 export async function signup(formData: FormData) {
@@ -36,6 +36,18 @@ export async function signup(formData: FormData) {
   }
 
   const { error } = await supabase.auth.signUp(data)
+
+  if (error) {
+    redirect('/error')
+  }
+
+  revalidatePath('/', 'layout')
+  redirect('/')
+}
+
+export async function signout() {
+  const supabase = createClient()
+  const { error } = await supabase.auth.signOut()
 
   if (error) {
     redirect('/error')
