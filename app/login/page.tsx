@@ -7,9 +7,11 @@ export default async function LoginPage() {
 
   if (error || !data?.user) {
     return (
-      <form className="flex flex-col gap-y-4 w-1/2 mx-auto">
+      <form className="flex flex-col gap-y-4">
         <div>
-          <label htmlFor="email">Email:</label>
+          <label className="block" htmlFor="email">
+            Email:
+          </label>
           <input
             className="input input-bordered w-full max-w-xs"
             id="email"
@@ -19,7 +21,9 @@ export default async function LoginPage() {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label className="block" htmlFor="password">
+            Mật khẩu:
+          </label>
           <input
             className="input input-bordered w-full max-w-xs"
             id="password"
@@ -28,12 +32,12 @@ export default async function LoginPage() {
             required
           />
         </div>
-        <div className="flex flex-row gap-x-4">
+        <div className="flex flex-row gap-4">
           <button className="btn btn-primary" formAction={login}>
-            Log in
+            Đăng nhập
           </button>
-          <button className="btn ml-4" formAction={signup}>
-            Sign up
+          <button className="btn btn-active btn-link" formAction={signup}>
+            Tạo tài khoản
           </button>
         </div>
       </form>
@@ -45,7 +49,7 @@ export default async function LoginPage() {
       <div className="flex flex-col gap-x-4">
         <p>User is logged in already,</p>
         <button className="btn w-fit" formAction={signout}>
-          Sign out
+          Thoát tài khoản
         </button>
       </div>
     </form>

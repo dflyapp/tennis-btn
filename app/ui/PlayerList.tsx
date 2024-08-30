@@ -16,7 +16,7 @@ export default function PlayerList() {
   if (isLoading) return <div>loading...</div>
 
   return (
-    <div className="container mx-auto">
+    <div className="px-2 md:px-0 container mx-auto">
       <h1>Dashboard</h1>
       <input
         type="text"
@@ -43,11 +43,7 @@ export default function PlayerList() {
                 <td>{e.min}</td>
                 <td>{e.max}</td>
                 <td>
-                  <button
-                    disabled={false}
-                    className="btn btn-secondary"
-                    onClick={() => {}}
-                  >
+                  <button disabled={false} className="btn" onClick={() => {}}>
                     Chỉnh sửa
                   </button>
                 </td>

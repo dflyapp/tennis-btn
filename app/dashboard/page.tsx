@@ -13,9 +13,13 @@ export default async function Dashboard() {
   }
 
   return (
-    <div>
-      <Link href="/">Home</Link>
-      <p>Hello {data.user.email},</p>
+    <div className="px-2 md:px-0 container mx-auto">
+      <Link className="underline" href="/">
+        Home
+      </Link>
+      <p>
+        Xin chào <strong>{data.user.email}</strong>,
+      </p>
       <PlayerList />
     </div>
   )
