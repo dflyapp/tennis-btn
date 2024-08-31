@@ -29,6 +29,13 @@
       "when": 1723007579823,
       "tag": "0003_lively_wither",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1725099959081,
+      "tag": "0004_brave_spencer_smythe",
+      "breakpoints": true
     }
   ]
 }

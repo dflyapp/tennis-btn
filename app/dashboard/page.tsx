@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 import { createClient } from 'utils/supabase/server'
+import { signout } from 'app/login/actions'
 
 export default async function Dashboard() {
   const supabase = createClient()
@@ -17,9 +18,12 @@ export default async function Dashboard() {
       <Link className="underline" href="/">
         Home
       </Link>
-      <p>
-        Xin chào <strong>{data.user.email}</strong>,
-      </p>
+      <form>
+        Xin chào <strong>{data.user.email}</strong>
+        <button className="btn btn-link" formAction={signout}>
+          (Thoát)
+        </button>
+      </form>
       <PlayerList />
     </div>
   )

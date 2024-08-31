@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="mytheme">
-      <body className="container mx-auto">{children}</body>
+      <body className="container mx-auto pt-4">{children}</body>
     </html>
   )
 }

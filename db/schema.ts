@@ -6,6 +6,8 @@ export const usersTable = pgTable('users_table', {
   age: integer('age').notNull(),
   email: text('email').notNull().unique(),
 })
+export type InsertUser = typeof usersTable.$inferInsert
+export type SelectUser = typeof usersTable.$inferSelect
 
 export const postsTable = pgTable('posts_table', {
   id: serial('id').primaryKey(),
@@ -19,6 +21,8 @@ export const postsTable = pgTable('posts_table', {
     .notNull()
     .$onUpdate(() => new Date()),
 })
+export type InsertPost = typeof postsTable.$inferInsert
+export type SelectPost = typeof postsTable.$inferSelect
 
 export const countsTable = pgTable('counts_table', {
   id: serial('id').primaryKey(),
@@ -29,12 +33,19 @@ export const countsTable = pgTable('counts_table', {
     .notNull()
     .$onUpdate(() => new Date()),
 })
-
-export type InsertUser = typeof usersTable.$inferInsert
-export type SelectUser = typeof usersTable.$inferSelect
-
-export type InsertPost = typeof postsTable.$inferInsert
-export type SelectPost = typeof postsTable.$inferSelect
-
 export type InsertCount = typeof countsTable.$inferInsert
 export type SelectCount = typeof countsTable.$inferSelect
+
+export const playersFemaleTable = pgTable('players_female', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  phone: text('phone'),
+  max: integer('max').notNull(),
+  min: integer('min').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
+})
+export type InsertPlayerFemale = typeof playersFemaleTable.$inferInsert
+export type SelectPlayerFemale = typeof playersFemaleTable.$inferSelect
