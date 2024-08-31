@@ -29,6 +29,7 @@ import {
 
 import { makeData, Person } from 'utils/makeData'
 import ImageWithFallback from 'components/ImageWithFallback'
+import Image from 'next/image'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -98,7 +99,8 @@ export default function FilterTableNam({ dataSet }: Props) {
               src={`/avatar-nam/${info.cell.row.original.id}.jpg`}
               fallbackSrc={Ball}
             /> */}
-            <img
+            <Image
+              alt="players"
               className="rounded-full"
               width={40}
               height={40}

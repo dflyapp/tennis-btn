@@ -9,13 +9,6 @@ import Sponsor6 from 'assets/sponsors/tuan-phat.jpg'
 import Sponsor7 from 'assets/sponsors/ve-may-bay.jpg'
 import Sponsor8 from 'assets/sponsors/tp.jpg'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper'
-import Dialog from './DialogBrand'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
 import Link from 'next/link'
 
 export default function Sponsors() {
@@ -174,36 +167,38 @@ export default function Sponsors() {
     },
   ]
   return (
-    <>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={0}
-        slidesPerGroup={1}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={false}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper"
-      >
-        {sponsorList.map((e) => {
-          return (
-            <SwiperSlide className="mx-0" key={e.name}>
-              <Dialog content={e}>
-                <h1>Giới thiệu về công ty {e.vnName}</h1>
-                <Image src={e.logo} alt={e.name} />
-                <div className="sponsors">{e.content()}</div>
-              </Dialog>
-            </SwiperSlide>
-          )
-        })}
-      </Swiper>
-    </>
+    <div className="flex flex-wrap gap-x-2 mx-auto w-fit">
+      {sponsorList.map((e) => {
+        return (
+          <div key={e.name}>
+            <Image
+              width={50}
+              height={50}
+              src={e.logo}
+              alt={e.name}
+              className="cursor-pointer"
+              onClick={() => {
+                ;(
+                  document?.getElementById(
+                    `my_modal_${e.name}`
+                  ) as HTMLDialogElement
+                )?.showModal()
+              }}
+            />
+            <dialog id={`my_modal_${e.name}`} className="modal">
+              <div className="modal-box">
+                <h1>{e.vnName}</h1>
+                <div>{e.content()}</div>
+                <div className="modal-action">
+                  <form method="dialog">
+                    <button className="btn">Đóng</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
+        )
+      })}
+    </div>
   )
 }

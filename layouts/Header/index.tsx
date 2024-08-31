@@ -32,7 +32,7 @@ export default function Header() {
       </Link>
       <Link href="/">
         <div className="w-16 h-16 cursor-pointer">
-          <Image src={Logo} alt="logo" />
+          <Image width={100} height={100} src={Logo} alt="logo" />
         </div>
       </Link>
       <Link href="/bang-diem/nu">

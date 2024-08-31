@@ -10,7 +10,7 @@ import matter from 'gray-matter'
 import classNames from 'classnames'
 
 import { Header, Footer } from 'layouts'
-import { Sponsors, Players, DialogEvent } from 'components'
+import { Sponsors } from 'components'
 import Cover from 'assets/cover-main.jpeg'
 import LeaderboardBg from 'assets/leaderboard-bg.jpg'
 import { sortByDate } from 'utils'
@@ -34,6 +34,8 @@ const Home: NextPage = ({ events, players }: any) => {
           placeholder="blur"
           alt="Nhà tài trợ diễn đàn tennis BTN"
           layout="responsive"
+          width={100}
+          height={100}
         />
 
         {/* founders */}
@@ -63,7 +65,12 @@ const Home: NextPage = ({ events, players }: any) => {
               if (e.frontmatter.hot) {
                 return (
                   <div className="mt-4" key={e.slug}>
-                    <img src={e.frontmatter.cover_image} alt="giai dau" />
+                    <Image
+                      src={e.frontmatter.cover_image}
+                      alt="giai dau"
+                      width={500}
+                      height={100}
+                    />
                     <div className="bg-gray-100 py-4 flex items-center flex-wrap rounded-bl-lg rounded-br-lg">
                       <div className="w-1/4 pt-1 flex items-center justify-center">
                         <div className="w-16 h-16 bg-white rounded-md">
@@ -104,10 +111,6 @@ const Home: NextPage = ({ events, players }: any) => {
                         <p className="uppercase font-bold pr-4 mb-4">
                           {e.frontmatter.title}
                         </p>
-
-                        <DialogEvent content={e}>
-                          <h1>---</h1>
-                        </DialogEvent>
                       </div>
                     </div>
                   </div>
@@ -121,7 +124,12 @@ const Home: NextPage = ({ events, players }: any) => {
               if (!e.frontmatter.hot) {
                 return (
                   <div className="mt-4" key={e.slug}>
-                    <img src={e.frontmatter.cover_image} alt="giai dau" />
+                    <Image
+                      width={500}
+                      height={100}
+                      src={e.frontmatter.cover_image}
+                      alt="giai dau"
+                    />
                     <div className="bg-gray-100 py-4 flex items-center flex-wrap rounded-bl-lg rounded-br-lg">
                       <div className="w-1/4 pt-1 flex items-center justify-center">
                         <div className="w-16 h-16 bg-white rounded-md">
@@ -162,10 +170,6 @@ const Home: NextPage = ({ events, players }: any) => {
                         <p className="uppercase font-bold pr-4 mb-4">
                           {e.frontmatter.title}
                         </p>
-
-                        <DialogEvent content={e}>
-                          <h1>---</h1>
-                        </DialogEvent>
                       </div>
                     </div>
                   </div>
@@ -211,7 +215,6 @@ const Home: NextPage = ({ events, players }: any) => {
           <h1 className="w-fit mx-auto px-3 py-2 uppercase text-center mt-12">
             Hình ảnh
           </h1>
-          <Players players={players} />
           <div className="flex justify-center mt-2 mb-4">
             <Link className="link link-secondary" href="/hinh-anh">
               Xem tất cả hình ảnh

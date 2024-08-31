@@ -1,5 +1,4 @@
 import 'styles/globals.css'
-import 'swiper/css/bundle'
 import Script from 'next/script'
 
 import type { AppProps } from 'next/app'

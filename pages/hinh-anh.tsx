@@ -3,6 +3,7 @@ import path from 'path'
 
 import { Footer, Header } from 'layouts'
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 
 export default function HinhAnh({ players }: any) {
   return (
@@ -17,7 +18,7 @@ export default function HinhAnh({ players }: any) {
           {players.map((e: any) => {
             return (
               <div className="my-8" key={e}>
-                <img src={e} alt={e} />
+                <Image src={e} alt={e} width={200} height={100} />
               </div>
             )
           })}
