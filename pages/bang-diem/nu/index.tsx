@@ -3,26 +3,33 @@ import { Footer, Header } from 'layouts'
 import { NextSeo } from 'next-seo'
 import { InferGetStaticPropsType } from 'next'
 import FilterTable from 'components/FilterTable'
-import { useQuery } from '@tanstack/react-query'
+import { createClient } from 'utils/supabase/client'
+import { SelectPlayerFemale } from 'db/schema'
 
 export async function getStaticProps() {
+  const supabase = createClient()
+  const response = await supabase
+    .from('players_female')
+    .select()
+    .order('id')
+    .returns<SelectPlayerFemale[]>()
+
   return {
     props: {
       HIDE: process.env.HIDE,
+      response,
     },
   }
 }
 
 export default function BangDiem({
   HIDE,
+  response,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { isPending, error, data, refetch } = useQuery({
-    queryKey: ['players-female-key'],
-    queryFn: () => fetch('/api/players-female').then((res) => res.json()),
-  })
+  const { error, data } = response
 
   if (error) return <div>failed to load</div>
-  if (isPending) return <Loading />
+  if (!data) return <Loading />
 
   if (HIDE === 'true') {
     return (
@@ -48,7 +55,7 @@ export default function BangDiem({
       />
       <Header />
       <h1 className="text-center my-8">Bảng điểm nữ</h1>
-      <FilterTable dataSet={data?.players} />
+      <FilterTable dataSet={data} />
 
       <div className="my-12" />
       <Footer />
