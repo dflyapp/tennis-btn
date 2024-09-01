@@ -1,9 +1,9 @@
-import useSWR from 'swr'
 import { Loading } from 'components'
 import { Footer, Header } from 'layouts'
 import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import FilterTableNu from 'components/FilterTableNu'
+import { useQuery } from '@tanstack/react-query'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -27,7 +27,10 @@ export const getStaticProps = () => {
 export default function BangDiem({
   HIDE,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { data, error } = useSWR('/api/score', fetcher)
+  const { isPending, error, data } = useQuery({
+    queryKey: ['score'],
+    queryFn: () => fetch('/api/score').then((res) => res.json()),
+  })
 
   if (error) return <div>failed to load</div>
   if (!data) return <Loading />

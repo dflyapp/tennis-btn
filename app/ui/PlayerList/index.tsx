@@ -1,58 +1,56 @@
 'use client'
-import { SelectPlayerFemale } from 'db/schema'
-import useSWR from 'swr'
-import useSWRMutation from 'swr/mutation'
-import EditPlayer from './EditPlayer'
-import CreatePlayer from './CreatePlayer'
-import TanksackTable from './TansackTable'
+import TableClient from './TableClient'
 
-const fetcher = (url: string) =>
-  fetch(url, { method: 'GET' }).then((res) => res.json())
-const updateName = (url: string) =>
-  fetch(url, { method: 'PUT' }).then((res) => res.json())
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
+import CreatePlayer from './CreatePlayer'
+
+const queryClient = new QueryClient()
 
 export default function PlayerList() {
-  const { data, error, isLoading, mutate } = useSWR(
-    '/api/players-female',
-    fetcher
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
   )
-  const { players } = data || {}
-  const { trigger } = useSWRMutation('/api/players/1', updateName)
+}
+
+function Example() {
+  const { isPending, error, data, refetch } = useQuery({
+    queryKey: ['players-female-key'],
+    queryFn: () => fetch('/api/players-female').then((res) => res.json()),
+  })
 
   if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
+  if (isPending) return <div>loading...</div>
 
   return (
-    <div className="px-2 md:px-0 container mx-auto">
-      <h1>Bảng điểm nữ</h1>
-      <TanksackTable />
-
-      {/* <table className="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Max</th>
-            <th>Min</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {players?.map((e: SelectPlayerFemale) => {
-            return (
-              <tr key={e.id}>
-                <th>{e.id}</th>
-                <td> {e.name}</td>
-                <td>{e.max}</td>
-                <td>{e.min}</td>
-                <td>
-                  <EditPlayer player={e} updateCache={() => mutate()} />
-                </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table> */}
+    <div className="px-2 md:px-0 container max-w-lg mx-auto">
+      <div className="flex items-center justify-between">
+        <h1>Bảng điểm nữ</h1>
+        <CreatePlayer
+          updateCache={async () => {
+            await refetch()
+            const searchInput = document.getElementById(
+              'search-input'
+            ) as HTMLInputElement
+            searchInput.value = ''
+          }}
+        />
+      </div>
+      <TableClient
+        dataSet={data?.players}
+        updateCache={async () => {
+          await refetch()
+          const searchInput = document.getElementById(
+            'search-input'
+          ) as HTMLInputElement
+          searchInput.value = ''
+        }}
+      />
     </div>
   )
 }

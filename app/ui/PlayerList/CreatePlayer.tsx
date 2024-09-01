@@ -4,6 +4,7 @@ import { createClient } from 'utils/supabase/client'
 
 interface CreatePlayer {
   updateCache?: () => void
+  invalidateQuery?: () => void
 }
 
 type Inputs = {
@@ -13,12 +14,15 @@ type Inputs = {
   phone?: string
 }
 
-export default function CreatePlayer({ updateCache }: CreatePlayer) {
+export default function CreatePlayer({
+  updateCache,
+  invalidateQuery,
+}: CreatePlayer) {
   const supabase = createClient()
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -31,12 +35,16 @@ export default function CreatePlayer({ updateCache }: CreatePlayer) {
       min: data.min,
       updated_at: new Date(),
     })
+
+    // invalidate caches: SWR and Tanksack Query
     updateCache?.()
+    invalidateQuery?.()
 
     if (error) {
       console.error(error.message)
     } else {
       closeModal()
+      reset()
     }
   }
 

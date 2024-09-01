@@ -6,6 +6,7 @@ export async function GET() {
   const { data: players, error } = await supabase
     .from('players_female')
     .select()
+    .order('id')
     .returns<SelectPlayerFemale[]>()
   if (error) {
     return new Response(error.message, { status: 500, statusText: 'Error' })

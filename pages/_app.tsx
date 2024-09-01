@@ -1,9 +1,17 @@
 import 'styles/globals.css'
 import Script from 'next/script'
+import {
+  HydrationBoundary,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 import type { AppProps } from 'next/app'
+import { useState } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient())
+
   return (
     <>
       <Script
@@ -18,7 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'G-4DEJQF554X');
         `}
       </Script>
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <HydrationBoundary state={pageProps.dehydratedState}>
+          <Component {...pageProps} />{' '}
+        </HydrationBoundary>
+      </QueryClientProvider>
     </>
   )
 }

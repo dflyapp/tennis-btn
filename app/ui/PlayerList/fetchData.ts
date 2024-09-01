@@ -1,10 +1,12 @@
-import { faker } from '@faker-js/faker'
 import { createClient } from 'utils/supabase/client'
 
-export async function fetchData(options: {
-  pageIndex: number
-  pageSize: number
-}) {
+export async function fetchData(
+  options: {
+    pageIndex: number
+    pageSize: number
+  },
+  textSearch: string
+) {
   console.log('options', options)
   const supabase = createClient()
   const { pageIndex, pageSize } = options
@@ -17,8 +19,11 @@ export async function fetchData(options: {
   const { data, error } = await supabase
     .from('players_female')
     .select()
-    .order('id', { ascending: true })
-    .range(offset, offset + pageSize - 1)
+    .textSearch('name', textSearch, {
+      type: 'plain',
+    })
+  // .order('id', { ascending: true })
+  // .range(offset, offset + pageSize - 1)
 
   if (error || countError) {
     console.error(error?.message)

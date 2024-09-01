@@ -38,7 +38,9 @@ export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
   }
 
   function closeModal() {
-    ;(document?.getElementById(player.name) as HTMLDialogElement)?.close()
+    ;(
+      document?.getElementById(player.id.toString()) as HTMLDialogElement
+    )?.close()
   }
 
   return (
@@ -48,13 +50,17 @@ export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
         className="btn"
         onClick={() =>
           (
-            document?.getElementById(player.name) as HTMLDialogElement
+            document?.getElementById(player.id.toString()) as HTMLDialogElement
           )?.showModal()
         }
       >
         Chỉnh sửa
       </button>
-      <dialog id={player.name} className="modal">
+      <dialog
+        id={player.id.toString()}
+        key={player.id.toString()}
+        className="modal"
+      >
         <div className="modal-box">
           <h3 className="font-bold text-lg">Editting {player.name}</h3>
           <form

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
 import {
@@ -21,11 +21,15 @@ import {
 import { fetchData } from './fetchData'
 import { SelectPlayerFemale } from 'db/schema'
 import CreatePlayer from './CreatePlayer'
+import EditPlayer from './EditPlayer'
+import useDebounce from 'hooks/useDebounce'
 
 const queryClient = new QueryClient()
 
-function App() {
+function TableServer() {
   const rerender = React.useReducer(() => ({}), {})[1]
+  const [globalSearch, setGlobalSearch] = useState<string>('')
+  const debouncedSearchValue = useDebounce(globalSearch, 500)
 
   const columns = React.useMemo<ColumnDef<SelectPlayerFemale>[]>(
     () => [
@@ -51,8 +55,19 @@ function App() {
       },
       {
         header: () => <span></span>,
-        cell: () => <button className="btn btn-link">sửa</button>,
-        id: 'action',
+        cell: ({ cell }) => {
+          return (
+            <EditPlayer
+              player={cell.row.original}
+              updateCache={() => {
+                queryClient.invalidateQueries({
+                  queryKey: ['data', pagination],
+                })
+              }}
+            />
+          )
+        },
+        accessorKey: 'action',
       },
     ],
     []
@@ -64,8 +79,9 @@ function App() {
   })
 
   const dataQuery = useQuery({
-    queryKey: ['data', pagination],
-    queryFn: () => fetchData(pagination),
+    queryKey: ['data', pagination, debouncedSearchValue],
+    queryFn: () => fetchData(pagination, debouncedSearchValue),
+    enabled: true,
     placeholderData: keepPreviousData, // don't have 0 rows flash while changing pages/loading next page
   })
 
@@ -95,8 +111,16 @@ function App() {
           type="text"
           placeholder="Tìm tên, điểm"
           className="input input-bordered w-full my-4"
+          onChange={(e) => {
+            setGlobalSearch(e.target.value)
+          }}
+          value={globalSearch}
         />
-        <CreatePlayer />
+        <CreatePlayer
+          invalidateQuery={() => {
+            queryClient.invalidateQueries({ queryKey: ['data', pagination] })
+          }}
+        />
       </div>
       <table className="table">
         <thead>
@@ -218,7 +242,42 @@ function App() {
 export default function TanksackTable() {
   return (
     <QueryClientProvider client={queryClient}>
-      <App />
+      <TableServer />
     </QueryClientProvider>
+  )
+}
+
+// A typical debounced input react component
+function DebouncedInput({
+  value: initialValue,
+  onChange,
+  debounce = 500,
+  ...props
+}: {
+  value: string | number
+  onChange: (value: string | number) => void
+  debounce?: number
+} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'>) {
+  const [value, setValue] = React.useState(initialValue)
+
+  React.useEffect(() => {
+    setValue(initialValue)
+  }, [initialValue])
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      onChange(value)
+    }, debounce)
+
+    return () => clearTimeout(timeout)
+  }, [value])
+
+  return (
+    <input
+      className="input input-rounded"
+      {...props}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
   )
 }
