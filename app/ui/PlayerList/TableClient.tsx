@@ -18,7 +18,6 @@ import {
 
 import { RankingInfo, rankItem } from '@tanstack/match-sorter-utils'
 
-import { makeData } from 'utils/makeData'
 import Image from 'next/image'
 import { SelectPlayerFemale } from 'db/schema'
 import EditPlayer from './EditPlayer'
@@ -110,7 +109,6 @@ export default function TableClient({ dataSet, updateCache }: Props) {
   )
 
   const [data, setData] = React.useState<SelectPlayerFemale[]>([])
-
   useEffect(() => {
     setData(dataSet || [])
   }, [dataSet])

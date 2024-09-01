@@ -1,22 +1,11 @@
 import { Loading } from 'components'
 import { Footer, Header } from 'layouts'
 import { NextSeo } from 'next-seo'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import FilterTableNu from 'components/FilterTableNu'
+import { InferGetStaticPropsType } from 'next'
+import FilterTable from 'components/FilterTable'
 import { useQuery } from '@tanstack/react-query'
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
-
-type Person = {
-  id: number
-  nickName: string
-  max: number
-  min: number
-  mobile: string
-  isActive: number
-}
-
-export const getStaticProps = () => {
+export async function getStaticProps() {
   return {
     props: {
       HIDE: process.env.HIDE,
@@ -27,13 +16,13 @@ export const getStaticProps = () => {
 export default function BangDiem({
   HIDE,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { isPending, error, data } = useQuery({
-    queryKey: ['score'],
-    queryFn: () => fetch('/api/score').then((res) => res.json()),
+  const { isPending, error, data, refetch } = useQuery({
+    queryKey: ['players-female-key'],
+    queryFn: () => fetch('/api/players-female').then((res) => res.json()),
   })
 
   if (error) return <div>failed to load</div>
-  if (!data) return <Loading />
+  if (isPending) return <Loading />
 
   if (HIDE === 'true') {
     return (
@@ -51,22 +40,6 @@ export default function BangDiem({
     )
   }
 
-  const x = data[1].data.filter((e: any) => e.length >= 5 && e[0] > 0)
-  let result: Person[] = []
-  x.forEach((e: any) => {
-    result.push({
-      id: e[0],
-      nickName: e[2],
-      max: e[3],
-      min: e[4],
-      mobile: e[5],
-      isActive: e[6],
-    })
-  })
-
-  // only show members is active and has value 1, 0 means hidden
-  result = result.filter((e) => e.isActive === 1)
-
   return (
     <>
       <NextSeo
@@ -75,7 +48,7 @@ export default function BangDiem({
       />
       <Header />
       <h1 className="text-center my-8">Bảng điểm nữ</h1>
-      <FilterTableNu dataSet={result} />
+      <FilterTable dataSet={data?.players} />
 
       <div className="my-12" />
       <Footer />

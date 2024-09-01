@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Ball from './avatars/ball.svg'
 import {
@@ -12,10 +12,8 @@ import {
   getFacetedUniqueValues,
   getFacetedMinMaxValues,
   getPaginationRowModel,
-  sortingFns,
   getSortedRowModel,
   FilterFn,
-  SortingFn,
   ColumnDef,
   flexRender,
 } from '@tanstack/react-table'
@@ -26,8 +24,7 @@ import {
   compareItems,
 } from '@tanstack/match-sorter-utils'
 
-import { makeData, Person } from 'utils/makeData'
-import ImageWithFallback from 'components/ImageWithFallback'
+import { SelectPlayerFemale } from 'db/schema'
 import Image from 'next/image'
 
 declare module '@tanstack/table-core' {
@@ -40,46 +37,24 @@ declare module '@tanstack/table-core' {
 }
 
 const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
-  // Rank the item
   const itemRank = rankItem(row.getValue(columnId), value)
-
-  // Store the itemRank info
   addMeta({
     itemRank,
   })
-
-  // Return if the item should be filtered in/out
   return itemRank.passed
 }
 
-const fuzzySort: SortingFn<any> = (rowA, rowB, columnId) => {
-  let dir = 0
-
-  // Only sort by rank if the column has ranking information
-  if (rowA.columnFiltersMeta[columnId]) {
-    dir = compareItems(
-      rowA.columnFiltersMeta[columnId]?.itemRank!,
-      rowB.columnFiltersMeta[columnId]?.itemRank!
-    )
-  }
-
-  // Provide an alphanumeric fallback for when the item ranks are equal
-  return dir === 0 ? sortingFns.alphanumeric(rowA, rowB, columnId) : dir
-}
-
 interface Props {
-  dataSet?: Person[]
+  dataSet?: SelectPlayerFemale[]
 }
 
-export default function FilterTableNu({ dataSet }: Props) {
-  const rerender = React.useReducer(() => ({}), {})[1]
-
+export default function FilterTable({ dataSet }: Props) {
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
   const [globalFilter, setGlobalFilter] = React.useState('')
 
-  const columns = React.useMemo<ColumnDef<Person, any>[]>(
+  const columns = React.useMemo<ColumnDef<SelectPlayerFemale, any>[]>(
     () => [
       {
         accessorKey: 'id',
@@ -90,14 +65,6 @@ export default function FilterTableNu({ dataSet }: Props) {
         accessorKey: 'nickName',
         cell: (info) => (
           <div className="flex items-center">
-            {/* <ImageWithFallback
-              className="rounded-full"
-              width={40}
-              height={40}
-              key={info.cell.row.original.id}
-              src={`/avatar-nu/${info.cell.row.original.id}.jpg`}
-              fallbackSrc={Ball}
-            /> */}
             <Image
               alt="players"
               className="rounded-full"
@@ -107,8 +74,8 @@ export default function FilterTableNu({ dataSet }: Props) {
               src={Ball?.src}
             />
             <div className="ml-3">
-              <strong>{info.getValue()}</strong>
-              <p className="text-xs">{info.cell.row.original.mobile}</p>
+              <strong>{info.cell.row.original.name}</strong>
+              <p className="text-xs">{info.cell.row.original.phone}</p>
             </div>
           </div>
         ),
@@ -133,10 +100,10 @@ export default function FilterTableNu({ dataSet }: Props) {
     ],
     []
   )
-
-  const result = dataSet ? [...dataSet] : makeData(1000)
-  const [data, setData] = React.useState<Person[]>(() => result)
-  const refreshData = () => setData((old) => makeData(50000))
+  const [data, setData] = React.useState<SelectPlayerFemale[]>([])
+  useEffect(() => {
+    setData(dataSet || [])
+  }, [dataSet])
 
   const table = useReactTable({
     data,
@@ -187,9 +154,9 @@ export default function FilterTableNu({ dataSet }: Props) {
           className="input input-bordered input-primary w-full mx-2 md:mx-0"
           onChange={(event) => {
             if (event.target.value === '') {
-              setData(result)
+              setData(dataSet || [])
             } else if (Number(event.target.value) > 0) {
-              const newDataMax = result.filter(
+              const newDataMax = dataSet?.filter(
                 (e) =>
                   e.max !== null &&
                   e.max
@@ -197,7 +164,7 @@ export default function FilterTableNu({ dataSet }: Props) {
                     .toLowerCase()
                     .includes(event.target.value.toLowerCase())
               )
-              const newDataMin = result.filter(
+              const newDataMin = dataSet?.filter(
                 (e) =>
                   e.min !== null &&
                   e.min
@@ -205,16 +172,19 @@ export default function FilterTableNu({ dataSet }: Props) {
                     .toLowerCase()
                     .includes(event.target.value.toLowerCase())
               )
-              setData([...newDataMax, ...newDataMin])
+              setData([
+                ...(newDataMax as SelectPlayerFemale[]),
+                ...(newDataMin as SelectPlayerFemale[]),
+              ])
             } else {
-              const newData = result.filter(
+              const newData = dataSet?.filter(
                 (e) =>
-                  e.nickName !== null &&
-                  e.nickName
+                  e.name !== null &&
+                  e.name
                     .toLowerCase()
                     .includes(event.target.value.toLowerCase())
               )
-              setData(newData)
+              setData(newData as SelectPlayerFemale[])
             }
           }}
         />
