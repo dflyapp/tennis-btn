@@ -43,6 +43,17 @@ export default function EditPlayer({
       console.error(error.message)
     } else {
       closeModal()
+      // update to log table
+      const { error } = await supabase.from('players_log').insert({
+        ref_id: player.id,
+        is_male: model === 'players_male',
+        name: data.name,
+        max: data.max,
+        min: data.min,
+      })
+      if (error) {
+        alert('Failed to log changes to table players_log')
+      }
     }
     setIsEditting(false)
   }

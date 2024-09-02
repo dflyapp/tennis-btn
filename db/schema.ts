@@ -1,4 +1,13 @@
-import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
+import { sql } from 'drizzle-orm'
+import {
+  boolean,
+  integer,
+  pgTable,
+  serial,
+  text,
+  timestamp,
+  uuid,
+} from 'drizzle-orm/pg-core'
 
 export const usersTable = pgTable('users_table', {
   id: serial('id').primaryKey(),
@@ -63,3 +72,17 @@ export const playersMaleTable = pgTable('players_male', {
 })
 export type InsertPlayerMale = typeof playersMaleTable.$inferInsert
 export type SelectPlayerMale = typeof playersMaleTable.$inferSelect
+
+export const playersLogTable = pgTable('players_log', {
+  id: uuid('id')
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  refId: integer('ref_id').notNull(),
+  isMale: boolean('is_male'),
+  name: text('name').notNull(),
+  max: integer('max').notNull(),
+  min: integer('min').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+})
+export type InsertLogMale = typeof playersLogTable.$inferInsert
+export type SelectLogMale = typeof playersLogTable.$inferSelect

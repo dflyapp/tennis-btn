@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { lazy, useEffect } from 'react'
 
 import Ball from 'components/avatars/ball.svg'
 import {
@@ -22,6 +22,8 @@ import Image from 'next/image'
 import { SelectPlayerFemale } from 'db/schema'
 import EditPlayer from './EditPlayer'
 import { ModelType } from '.'
+
+import ViewPlayer from './ViewPlayer'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -72,7 +74,9 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
             />
             <div className="ml-3">
               {/* <strong>{info.getValue()}</strong> */}
-              <p className="text-xs">{info.cell.row.original.name}</p>
+              <ViewPlayer model={model} refId={info.cell.row.original.id}>
+                <p className="text-xs">{info.cell.row.original.name}</p>
+              </ViewPlayer>
               <p className="text-xs">{info.cell.row.original.phone}</p>
             </div>
           </div>
