@@ -1,12 +1,12 @@
 import { Loading } from 'components'
 import { Footer, Header } from 'layouts'
 import { NextSeo } from 'next-seo'
-import { InferGetServerSidePropsType } from 'next'
+import { InferGetServerSidePropsType, InferGetStaticPropsType } from 'next'
 import FilterTable from 'components/FilterTable'
 import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const supabase = createClient()
   const response = await supabase
     .from('players_male')
@@ -25,7 +25,7 @@ export async function getServerSideProps() {
 export default function BangDiem({
   HIDE,
   response,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { error, data } = response
 
   if (error) return <div>failed to load</div>

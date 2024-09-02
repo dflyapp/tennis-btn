@@ -1,8 +1,8 @@
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { PropsWithChildren, useRef, useState } from 'react'
+import dayjs from 'dayjs'
 
 import { createClient } from 'utils/supabase/client'
 import { ModelType } from '.'
-import { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import { SelectLogMale } from 'db/schema'
 
 interface ViewPlayerProps {
@@ -18,7 +18,6 @@ export default function ViewPlayer({
   const supabase = createClient()
   const ref = useRef<HTMLDialogElement>(null)
   const [log, setLog] = useState<SelectLogMale[]>()
-  const [show, setShow] = useState(false)
 
   function closeModal() {
     ref.current?.close()
@@ -29,20 +28,12 @@ export default function ViewPlayer({
       .from('players_log')
       .select()
       .eq('ref_id', refId)
+      .eq('is_male', model === 'players_male')
       .returns<SelectLogMale[]>()
+
     if (error) alert('Error while getting log')
     if (data) setLog(data)
   }
-
-  useEffect(() => {
-    if (ref.current?.show) {
-      console.log('in effect')
-      //   ref.current?.showModal()
-      //   getPlayerLog()
-      console.log(ref.current)
-      console.log(ref.current?.show)
-    }
-  }, [ref.current?.show])
 
   return (
     <>
@@ -50,22 +41,22 @@ export default function ViewPlayer({
         className="text-primary cursor-pointer"
         onClick={() => {
           ref.current?.showModal()
+          getPlayerLog()
         }}
       >
         {children}
       </span>
       <dialog ref={ref} id="modal-view-player" className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Lịch sử chỉnh sửa điểm</h3>
-          {log?.length === 0 ? (
-            <p className="text-left py-4">chưa từng chỉnh điểm</p>
-          ) : (
+          <h3 className="font-bold text-lg">Lịch sử chỉnh sửa:</h3>
+          {log && log?.length > 0 ? (
             <table className="table mb-4">
               <thead>
                 <tr>
                   <th>Nick Name</th>
                   <th>Max</th>
                   <th>Min</th>
+                  <th>Thời gian</th>
                 </tr>
               </thead>
               <tbody>
@@ -74,10 +65,13 @@ export default function ViewPlayer({
                     <td>{l.name}</td>
                     <td>{l.max}</td>
                     <td>{l.min}</td>
+                    <td>{dayjs(l.createdAt).format('DD/MM/YYYY')}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          ) : (
+            <p className="text-left py-4">chưa từng chỉnh điểm</p>
           )}
           <button
             onClick={() => {
@@ -86,14 +80,6 @@ export default function ViewPlayer({
             className="btn"
           >
             Đóng
-          </button>
-          <button
-            onClick={() => {
-              getPlayerLog()
-            }}
-            className="btn"
-          >
-            Get
           </button>
         </div>
       </dialog>

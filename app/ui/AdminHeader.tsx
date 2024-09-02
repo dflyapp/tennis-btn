@@ -25,16 +25,16 @@ export default function AdminHeader() {
     <>
       <div className="mb-4 flex items-center gap-x-2">
         <Link
-          className={classNames('btn', {
-            'btn-secondary': !pathname?.includes('female'),
+          className={classNames('btn rounded-none w-20 no-animation', {
+            'btn-primary': !pathname?.includes('female'),
           })}
           href="/dashboard/male"
         >
           Nam
         </Link>
         <Link
-          className={classNames('btn', {
-            'btn-secondary': pathname?.includes('female'),
+          className={classNames('btn rounded-none w-20 no-animation', {
+            'btn-primary': pathname?.includes('female'),
           })}
           href="/dashboard/female"
         >

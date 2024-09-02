@@ -86,16 +86,21 @@ export default function CreatePlayer({
 
   return (
     <>
-      <button
-        className="btn btn-primary"
-        onClick={() =>
-          (
-            document?.getElementById('modal-create-player') as HTMLDialogElement
-          )?.showModal()
-        }
-      >
-        {model == 'players_female' ? 'Tạo VĐV Nữ Mới' : 'Tạo VĐV Nam Mới'}
-      </button>
+      <div className="flex justify-between items-center">
+        <h2>Bảng điểm {model == 'players_male' ? 'Nam' : 'Nữ'}</h2>
+        <button
+          className="btn btn-secondary"
+          onClick={() =>
+            (
+              document?.getElementById(
+                'modal-create-player'
+              ) as HTMLDialogElement
+            )?.showModal()
+          }
+        >
+          {model == 'players_female' ? 'Tạo VĐV Nữ Mới' : 'Tạo VĐV Nam Mới'}
+        </button>
+      </div>
       <dialog id="modal-create-player" className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">

@@ -28,18 +28,16 @@ export default function PlayerList({ MODEL, API }: PlayerListProps) {
 
   return (
     <>
-      <div className="flex justify-end">
-        <CreatePlayer
-          model={MODEL}
-          updateCache={async () => {
-            await refetch()
-            const searchInput = document.getElementById(
-              'search-input'
-            ) as HTMLInputElement
-            searchInput.value = ''
-          }}
-        />
-      </div>
+      <CreatePlayer
+        model={MODEL}
+        updateCache={async () => {
+          await refetch()
+          const searchInput = document.getElementById(
+            'search-input'
+          ) as HTMLInputElement
+          searchInput.value = ''
+        }}
+      />
       <TableClient
         model={MODEL}
         dataSet={data?.players}

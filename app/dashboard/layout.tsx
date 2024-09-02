@@ -15,7 +15,9 @@ export default function RootLayout({
     <QueryClientProvider client={queryClient}>
       <div className="px-2 md:px-0 container max-w-lg mx-auto">
         <AdminHeader />
-        {children}
+        <section className="bg-gray-50 pt-2 -mt-4 border-2 border-primary p-2">
+          {children}
+        </section>
         <AdminFooter />
       </div>
     </QueryClientProvider>
