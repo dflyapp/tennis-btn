@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import classNames from 'classnames'
 import { usePathname } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 
 export default function AdminHeader() {
@@ -9,8 +10,10 @@ export default function AdminHeader() {
     queryFn: () => fetch('/api/get-user').then((res) => res.json()),
   })
   const pathname = usePathname()
+  if (error) {
+    redirect('/login')
+  }
 
-  if (error) return <>Error {error}</>
   if (isPending)
     return (
       <>
@@ -38,9 +41,6 @@ export default function AdminHeader() {
           Nữ
         </Link>
       </div>
-      <p className="text-xs">
-        Xin chào <strong>{data?.user?.email}!</strong>
-      </p>
     </>
   )
 }

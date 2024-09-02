@@ -8,7 +8,7 @@ export default async function LoginPage() {
 
   if (error || !data?.user) {
     return (
-      <form className="mt-12 flex flex-col gap-y-4">
+      <form className="mt-12 px-2 flex flex-col gap-y-4">
         <h1>Đăng nhập vào hệ thống:</h1>
         <div>
           <label className="block text-xs" htmlFor="email">
