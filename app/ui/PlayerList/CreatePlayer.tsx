@@ -1,10 +1,13 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { createClient } from 'utils/supabase/client'
+import { ModelType } from '.'
+import { useState } from 'react'
 
 interface CreatePlayer {
   updateCache?: () => void
   invalidateQuery?: () => void
+  model: ModelType
 }
 
 type Inputs = {
@@ -17,8 +20,10 @@ type Inputs = {
 export default function CreatePlayer({
   updateCache,
   invalidateQuery,
+  model,
 }: CreatePlayer) {
   const supabase = createClient()
+  const [isEditting, setIsEditting] = useState(false)
   const {
     register,
     handleSubmit,
@@ -26,9 +31,10 @@ export default function CreatePlayer({
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const largestId = await getLargestId('players_female')
+    setIsEditting(true)
+    const largestId = await getLargestId(model)
 
-    const { error } = await supabase.from('players_female').insert({
+    const { error } = await supabase.from(model).insert({
       id: largestId ? largestId + 1 : 1,
       name: data.name,
       max: data.max,
@@ -46,6 +52,7 @@ export default function CreatePlayer({
       closeModal()
       reset()
     }
+    setIsEditting(false)
   }
 
   async function getLargestId(tableName: string) {
@@ -87,49 +94,60 @@ export default function CreatePlayer({
           )?.showModal()
         }
       >
-        Tạo VĐV Mới
+        {model == 'players_female' ? 'Tạo VĐV Nữ Mới' : 'Tạo VĐV Nam Mới'}
       </button>
       <dialog id="modal-create-player" className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Tạo VĐV mới</h3>
+          <h3 className="font-bold text-lg">
+            {model == 'players_female' ? 'Tạo VĐV Nữ Mới' : 'Tạo VĐV Nam Mới'}
+          </h3>
           <form
             className="flex flex-col gap-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <label>
-              Name:
-              <input
-                className="ml-4 input input-bordered"
-                {...register('name', { required: true })}
-              />
-            </label>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Nick Name</th>
+                  <th>Max</th>
+                  <th>Min</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      className="input input-bordered"
+                      {...register('name', { required: true })}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      step={5}
+                      className="w-20 input input-bordered"
+                      {...register('max', { required: true })}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      step={5}
+                      className="w-20 input input-bordered"
+                      {...register('min', { required: true })}
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
             {errors.name && (
-              <span className="text-error">This field is required</span>
+              <span className="text-error">Name is required</span>
             )}
 
-            <label>
-              Max:
-              <input
-                type="number"
-                className="ml-4 input input-bordered"
-                {...register('max', { required: true })}
-              />
-            </label>
-            {errors.max && (
-              <span className="text-error">This field is required</span>
-            )}
+            {errors.max && <span className="text-error">Max is required</span>}
 
-            <label>
-              Min:
-              <input
-                type="number"
-                className="ml-4 input input-bordered"
-                {...register('min', { required: true })}
-              />
-            </label>
-            {errors.min && (
-              <span className="text-error">This field is required</span>
-            )}
+            {errors.min && <span className="text-error">Min is required</span>}
 
             <div className="flex gap-x-4 justify-end">
               <button
@@ -141,7 +159,11 @@ export default function CreatePlayer({
               >
                 Đóng
               </button>
-              <button className="btn btn-primary" type="submit">
+              <button
+                disabled={isEditting}
+                className="btn btn-primary"
+                type="submit"
+              >
                 Tạo
               </button>
             </div>

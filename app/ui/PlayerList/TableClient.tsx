@@ -21,6 +21,7 @@ import { RankingInfo, rankItem } from '@tanstack/match-sorter-utils'
 import Image from 'next/image'
 import { SelectPlayerFemale } from 'db/schema'
 import EditPlayer from './EditPlayer'
+import { ModelType } from '.'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -42,9 +43,10 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
 interface Props {
   dataSet?: SelectPlayerFemale[]
   updateCache?: () => void
+  model: ModelType
 }
 
-export default function TableClient({ dataSet, updateCache }: Props) {
+export default function TableClient({ dataSet, updateCache, model }: Props) {
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
@@ -98,6 +100,7 @@ export default function TableClient({ dataSet, updateCache }: Props) {
               updateCache={() => {
                 updateCache?.()
               }}
+              model={model}
             />
           </div>
         ),

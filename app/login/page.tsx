@@ -1,5 +1,6 @@
 import { createClient } from 'utils/supabase/server'
-import { login, signout, signup } from './actions'
+import { login, migrate, signout, signup } from './actions'
+import Link from 'next/link'
 
 export default async function LoginPage() {
   const supabase = createClient()
@@ -7,13 +8,14 @@ export default async function LoginPage() {
 
   if (error || !data?.user) {
     return (
-      <form className="flex flex-col gap-y-4">
+      <form className="mt-12 flex flex-col gap-y-4">
+        <h1>Đăng nhập vào hệ thống:</h1>
         <div>
-          <label className="block" htmlFor="email">
+          <label className="block text-xs" htmlFor="email">
             Email:
           </label>
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="mt-1 input input-bordered w-full max-w-xs"
             id="email"
             name="email"
             type="email"
@@ -21,11 +23,11 @@ export default async function LoginPage() {
           />
         </div>
         <div>
-          <label className="block" htmlFor="password">
+          <label className="block text-xs" htmlFor="password">
             Mật khẩu:
           </label>
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="mt-1 input input-bordered w-full max-w-xs"
             id="password"
             name="password"
             type="password"
@@ -36,9 +38,9 @@ export default async function LoginPage() {
           <button className="btn btn-primary" formAction={login}>
             Đăng nhập
           </button>
-          <button className="btn btn-active btn-link" formAction={signup}>
+          {/* <button className="btn btn-active btn-link" formAction={signup}>
             Tạo tài khoản
-          </button>
+          </button> */}
         </div>
       </form>
     )
@@ -46,11 +48,28 @@ export default async function LoginPage() {
 
   return (
     <form className="flex flex-col gap-y-4 w-1/2 mx-auto">
-      <div className="flex flex-col gap-x-4">
-        <p>User is logged in already,</p>
-        <button className="btn w-fit" formAction={signout}>
-          Thoát tài khoản
-        </button>
+      <div className="flex flex-col gap-4">
+        <div className="text-xs mt-24">
+          <p className="text-primary">{data.user.email}</p>
+          <p>User is logged in already,</p>
+        </div>
+        <div className="flex flex-col items-start">
+          <Link className="btn btn-link" href="/">
+            Trang chính
+          </Link>
+          <Link className="btn btn-link" href="/dashboard/male">
+            Bảng Điểm Nam
+          </Link>
+          <Link className="btn btn-link" href="/dashboard/female">
+            Bảng Điểm Nữ
+          </Link>
+          <button className="btn btn-link" formAction={signout}>
+            Thoát
+          </button>
+          <button className="btn btn-link" formAction={migrate}>
+            Migrate
+          </button>
+        </div>
       </div>
     </form>
   )

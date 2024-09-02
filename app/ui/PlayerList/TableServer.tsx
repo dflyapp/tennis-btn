@@ -58,6 +58,7 @@ function TableServer() {
         cell: ({ cell }) => {
           return (
             <EditPlayer
+              model="players_female"
               player={cell.row.original}
               updateCache={() => {
                 queryClient.invalidateQueries({
@@ -117,6 +118,7 @@ function TableServer() {
           value={globalSearch}
         />
         <CreatePlayer
+          model="players_female"
           invalidateQuery={() => {
             queryClient.invalidateQueries({ queryKey: ['data', pagination] })
           }}

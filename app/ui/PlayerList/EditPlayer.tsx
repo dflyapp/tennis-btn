@@ -2,10 +2,13 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
+import { useState } from 'react'
+import { ModelType } from '.'
 
 interface EditPlayerProps {
   player: SelectPlayerFemale
   updateCache: () => void
+  model: ModelType
 }
 
 type Inputs = {
@@ -15,17 +18,23 @@ type Inputs = {
   phone?: string
 }
 
-export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
+export default function EditPlayer({
+  player,
+  updateCache,
+  model,
+}: EditPlayerProps) {
   const supabase = createClient()
+  const [isEditting, setIsEditting] = useState(false)
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setIsEditting(true)
     const { error } = await supabase
-      .from('players_female')
+      .from(model)
       .update({ name: data.name, max: data.max, min: data.min })
       .eq('id', player.id)
     updateCache()
@@ -35,12 +44,14 @@ export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
     } else {
       closeModal()
     }
+    setIsEditting(false)
   }
 
   function closeModal() {
     ;(
       document?.getElementById(player.id.toString()) as HTMLDialogElement
     )?.close()
+    reset()
   }
 
   return (
@@ -54,7 +65,7 @@ export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
           )?.showModal()
         }
       >
-        Chỉnh sửa
+        sửa
       </button>
       <dialog
         id={player.id.toString()}
@@ -62,48 +73,55 @@ export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
         className="modal"
       >
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Editting {player.name}</h3>
+          <h3 className="font-bold text-lg">Đang điều chỉnh: {player.name}</h3>
           <form
             className="flex flex-col gap-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <label>
-              Name:
-              <input
-                className="ml-4 input input-bordered"
-                defaultValue={player.name}
-                {...register('name')}
-              />
-            </label>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Nick Name</th>
+                  <th>Max</th>
+                  <th>Min</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      className="input input-bordered"
+                      defaultValue={player.name}
+                      {...register('name')}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      step={5}
+                      className="w-20 input input-bordered"
+                      defaultValue={player.max}
+                      {...register('max', { required: true })}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      step={5}
+                      className="w-20 input input-bordered"
+                      defaultValue={player.min}
+                      {...register('min', { required: true })}
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
             {errors.name && (
-              <span className="text-error">This field is required</span>
+              <span className="text-error">Name is required</span>
             )}
-
-            <label>
-              Max:
-              <input
-                type="number"
-                className="ml-4 input input-bordered"
-                defaultValue={player.max}
-                {...register('max', { required: true })}
-              />
-            </label>
-            {errors.max && (
-              <span className="text-error">This field is required</span>
-            )}
-
-            <label>
-              Min:
-              <input
-                type="number"
-                className="ml-4 input input-bordered"
-                defaultValue={player.min}
-                {...register('min', { required: true })}
-              />
-            </label>
-            {errors.min && (
-              <span className="text-error">This field is required</span>
-            )}
+            {errors.max && <span className="text-error">Max is required</span>}
+            {errors.min && <span className="text-error">Min is required</span>}
 
             <div className="flex gap-x-4 justify-end">
               <button
@@ -115,7 +133,11 @@ export default function EditPlayer({ player, updateCache }: EditPlayerProps) {
               >
                 Đóng
               </button>
-              <button className="btn btn-primary" type="submit">
+              <button
+                disabled={isEditting}
+                className="btn btn-primary"
+                type="submit"
+              >
                 Cập nhật
               </button>
             </div>

@@ -49,3 +49,17 @@ export const playersFemaleTable = pgTable('players_female', {
 })
 export type InsertPlayerFemale = typeof playersFemaleTable.$inferInsert
 export type SelectPlayerFemale = typeof playersFemaleTable.$inferSelect
+
+export const playersMaleTable = pgTable('players_male', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  phone: text('phone'),
+  max: integer('max').notNull(),
+  min: integer('min').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
+})
+export type InsertPlayerMale = typeof playersMaleTable.$inferInsert
+export type SelectPlayerMale = typeof playersMaleTable.$inferSelect
