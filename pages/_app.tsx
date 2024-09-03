@@ -5,6 +5,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import LoadingWidget from 'components/LoadingWidget'
 
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
@@ -28,7 +29,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Script>
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={pageProps.dehydratedState}>
-          <Component {...pageProps} />{' '}
+          <Component {...pageProps} />
+          <LoadingWidget />
         </HydrationBoundary>
       </QueryClientProvider>
     </>

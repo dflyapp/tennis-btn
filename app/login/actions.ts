@@ -66,23 +66,34 @@ function print(PlayerList: any, idx: number) {
 
 export async function migrate() {
   const supabase = createClient()
+  const CONFIG = {
+    male: {
+      index: 0,
+      schema: 'players_male',
+    },
+    female: {
+      index: 1,
+      schema: 'players_female',
+    },
+  }
+  const CurrentTable = 'male' as 'male' | 'female'
 
   const fileContents = await fs.readFileSync(
     path.join(process.cwd(), 'scripts/data.xlsx')
   )
+
   const res = xlsx.parse(fileContents)
-  let PlayerList = res[1].data as any
+  let PlayerList = res[CONFIG[CurrentTable].index].data as any // 0:male and 1:female
 
   // filter rows that have id > 0 (not blank)
   PlayerList = PlayerList.filter((e: any) => e[0] > 0)
 
-  print(PlayerList, 0) // test first player
-
-  console.log(PlayerList.length, 'length of the list')
+  // print(PlayerList, 0) // test first player
+  // console.log(PlayerList.length, 'length of the list')
 
   // migrate
-  // for (let i = 81; i <= PlayerList.length - 1; i++) {
-  //   const { error } = await supabase.from('players_female').upsert({
+  // for (let i = 1001; i <= PlayerList.length; i++) {
+  //   const { error } = await supabase.from(CONFIG[CurrentTable].schema).upsert({
   //     id: PlayerList[i][0],
   //     name: PlayerList[i][2],
   //     max: PlayerList[i][3],
