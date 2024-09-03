@@ -1,4 +1,4 @@
-import { createClient } from 'utils/supabase/client'
+import { createClient } from 'utils/supabase/server'
 import { SelectPlayerFemale } from 'db/schema'
 import FilterTable from 'components/FilterTable'
 import { Header } from 'layouts'
