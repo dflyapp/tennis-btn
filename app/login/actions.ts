@@ -56,6 +56,11 @@ export async function signout() {
   redirect('/login')
 }
 
+export async function revalidate() {
+  revalidatePath('/bang-diem/nam')
+  revalidatePath('/bang-diem/nu')
+}
+
 function print(PlayerList: any, idx: number) {
   console.log('id: ', PlayerList[idx][0])
   console.log('name: ', PlayerList[idx][2])

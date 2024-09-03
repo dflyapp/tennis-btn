@@ -3,21 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Logo from 'assets/tennis-logo.png'
-import { useEffect } from 'react'
 
 export default function Header() {
-  useEffect(() => {
-    fetch('/api/count', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: null,
-    }).catch((e) => {
-      console.log('error on increasing counter!!!', e)
-    })
-  }, [])
-
   return (
     <header className="bg-primary py-4 flex justify-between md:justify-center md:gap-x-4 items-center px-4 fixed top-0 left-0 w-full z-10">
       <Link href="/giai-dau">

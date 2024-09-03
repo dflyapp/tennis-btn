@@ -1,5 +1,5 @@
 import { createClient } from 'utils/supabase/server'
-import { login, migrate, signout, signup } from './actions'
+import { login, migrate, revalidate, signout, signup } from './actions'
 import Link from 'next/link'
 
 export default async function LoginPage() {
@@ -68,6 +68,9 @@ export default async function LoginPage() {
           </button>
           <button className="btn btn-link" formAction={migrate}>
             Migrate
+          </button>
+          <button className="btn btn-link" formAction={revalidate}>
+            Revalidate Caches
           </button>
         </div>
       </div>
