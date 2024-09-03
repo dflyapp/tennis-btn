@@ -146,7 +146,7 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
     initialState: {
       // sorting: [{ id: "max", desc: true }],
       pagination: {
-        pageSize: 30,
+        pageSize: 10,
       },
     },
   })
