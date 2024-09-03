@@ -21,8 +21,9 @@ export default function PlayerList({ MODEL, API }: PlayerListProps) {
   if (isPending)
     return (
       <div className="flex mt-12 flex-col gap-4">
-        <div className="skeleton h-8 w-full"></div>
-        <div className="skeleton h-24 w-full"></div>
+        <div className="skeleton rounded-none h-8 w-full"></div>
+        <div className="skeleton rounded-none h-96 w-full"></div>
+        <div className="skeleton rounded-none h-96 w-full"></div>
       </div>
     )
 

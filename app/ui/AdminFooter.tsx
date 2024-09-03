@@ -24,10 +24,13 @@ export default function AdminFooter() {
         <Link className="btn btn-link" href="/login">
           Trang Login
         </Link>
-        <Link className="btn btn-link" href="/dashboard/male">
+        <Link className="btn btn-link" href="/">
+          Trang chủ
+        </Link>
+        <Link className="btn btn-link" href="/bang-diem/nam">
           Nam
         </Link>
-        <Link className="btn btn-link" href="/dashboard/female">
+        <Link className="btn btn-link" href="/bang-diem/nu">
           Nữ
         </Link>
       </div>

@@ -55,7 +55,7 @@ export default async function LoginPage() {
         </div>
         <div className="flex flex-col items-start">
           <Link className="btn btn-link" href="/">
-            Trang chính
+            Trang chủ
           </Link>
           <Link className="btn btn-link" href="/dashboard/male">
             Bảng Điểm Nam

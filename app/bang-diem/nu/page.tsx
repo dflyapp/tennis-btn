@@ -1,7 +1,6 @@
 import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
 import FilterTable from 'components/FilterTable'
-import { Loading } from 'components'
 import { Header } from 'layouts'
 
 export default async function Page() {
@@ -12,11 +11,7 @@ export default async function Page() {
     .order('id')
     .returns<SelectPlayerFemale[]>()
 
-  if (error) return <>Đã có lỗi xảy ra</>
-  if (!data) return <Loading />
-
-  if (!data.length)
-    return <span className="text-xs text-gray-400">có lỗi xày ra</span>
+  if (error) return <>Đã có lỗi xảy ra: {error.message}</>
 
   return (
     <>
