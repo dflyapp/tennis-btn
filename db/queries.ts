@@ -6,7 +6,13 @@ import {
   postsTable,
   usersTable,
   countsTable,
+  SelectPlayerFemale,
+  playersFemaleTable,
 } from './schema'
+
+export async function getPlayersFemale(): Promise<Array<SelectPlayerFemale>> {
+  return db.select().from(playersFemaleTable)
+}
 
 export async function getCountsById(id: SelectCount['id']): Promise<
   Array<{

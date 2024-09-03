@@ -1,3 +1,10 @@
+// add this file forces NextJS build `/bang-diem/*` to use Dynamic Function.
+//    - use fetch: has cache by default
+//    - use 3rd party (supabase, drizzle): no cache, if need cache please use unstbale_cache
+//
+// remove this file to use Static File and it has cache, then we need to revalidate on demand.
+// seems like using unstable_cache
+
 export default function Loading() {
   return (
     <>

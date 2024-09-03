@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import Ball from './avatars/ball.svg'
 import {
@@ -19,11 +19,7 @@ import {
   flexRender,
 } from '@tanstack/react-table'
 
-import {
-  RankingInfo,
-  rankItem,
-  compareItems,
-} from '@tanstack/match-sorter-utils'
+import { RankingInfo, rankItem } from '@tanstack/match-sorter-utils'
 
 import { SelectPlayerFemale } from 'db/schema'
 import Image from 'next/image'
@@ -101,10 +97,7 @@ export default function FilterTable({ dataSet }: Props) {
     ],
     []
   )
-  const [data, setData] = React.useState<SelectPlayerFemale[]>([])
-  useEffect(() => {
-    setData(dataSet || [])
-  }, [dataSet])
+  const [data, setData] = React.useState<SelectPlayerFemale[]>(dataSet || [])
 
   const table = useReactTable({
     data,
