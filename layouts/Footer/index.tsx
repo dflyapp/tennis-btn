@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 
 import LogoZalo from './logo-zalo.png'
