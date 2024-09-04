@@ -1,10 +1,10 @@
 import { Loading } from 'components'
 import { Footer, Header } from 'layouts'
-import { NextSeo } from 'next-seo'
 import { InferGetServerSidePropsType, InferGetStaticPropsType } from 'next'
 import FilterTable from 'components/FilterTable'
 import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
+import Head from 'next/head'
 
 export async function getStaticProps() {
   const supabase = createClient()
@@ -34,10 +34,10 @@ export default function BangDiem({
   if (HIDE === 'true') {
     return (
       <>
-        <NextSeo
-          title="Tennis BTN - Bảng điểm Nam"
-          description="Thông tin bảng điểm nam"
-        />
+        <Head>
+          <title>Tennis BTN - Bảng điểm Nam</title>
+          <meta name="description" content="Thông tin bảng điểm nam" />
+        </Head>
         <Header />
         <h1 className="text-center my-8">Bảng điểm nữ</h1>
         <p className="text-center">
@@ -49,10 +49,10 @@ export default function BangDiem({
 
   return (
     <>
-      <NextSeo
-        title="Tennis BTN - Bảng điểm Nam"
-        description="Thông tin bảng điểm nam"
-      />
+      <Head>
+        <title>Tennis BTN - Bảng điểm Nam</title>
+        <meta name="description" content="Thông tin bảng điểm nam" />
+      </Head>
       <Header />
       <h1 className="text-center my-8">Bảng điểm nam</h1>
       <FilterTable dataSet={data} />

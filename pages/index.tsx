@@ -15,19 +15,20 @@ import Cover from 'assets/cover-main.jpeg'
 import LeaderboardBg from 'assets/leaderboard-bg.jpg'
 import { sortByDate } from 'utils'
 import Founders from 'components/Founders'
-import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 
 const Home: NextPage = ({ events, players }: any) => {
   const todaySubtract3 = dayjs(new Date()).subtract(3, 'day')
   return (
     <div className="max-w-lg mx-auto">
-      <NextSeo
-        title="Diễn đàn tennis Bắc Trung Nam"
-        description="Tennis BTN là sân chơi, nơi trao đổi kinh nghiệm và giao lưu kiến thức về tennis. Tinh thần đoàn kết Bắc Trung Nam chung một mái nhà"
-      />
-
+      <Head>
+        <title>Diễn đàn tennis Bắc Trung Nam</title>
+        <meta
+          name="description"
+          content="Tennis BTN là sân chơi, nơi trao đổi kinh nghiệm và giao lưu kiến thức về tennis. Tinh thần đoàn kết Bắc Trung Nam chung một mái nhà"
+        />
+      </Head>
       <Header />
-
       <main className="container mx-auto">
         <Image
           src={Cover}

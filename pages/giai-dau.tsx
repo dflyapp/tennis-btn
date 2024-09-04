@@ -6,15 +6,18 @@ import Post from 'components/Post'
 import { Header, Footer } from 'layouts'
 
 import { sortByDate } from 'utils'
-import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 
 export default function Blog({ posts }: any) {
   return (
     <>
-      <NextSeo
-        title="Tennis BTN - Giải đấu"
-        description="Cập nhật các giải đấu tennis BTN nhanh nhất tại đây!"
-      />
+      <Head>
+        <title>Tennis BTN - Giải đấu</title>
+        <meta
+          name="description"
+          content="Cập nhật các giải đấu tennis BTN nhanh nhất tại đây!"
+        />
+      </Head>
       <div className="max-w-lg mx-auto">
         <Header />
 

@@ -5,8 +5,8 @@ import ReactMarkdown from 'react-markdown'
 import dayjs from 'dayjs'
 
 import { Header } from 'layouts'
-import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function PostPage({
   frontmatter: { title: title2, date, cover_image, excerpt },
@@ -15,12 +15,21 @@ export default function PostPage({
 }: any) {
   return (
     <>
-      <NextSeo title={title2} description={excerpt} />
+      <Head>
+        <title>{title2}</title>
+        <meta name="description" content={excerpt} />
+      </Head>
       <Header />
       <div className="giai-dau">
         <div className="container mx-auto">
-          <div className="w-3/4 mx-auto mt-24">
-            <Image src={cover_image} alt="" width={100} height={100} />
+          <div className="mt-24 flex justify-center">
+            <Image
+              className="border border-primary p-4"
+              src={cover_image}
+              alt=""
+              width={500}
+              height={100}
+            />
           </div>
           <div className="px-2">
             <p className="text-sm text-dark mt-4 text-center">

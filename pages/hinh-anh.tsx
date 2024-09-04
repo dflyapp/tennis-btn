@@ -2,16 +2,19 @@ import fs from 'fs'
 import path from 'path'
 
 import { Footer, Header } from 'layouts'
-import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function HinhAnh({ players }: any) {
   return (
     <>
-      <NextSeo
-        title="Tennis BTN - Hình ảnh"
-        description="Hình ảnh giao lưu diễn đàn tennis BTN đã được thành lập để tạo ra sân chơi đồng thời là nơi trao đổi kinh nghiệm, giao lưu kiến thức về tennis."
-      />
+      <Head>
+        <title>Tennis BTN - Hình ảnh</title>
+        <meta
+          name="description"
+          content="Hình ảnh giao lưu diễn đàn tennis BTN đã được thành lập để tạo ra sân chơi đồng thời là nơi trao đổi kinh nghiệm, giao lưu kiến thức về tennis."
+        />
+      </Head>
       <Header />
       <div className="max-w-lg mx-auto">
         <div className="flex flex-wrap justify-center">

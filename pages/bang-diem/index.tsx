@@ -1,14 +1,17 @@
 import Link from 'next/link'
 import { Header } from 'layouts'
-import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 
 export default function BangDiem() {
   return (
     <>
-      <NextSeo
-        title="Tennis BTN - Bảng điểm"
-        description="Thông tin bảng điểm"
-      />
+      <Head>
+        <title>Tennis BTN - Bảng điểm</title>
+        <meta
+          name="description"
+          content="Xem điểm Max và Min của trình Nam và Nữ"
+        />
+      </Head>
       <Header />
       {/* leader board */}
       <div className="px-2 bg-gray-100 py-3">
