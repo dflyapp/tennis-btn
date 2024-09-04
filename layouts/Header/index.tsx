@@ -1,25 +1,12 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import Logo from 'assets/tennis-logo.png'
-import { useEffect } from 'react'
 
 export default function Header() {
-  useEffect(() => {
-    fetch('/api/count', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: null,
-    }).catch((e) => {
-      console.log('error on increasing counter!!!', e)
-    })
-  }, [])
-
   return (
     <header className="bg-primary py-4 flex justify-between md:justify-center md:gap-x-4 items-center px-4 fixed top-0 left-0 w-full z-10">
-      {/* <MenuButton className="px-0" /> */}
       <Link href="/giai-dau">
         <button className="text-white border border-white rounded-md px-2 py-3">
           <span className="text-xs">Sự Kiện</span>
@@ -33,7 +20,7 @@ export default function Header() {
       </Link>
       <Link href="/">
         <div className="w-16 h-16 cursor-pointer">
-          <Image src={Logo} alt="logo" />
+          <Image width={100} height={100} src={Logo} alt="logo" />
         </div>
       </Link>
       <Link href="/bang-diem/nu">

@@ -1,10 +1,10 @@
+'use client'
 import Image from 'next/image'
 
 import LogoZalo from './logo-zalo.png'
 import LogoFacebook from './logo-facebook.png'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import CountVisit from 'components/CountVisit'
 
 export default function Footer() {
   const [url, setUrl] = useState('')
@@ -53,7 +53,6 @@ export default function Footer() {
             />
           </Link>
         </div>
-        <CountVisit />
       </div>
     </>
   )

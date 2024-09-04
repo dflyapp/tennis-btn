@@ -1,12 +1,12 @@
-import useSWR from 'swr'
 import Loading from './Loading'
 import { SelectCount } from 'db/schema'
-import { useEffect } from 'react'
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
+import { useQuery } from '@tanstack/react-query'
 
 export default function CountVisit() {
-  const { data, error } = useSWR<SelectCount[]>('/api/count', fetcher)
+  const { isPending, error, data } = useQuery({
+    queryKey: ['count'],
+    queryFn: () => fetch('/api/count').then((res) => res.json()),
+  })
 
   if (error) return <span className="text-xs text-gray-400">có lỗi xày ra</span>
   if (!data) return <Loading />

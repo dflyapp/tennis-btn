@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import dayjs from 'dayjs'
+import Image from 'next/image'
 
 export default function Post({ post }) {
   return (
     <Link href={`/giai-dau/${post.slug}`}>
       <div className="mb-12 w-full p-4 cursor-pointer">
-        <img src={post.frontmatter.cover_image} alt="" />
+        <Image width={500} height={100} src={post.frontmatter.cover_image} alt="" />
 
         <p className="text-sm text-dark mt-4">
           Ngày đăng: {dayjs(post.frontmatter.date).date()}

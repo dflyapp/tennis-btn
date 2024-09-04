@@ -11,8 +11,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="dark">
-      <body>{children}</body>
+    <html lang="en" data-theme="mytheme">
+      <body className="container mx-auto pt-4 max-w-lg">{children}</body>
     </html>
   )
 }

@@ -7,6 +7,16 @@ const nextConfig = {
     locales: ['vi'],
     defaultLocale: 'vi',
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: [
+        '*.netlify.app',
+        'diendantennisbtn.com',
+        '*.diendantennisbtn.com'
+      ],
+    },
+  },
+
 }
 
 module.exports = nextConfig
