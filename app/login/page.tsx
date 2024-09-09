@@ -1,6 +1,7 @@
 import { createClient } from 'utils/supabase/server'
 import { login, migrate, revalidate, signout, signup } from './actions'
 import Link from 'next/link'
+import PWA from 'app/ui/PWA'
 
 export default async function LoginPage() {
   const supabase = createClient()
@@ -58,22 +59,23 @@ export default async function LoginPage() {
             Trang chủ
           </Link>
           <Link className="btn btn-link" href="/dashboard/male">
-            Bảng Điểm Nam
+            Chỉnh Điểm Nam
           </Link>
           <Link className="btn btn-link" href="/dashboard/female">
-            Bảng Điểm Nữ
+            Chỉnh Điểm Nữ
           </Link>
           <button className="btn btn-link" formAction={signout}>
             Thoát
           </button>
-          <button className="btn btn-link" formAction={migrate}>
+          {/* <button className="btn btn-link" formAction={migrate}>
             Migrate
-          </button>
+          </button> */}
           <button className="btn btn-link" formAction={revalidate}>
             Revalidate Caches
           </button>
         </div>
       </div>
+      <PWA />
     </form>
   )
 }

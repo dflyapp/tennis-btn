@@ -9,7 +9,7 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   // Handle fetch events
-  if (event.request.url.includes('/pwa')) {
+  if (event.request.url.includes('/login')) {
     event.respondWith(
       caches.match(event.request).then(response => {
         return response || fetch(event.request);
