@@ -6,7 +6,7 @@ export default function MobileFooter() {
     <section className="z-20 fixed bottom-0 left-0 bg-primary h-20 w-full">
       <div className="flex justify-between items-center h-full px-4">
         <Link
-          className="btn btn-link text-white text-xl"
+          className="btn btn-ghost text-white text-xl w-16 border-white"
           href="/dashboard/male"
         >
           Nam
@@ -15,7 +15,7 @@ export default function MobileFooter() {
           <House size={40} color="white" />
         </Link>
         <Link
-          className="btn btn-link text-white text-xl"
+          className="btn btn-ghost text-white text-xl w-16 border-white"
           href="/dashboard/female"
         >
           Nữ
