@@ -19,8 +19,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="container mx-auto pt-0 max-w-lg">
-        {/* <MobileHeader /> */}
+        <MobileHeader />
+        <div className="h-24" />
         {children}
+        <div className="h-24" />
         <MobileFooter />
       </body>
     </html>

@@ -87,7 +87,7 @@ export default function CreatePlayer({
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center px-2">
         <h4>Bảng điểm {model == 'players_male' ? 'Nam' : 'Nữ'}</h4>
         <button
           className="btn btn-secondary"
@@ -112,26 +112,35 @@ export default function CreatePlayer({
             className="flex flex-col gap-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <input
-              className="input input-bordered"
-              placeholder="Nick Name"
-              {...register('name', { required: true })}
-            />
+            <label>
+              Tên:{' '}
+              <input
+                className="input input-bordered"
+                placeholder="Nick Name"
+                {...register('name', { required: true })}
+              />
+            </label>
             <div className="flex gap-x-4">
-              <input
-                type="number"
-                step={5}
-                className="w-20 input input-bordered"
-                placeholder="Max"
-                {...register('max', { required: true })}
-              />
-              <input
-                type="number"
-                step={5}
-                className="w-20 input input-bordered"
-                placeholder="Min"
-                {...register('min', { required: true })}
-              />
+              <label>
+                Max:{' '}
+                <input
+                  type="number"
+                  step={5}
+                  className="w-20 input input-bordered"
+                  placeholder="Max"
+                  {...register('max', { required: true })}
+                />
+              </label>
+              <label>
+                Min:{' '}
+                <input
+                  type="number"
+                  step={5}
+                  className="w-20 input input-bordered"
+                  placeholder="Min"
+                  {...register('min', { required: true })}
+                />
+              </label>
             </div>
 
             {errors.name && (
