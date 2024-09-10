@@ -1,3 +1,5 @@
+import MobileFooter from 'app/ui/MobileFooter'
+import MobileHeader from 'app/ui/MobileHeader'
 import 'styles/globals.css'
 
 export const metadata = {
@@ -16,7 +18,11 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="container mx-auto pt-4 max-w-lg">{children}</body>
+      <body className="container mx-auto pt-0 max-w-lg">
+        <MobileHeader />
+        {children}
+        <MobileFooter />
+      </body>
     </html>
   )
 }

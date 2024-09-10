@@ -84,14 +84,24 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
         header: () => <span>Nick Name</span>,
         footer: (props) => props.column.id,
       },
+      // {
+      //   accessorKey: 'max',
+      //   header: () => <span>Max</span>,
+      //   footer: (props) => props.column.id,
+      // },
+      // {
+      //   accessorKey: 'min',
+      //   header: () => <span>Min</span>,
+      //   footer: (props) => props.column.id,
+      // },
       {
-        accessorKey: 'max',
-        header: () => <span>Max</span>,
-        footer: (props) => props.column.id,
-      },
-      {
-        accessorKey: 'min',
-        header: () => <span>Min</span>,
+        accessorKey: 'max-min',
+        cell: (info) => (
+          <div>
+            {info.row.original.max}-{info.row.original.min}
+          </div>
+        ),
+        header: () => <span>Max-Min</span>,
         footer: (props) => props.column.id,
       },
       {
@@ -207,71 +217,73 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
       </div>
 
       <div className="h-2" />
-      <table className="min-w-full divide-y divide-gray-300">
-        <thead className="bg-gray-50">
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <th
-                    key={header.id}
-                    colSpan={header.colSpan}
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                  >
-                    {header.isPlaceholder ? null : (
-                      <>
-                        <div
-                          {...{
-                            className: header.column.getCanSort()
-                              ? 'cursor-pointer select-none'
-                              : '',
-                            onClick: header.column.getToggleSortingHandler(),
-                          }}
-                        >
-                          {flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                          {{
-                            asc: ' 🔼',
-                            desc: ' 🔽',
-                          }[header.column.getIsSorted() as string] ?? null}
-                        </div>
-                        {/* {header.column.getCanFilter() ? (
+      <div className="overflow-x-scroll">
+        <table className="min-w-full divide-y divide-gray-300">
+          <thead className="bg-gray-50">
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
+                  return (
+                    <th
+                      key={header.id}
+                      colSpan={header.colSpan}
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      {header.isPlaceholder ? null : (
+                        <>
+                          <div
+                            {...{
+                              className: header.column.getCanSort()
+                                ? 'cursor-pointer select-none'
+                                : '',
+                              onClick: header.column.getToggleSortingHandler(),
+                            }}
+                          >
+                            {flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                            {{
+                              asc: ' 🔼',
+                              desc: ' 🔽',
+                            }[header.column.getIsSorted() as string] ?? null}
+                          </div>
+                          {/* {header.column.getCanFilter() ? (
                           <div>
                             <Filter column={header.column} table={table} />
                           </div>
                         ) : null} */}
-                      </>
-                    )}
-                  </th>
-                )
-              })}
-            </tr>
-          ))}
-        </thead>
-        <tbody className="divide-y divide-gray-200 bg-white">
-          {table.getRowModel().rows.map((row, index) => {
-            return (
-              <tr key={row.id} className={index % 2 ? 'bg-gray-50' : ''}>
-                {row.getVisibleCells().map((cell) => {
-                  return (
-                    <td
-                      key={cell.id}
-                      className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
-                    >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
+                        </>
                       )}
-                    </td>
+                    </th>
                   )
                 })}
               </tr>
-            )
-          })}
-        </tbody>
-      </table>
+            ))}
+          </thead>
+          <tbody className="divide-y divide-gray-200 bg-white">
+            {table.getRowModel().rows.map((row, index) => {
+              return (
+                <tr key={row.id} className={index % 2 ? 'bg-gray-50' : ''}>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td
+                        key={cell.id}
+                        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </td>
+                    )
+                  })}
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
       <div className="h-12" />
       <div className="flex flex-col items-center gap-2">
         <div>

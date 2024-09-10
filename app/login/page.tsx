@@ -51,8 +51,8 @@ export default async function LoginPage() {
     <form className="flex flex-col gap-y-4 w-1/2 mx-auto">
       <div className="flex flex-col gap-4">
         <div className="text-xs mt-24">
+          <p>Xin chào!</p>
           <p className="text-primary">{data.user.email}</p>
-          <p>User is logged in already,</p>
         </div>
         <div className="flex flex-col items-start">
           <Link className="btn btn-link" href="/">

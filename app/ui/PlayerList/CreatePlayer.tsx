@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { createClient } from 'utils/supabase/client'
 import { ModelType } from '.'
 import { useState } from 'react'
+import { Plus } from 'lucide-react'
 
 interface CreatePlayer {
   updateCache?: () => void
@@ -87,7 +88,7 @@ export default function CreatePlayer({
   return (
     <>
       <div className="flex justify-between items-center">
-        <h2>Bảng điểm {model == 'players_male' ? 'Nam' : 'Nữ'}</h2>
+        <h4>Bảng điểm {model == 'players_male' ? 'Nam' : 'Nữ'}</h4>
         <button
           className="btn btn-secondary"
           onClick={() =>
@@ -98,7 +99,8 @@ export default function CreatePlayer({
             )?.showModal()
           }
         >
-          {model == 'players_female' ? 'Tạo VĐV Nữ Mới' : 'Tạo VĐV Nam Mới'}
+          <Plus />
+          {model == 'players_female' ? 'VĐV Nữ' : 'VĐV Nam'}
         </button>
       </div>
       <dialog id="modal-create-player" className="modal">
@@ -110,51 +112,36 @@ export default function CreatePlayer({
             className="flex flex-col gap-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Nick Name</th>
-                  <th>Max</th>
-                  <th>Min</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <input
-                      className="input input-bordered"
-                      {...register('name', { required: true })}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      step={5}
-                      className="w-20 input input-bordered"
-                      {...register('max', { required: true })}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      step={5}
-                      className="w-20 input input-bordered"
-                      {...register('min', { required: true })}
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <input
+              className="input input-bordered"
+              placeholder="Nick Name"
+              {...register('name', { required: true })}
+            />
+            <div className="flex gap-x-4">
+              <input
+                type="number"
+                step={5}
+                className="w-20 input input-bordered"
+                placeholder="Max"
+                {...register('max', { required: true })}
+              />
+              <input
+                type="number"
+                step={5}
+                className="w-20 input input-bordered"
+                placeholder="Min"
+                {...register('min', { required: true })}
+              />
+            </div>
 
             {errors.name && (
               <span className="text-error">Name is required</span>
             )}
-
             {errors.max && <span className="text-error">Max is required</span>}
 
             {errors.min && <span className="text-error">Min is required</span>}
 
-            <div className="flex gap-x-4 justify-end">
+            <div className="mt-4 flex gap-x-4 justify-end">
               <button
                 className="btn"
                 onClick={(e) => {

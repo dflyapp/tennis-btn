@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="mytheme">
-      <body className="container mx-auto pt-4 max-w-lg">{children}</body>
+      <body className="container mx-auto pt-0 max-w-lg">{children}</body>
     </html>
   )
 }
