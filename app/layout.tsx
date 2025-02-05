@@ -1,3 +1,5 @@
+import Observability from '../components/Observability'
+
 import 'styles/globals.css'
 
 export const metadata = {
@@ -13,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="mytheme">
       <body className="container mx-auto pt-0 max-w-lg">{children}</body>
+      <Observability />
     </html>
   )
 }
