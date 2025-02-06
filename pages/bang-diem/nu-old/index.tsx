@@ -1,6 +1,6 @@
 import { Loading } from 'components'
 import { Footer, Header } from 'layouts'
-import { InferGetServerSidePropsType, InferGetStaticPropsType } from 'next'
+import { InferGetStaticPropsType } from 'next'
 import FilterTable from 'components/FilterTable'
 import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
@@ -16,36 +16,18 @@ export async function getStaticProps() {
 
   return {
     props: {
-      HIDE: process.env.HIDE,
       response,
     },
   }
 }
 
 export default function BangDiem({
-  HIDE,
   response,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { error, data } = response
 
   if (error) return <div>failed to load</div>
   if (!data) return <Loading />
-
-  if (HIDE === 'true') {
-    return (
-      <>
-        <Head>
-          <title>Tennis BTN - Bảng điểm Nữ</title>
-          <meta name="description" content="Thông tin bảng điểm nữ" />
-        </Head>
-        <Header />
-        <h1 className="text-center my-8">Bảng điểm nữ</h1>
-        <p className="text-center">
-          Điểm đang được cập nhật. Vui lòng quay lại sau.
-        </p>
-      </>
-    )
-  }
 
   return (
     <>
