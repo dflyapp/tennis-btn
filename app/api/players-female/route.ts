@@ -3,7 +3,7 @@ import { createClient } from 'utils/supabase/server'
 
 export async function GET() {
   const supabase = createClient()
-  const { data: players, error } = await supabase
+  const { data: players, error } = await (await supabase)
     .from('players_female')
     .select()
     .order('id')

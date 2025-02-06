@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 export default async function Page() {
-  const supabase = createClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from('players_female')
     .select()

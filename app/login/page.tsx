@@ -5,7 +5,7 @@ import PWA from 'app/ui/PWA'
 
 export default async function LoginPage() {
   const supabase = createClient()
-  const { data, error } = await supabase.auth.getUser()
+  const { data, error } = await (await supabase).auth.getUser()
 
   if (error || !data?.user) {
     return (
