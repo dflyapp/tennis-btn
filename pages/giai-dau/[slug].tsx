@@ -4,9 +4,9 @@ import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import dayjs from 'dayjs'
 
-import { Header } from 'layouts'
 import Image from 'next/image'
 import Head from 'next/head'
+import Header from 'components/Header'
 
 export default function PostPage({
   frontmatter: { title: title2, date, cover_image, excerpt },
