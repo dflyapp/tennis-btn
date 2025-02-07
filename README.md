@@ -13,3 +13,5 @@ step 2: push to remote `npx drizzle-kit migrate`
 ## Notes
 
 - next-sitemap is not generating for /bang-diem/nam and /bang-diem/nu
+
+[ ] remove client supabase, use URI only
