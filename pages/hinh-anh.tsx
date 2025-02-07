@@ -1,9 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 
-import { Footer, Header } from 'layouts'
 import Image from 'next/image'
 import Head from 'next/head'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 export default function HinhAnh({ players }: any) {
   return (

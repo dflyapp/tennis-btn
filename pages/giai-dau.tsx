@@ -3,10 +3,11 @@ import path from 'path'
 import matter from 'gray-matter'
 
 import Post from 'components/Post'
-import { Header, Footer } from 'layouts'
 
 import { sortByDate } from 'utils'
 import Head from 'next/head'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 export default function Blog({ posts }: any) {
   return (

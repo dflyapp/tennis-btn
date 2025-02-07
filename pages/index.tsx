@@ -9,13 +9,14 @@ import path from 'path'
 import matter from 'gray-matter'
 import classNames from 'classnames'
 
-import { Header, Footer } from 'layouts'
 import { Sponsors } from 'components'
 import Cover from 'assets/cover-main.jpeg'
 import LeaderboardBg from 'assets/leaderboard-bg.jpg'
 import { sortByDate } from 'utils'
 import Founders from 'components/Founders'
 import Head from 'next/head'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 const Home: NextPage = ({ events, players }: any) => {
   const todaySubtract3 = dayjs(new Date()).subtract(3, 'day')

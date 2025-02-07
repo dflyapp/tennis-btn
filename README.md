@@ -13,3 +13,6 @@ step 2: push to remote `npx drizzle-kit migrate`
 ## Notes
 
 - next-sitemap is not generating for /bang-diem/nam and /bang-diem/nu
+
+[ ] migrate to app router /hinh-anh
+[ ] migrate to app router /giai-dau and /giai-dau/:id
