@@ -35,7 +35,12 @@ export default function EditPlayer({
     setIsEditting(true)
     const { error } = await supabase
       .from(model)
-      .update({ name: data.name, max: data.max, min: data.min })
+      .update({
+        name: data.name,
+        max: data.max,
+        min: data.min,
+        phone: data.phone || '',
+      })
       .eq('id', player.id)
     updateCache()
 
@@ -96,17 +101,19 @@ export default function EditPlayer({
             className="flex flex-col gap-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <label>
-              Tên:{' '}
-              <input
-                className="input input-bordered"
-                defaultValue={player.name}
-                {...register('name')}
-              />
-            </label>
+            <div className="flex gap-x-4 w-full">
+              <label>
+                <span className="w-16 inline-block">Tên: </span>
+                <input
+                  className="input input-bordered w-full"
+                  defaultValue={player.name}
+                  {...register('name')}
+                />
+              </label>
+            </div>
             <div className="flex gap-x-4">
               <label>
-                Max:{' '}
+                <span className="w-16 inline-block">Max: </span>
                 <input
                   type="number"
                   step={5}
@@ -123,6 +130,17 @@ export default function EditPlayer({
                   className="w-20 input input-bordered"
                   defaultValue={player.min}
                   {...register('min', { required: true })}
+                />
+              </label>
+            </div>
+            <div className="flex gap-x-4">
+              <label>
+                <span className="w-16 inline-block">Số dđ: </span>
+                <input
+                  type="number"
+                  className="w-full input input-bordered"
+                  defaultValue={player.phone || ''}
+                  {...register('phone')}
                 />
               </label>
             </div>
