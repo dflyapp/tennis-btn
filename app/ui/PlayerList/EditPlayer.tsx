@@ -103,7 +103,7 @@ export default function EditPlayer({
           >
             <div className="flex gap-x-4 w-full">
               <label>
-                <span className="w-16 inline-block">Tên: </span>
+                <span className="w-16 block sm:inline-block">Tên: </span>
                 <input
                   className="input input-bordered w-full"
                   defaultValue={player.name}
@@ -113,7 +113,7 @@ export default function EditPlayer({
             </div>
             <div className="flex gap-x-4">
               <label>
-                <span className="w-16 inline-block">Max: </span>
+                <span className="w-fit sm:w-16 inline-block">Max: </span>
                 <input
                   type="number"
                   step={5}
@@ -135,7 +135,7 @@ export default function EditPlayer({
             </div>
             <div className="flex gap-x-4">
               <label>
-                <span className="w-16 inline-block">Số dđ: </span>
+                <span className="w-16 block sm:inline-block">Số dđ: </span>
                 <input
                   type="number"
                   className="w-full input input-bordered"
