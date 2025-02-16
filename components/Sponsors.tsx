@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 import Sponsor1 from 'assets/sponsors/duc-phat.jpg'
