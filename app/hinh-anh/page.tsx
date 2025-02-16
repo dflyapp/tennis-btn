@@ -1,7 +1,7 @@
-import fs from 'fs'
-import path from 'path'
+// import fs from 'fs'
+// import path from 'path'
 
-import Image from 'next/image'
+// import Image from 'next/image'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
@@ -12,14 +12,14 @@ export const metadata = {
 }
 
 export default function Page() {
-  const hinhAnh = fs.readdirSync(path.join('public/hinh-anh'))
-  const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`)
+  // const hinhAnh = fs.readdirSync(path.join('public/hinh-anh'))
+  // const players = hinhAnh.map((filename) => `/hinh-anh/${filename}`)
 
   return (
     <>
       <Header />
       <div className="max-w-lg mx-auto">
-        <div className="mt-20 flex flex-wrap justify-center">
+        {/* <div className="mt-20 flex flex-wrap justify-center">
           {players.map((e: any) => {
             return (
               <div className="my-8" key={e}>
@@ -27,7 +27,7 @@ export default function Page() {
               </div>
             )
           })}
-        </div>
+        </div> */}
       </div>
 
       <div className="my-12" />

@@ -31,6 +31,7 @@ specifiers:
   eslint: 8.21.0
   eslint-config-next: 15.1.6
   gray-matter: ^4.0.3
+  import-in-the-middle: ^1.13.0
   lucide-react: ^0.439.0
   next: 15.1.6
   next-sitemap: ^4.2.3
@@ -58,6 +59,7 @@ dependencies:
   dayjs: 1.11.13
   drizzle-orm: 0.31.4_u6q7ngqpotjkrzaspwoca3wo7a
   gray-matter: 4.0.3
+  import-in-the-middle: 1.13.0
   lucide-react: 0.439.0_react@19.0.0
   next: 15.1.6_upmzqgzhjrquwzo2dphtigtdgi
   next-sitemap: 4.2.3_next@15.1.6
