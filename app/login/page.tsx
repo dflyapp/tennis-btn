@@ -1,7 +1,7 @@
 import { createClient } from 'utils/supabase/server'
 import { login, migrate, revalidate, signout, signup } from './actions'
 import Link from 'next/link'
-import PWA from 'app/ui/PWA'
+import PWA from 'components/PWA'
 
 export default async function LoginPage() {
   const supabase = createClient()

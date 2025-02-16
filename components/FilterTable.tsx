@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-import Ball from './avatars/ball.svg'
+import Ball from 'assets/ball.svg'
 import {
   Column,
   Table,

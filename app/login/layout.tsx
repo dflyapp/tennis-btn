@@ -1,5 +1,5 @@
-import MobileFooter from 'app/ui/MobileFooter'
-import MobileHeader from 'app/ui/MobileHeader'
+import MobileFooter from 'components/MobileFooter'
+import MobileHeader from 'components/MobileHeader'
 import 'styles/globals.css'
 
 export const metadata = {

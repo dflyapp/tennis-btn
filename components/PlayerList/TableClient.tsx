@@ -1,6 +1,6 @@
 import React, { lazy, useEffect } from 'react'
 
-import Ball from 'components/avatars/ball.svg'
+import Ball from 'assets/ball.svg'
 import {
   useReactTable,
   ColumnFiltersState,
