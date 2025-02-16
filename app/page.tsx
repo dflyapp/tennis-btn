@@ -62,8 +62,7 @@ export default function Page() {
           src={Cover}
           placeholder="blur"
           alt="Nhà tài trợ diễn đàn tennis BTN"
-          width={100}
-          height={100}
+          layout="responsive"
         />
 
         {/* founders */}
