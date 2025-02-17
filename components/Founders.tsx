@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 
 import Founder1 from 'assets/founders/sponsor-1.jpeg'

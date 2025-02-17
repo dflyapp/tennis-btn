@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,51 +18,24 @@ import Head from 'next/head'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-export const metadata = {
-  title: 'Diễn đàn tennis Bắc Trung Nam',
-  description:
-    'Tennis BTN là sân chơi, nơi trao đổi kinh nghiệm và giao lưu kiến thức về tennis. Tinh thần đoàn kết Bắc Trung Nam chung một mái nhà',
-}
-
-export default function Page() {
-  // Get files from the posts dir
-  const files = fs.readdirSync(path.join('assets/content'))
-
-  // Get slug and frontmatter from posts
-  const posts = files
-    .map((filename) => {
-      // Create slug
-      const slug = filename.replace('.md', '')
-
-      // Get frontmatter
-      const markdownWithMeta = fs.readFileSync(
-        path.join('assets/content', filename),
-        'utf-8'
-      )
-
-      const { data: frontmatter, content } = matter(markdownWithMeta)
-      return {
-        slug,
-        frontmatter,
-        content,
-      }
-    })
-    .sort(sortByDate)
-
-  const hinhAnh = fs.readdirSync(path.join('public/hinh-anh'))
-  let players = hinhAnh.map((filename) => `/hinh-anh/${filename}`)
-  players = players.filter((filename) => filename.includes('player'))
-
+const Home: NextPage = ({ events, players }: any) => {
   const todaySubtract3 = dayjs(new Date()).subtract(3, 'day')
-
   return (
     <div className="max-w-lg mx-auto">
+      <Head>
+        <title>Diễn đàn tennis Bắc Trung Nam</title>
+        <meta
+          name="description"
+          content="Tennis BTN là sân chơi, nơi trao đổi kinh nghiệm và giao lưu kiến thức về tennis. Tinh thần đoàn kết Bắc Trung Nam chung một mái nhà"
+        />
+      </Head>
       <Header />
       <main className="container mx-auto">
         <Image
           src={Cover}
           placeholder="blur"
           alt="Nhà tài trợ diễn đàn tennis BTN"
+          layout="responsive"
           width={100}
           height={100}
         />
@@ -88,8 +62,8 @@ export default function Page() {
             Các giải đấu mới
           </h1>
           {/* hot events */}
-          {posts &&
-            posts.map((e: any) => {
+          {events &&
+            events.map((e: any) => {
               if (e.frontmatter.hot) {
                 return (
                   <div className="mt-4" key={e.slug}>
@@ -147,8 +121,8 @@ export default function Page() {
             })}
 
           {/* normal events */}
-          {posts &&
-            posts.map((e: any) => {
+          {events &&
+            events.map((e: any) => {
               if (!e.frontmatter.hot) {
                 return (
                   <div className="mt-4" key={e.slug}>
@@ -255,4 +229,40 @@ export default function Page() {
       <Footer />
     </div>
   )
+}
+
+export default Home
+
+export async function getStaticProps() {
+  // Get files from the posts dir
+  const files = fs.readdirSync(path.join('pages/giai-dau/content'))
+
+  // Get slug and frontmatter from posts
+  const posts = files.map((filename) => {
+    // Create slug
+    const slug = filename.replace('.md', '')
+
+    // Get frontmatter
+    const markdownWithMeta = fs.readFileSync(
+      path.join('pages/giai-dau/content', filename),
+      'utf-8'
+    )
+
+    const { data: frontmatter, content } = matter(markdownWithMeta)
+    return {
+      slug,
+      frontmatter,
+      content,
+    }
+  })
+
+  const hinhAnh = fs.readdirSync(path.join('public/hinh-anh'))
+  let players = hinhAnh.map((filename) => `/hinh-anh/${filename}`)
+  players = players.filter((filename) => filename.includes('player'))
+  return {
+    props: {
+      players,
+      events: posts.sort(sortByDate),
+    },
+  }
 }
