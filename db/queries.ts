@@ -8,6 +8,8 @@ import {
   countsTable,
   SelectPlayerFemale,
   playersFemaleTable,
+  SelectPlayerMale,
+  playersMaleTable
 } from './schema'
 
 export async function getPlayersFemale(): Promise<Array<SelectPlayerFemale>> {
@@ -32,6 +34,30 @@ export async function increaseCountsById(id: SelectCount['id']) {
 
   const count = countRes[0]?.count ? countRes[0]?.count + 1 : 0
   await db.update(countsTable).set({ count }).where(eq(countsTable.id, id))
+}
+
+export async function updateFemalePlayerById(id: SelectPlayerFemale['id'], data: {
+  name: string
+  max: number
+  min: number
+  phone?: string
+}) {
+  await db
+    .update(playersFemaleTable)
+    .set(data)
+    .where(eq(playersFemaleTable.id, id))
+}
+
+export async function updateMalePlayerById(id: SelectPlayerMale['id'], data: {
+  name: string
+  max: number
+  min: number
+  phone?: string
+}) {
+  await db
+    .update(playersMaleTable)
+    .set(data)
+    .where(eq(playersMaleTable.id, id))
 }
 
 export async function getUserById(id: SelectUser['id']): Promise<
