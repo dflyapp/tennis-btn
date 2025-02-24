@@ -1,9 +1,10 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-import { createClient } from 'utils/supabase/client'
+// import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
 import { useState } from 'react'
 import { ModelType } from '.'
+import { updatePlayer } from './actions'
 
 interface EditPlayerProps {
   player: SelectPlayerFemale
@@ -23,7 +24,7 @@ export default function EditPlayer({
   updateCache,
   model,
 }: EditPlayerProps) {
-  const supabase = createClient()
+  // const supabase = createClient()
   const [isEditting, setIsEditting] = useState(false)
   const {
     register,
@@ -32,34 +33,43 @@ export default function EditPlayer({
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    setIsEditting(true)
-    const { error } = await supabase
-      .from(model)
-      .update({
-        name: data.name,
-        max: data.max,
-        min: data.min,
-        phone: data.phone || '',
-      })
-      .eq('id', player.id)
-    updateCache()
-
-    if (error) {
-      console.error(error.message)
-    } else {
-      closeModal()
-      // update to log table
-      const { error } = await supabase.from('players_log').insert({
-        ref_id: player.id,
-        is_male: model === 'players_male',
-        name: data.name,
-        max: data.max,
-        min: data.min,
-      })
-      if (error) {
-        alert('Failed to log changes to table players_log')
-      }
+    const SECRET = localStorage.getItem('secret')
+    if (SECRET === null || SECRET !== process.env.NEXT_PUBLIC_SECRET) {
+      alert('Sai mật mã, vui lòng thử lại sau')
+      return
     }
+
+    setIsEditting(true)
+
+    await updatePlayer(model, player.id, data)
+    // const { error } = await supabase
+    //   .from(model)
+    //   .update({
+    //     name: data.name,
+    //     max: data.max,
+    //     min: data.min,
+    //     phone: data.phone || '',
+    //   })
+    //   .eq('id', player.id)
+    updateCache()
+    closeModal()
+
+    // if (error) {
+    //   console.error(error.message)
+    // } else {
+    //   closeModal()
+    //   // update to log table
+    //   const { error } = await supabase.from('players_log').insert({
+    //     ref_id: player.id,
+    //     is_male: model === 'players_male',
+    //     name: data.name,
+    //     max: data.max,
+    //     min: data.min,
+    //   })
+    //   if (error) {
+    //     alert('Failed to log changes to table players_log')
+    //   }
+    // }
     setIsEditting(false)
   }
 

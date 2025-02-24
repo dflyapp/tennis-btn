@@ -4,6 +4,7 @@ import { createClient } from 'utils/supabase/client'
 import { ModelType } from '.'
 import { useState } from 'react'
 import { Plus } from 'lucide-react'
+import { addPlayer } from './actions'
 
 interface CreatePlayer {
   updateCache?: () => void
@@ -32,27 +33,39 @@ export default function CreatePlayer({
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    setIsEditting(true)
-    const largestId = await getLargestId(model)
+    const SECRET = localStorage.getItem('secret')
+    if (SECRET === null || SECRET !== process.env.NEXT_PUBLIC_SECRET) {
+      alert('Sai mật mã, vui lòng thử lại sau')
+      return
+    }
 
-    const { error } = await supabase.from(model).insert({
+    setIsEditting(true)
+
+    const largestId = await getLargestId(model)
+    await addPlayer(model, {
+      ...data,
       id: largestId ? largestId + 1 : 1,
-      name: data.name,
-      max: data.max,
-      min: data.min,
-      updated_at: new Date(),
     })
+
+    // const { error } = await supabase.from(model).insert({
+    //   id: largestId ? largestId + 1 : 1,
+    //   name: data.name,
+    //   max: data.max,
+    //   min: data.min,
+    //   updated_at: new Date(),
+    // })
 
     // invalidate caches: SWR and Tanksack Query
     updateCache?.()
-    invalidateQuery?.()
+    // invalidateQuery?.()
+    closeModal()
 
-    if (error) {
-      console.error(error.message)
-    } else {
-      closeModal()
-      reset()
-    }
+    // if (error) {
+    //   console.error(error.message)
+    // } else {
+    //   closeModal()
+    //   reset()
+    // }
     setIsEditting(false)
   }
 

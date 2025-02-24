@@ -9,7 +9,7 @@ import {
   SelectPlayerFemale,
   playersFemaleTable,
   SelectPlayerMale,
-  playersMaleTable
+  playersMaleTable,
 } from './schema'
 
 export async function getPlayersFemale(): Promise<Array<SelectPlayerFemale>> {
@@ -36,28 +36,49 @@ export async function increaseCountsById(id: SelectCount['id']) {
   await db.update(countsTable).set({ count }).where(eq(countsTable.id, id))
 }
 
-export async function updateFemalePlayerById(id: SelectPlayerFemale['id'], data: {
+export async function addFemalePlayer(data: {
   name: string
   max: number
   min: number
   phone?: string
 }) {
+  await db.insert(playersFemaleTable).values(data)
+}
+
+export async function updateFemalePlayerById(
+  id: SelectPlayerFemale['id'],
+  data: {
+    name: string
+    max: number
+    min: number
+    phone?: string
+  }
+) {
   await db
     .update(playersFemaleTable)
     .set(data)
     .where(eq(playersFemaleTable.id, id))
 }
 
-export async function updateMalePlayerById(id: SelectPlayerMale['id'], data: {
+export async function addMalePlayer(data: {
   name: string
   max: number
   min: number
   phone?: string
 }) {
-  await db
-    .update(playersMaleTable)
-    .set(data)
-    .where(eq(playersMaleTable.id, id))
+  await db.insert(playersMaleTable).values(data)
+}
+
+export async function updateMalePlayerById(
+  id: SelectPlayerMale['id'],
+  data: {
+    name: string
+    max: number
+    min: number
+    phone?: string
+  }
+) {
+  await db.update(playersMaleTable).set(data).where(eq(playersMaleTable.id, id))
 }
 
 export async function getUserById(id: SelectUser['id']): Promise<
