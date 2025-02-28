@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
+import * as Sentry from '@sentry/nextjs'
 
 // import { createClient } from 'utils/supabase/client'
 import { SelectPlayerFemale } from 'db/schema'
@@ -33,44 +34,32 @@ export default function EditPlayer({
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const SECRET = localStorage.getItem('secret')
-    if (SECRET === null || SECRET !== process.env.NEXT_PUBLIC_SECRET) {
-      alert('Sai mật mã, vui lòng thử lại sau')
-      return
-    }
+    return Sentry.startSpan(
+      {
+        name: 'editPlayer',
+        op: 'function',
+      },
+      async (span) => {
+        try {
+          const SECRET = localStorage.getItem('secret')
+          if (SECRET === null || SECRET !== process.env.NEXT_PUBLIC_SECRET) {
+            alert('Sai mật mã, vui lòng thử lại sau')
+            return
+          }
 
-    setIsEditting(true)
+          setIsEditting(true)
 
-    await updatePlayer(model, player.id, data)
-    // const { error } = await supabase
-    //   .from(model)
-    //   .update({
-    //     name: data.name,
-    //     max: data.max,
-    //     min: data.min,
-    //     phone: data.phone || '',
-    //   })
-    //   .eq('id', player.id)
-    updateCache()
-    closeModal()
+          await updatePlayer(model, player.id, data)
+          updateCache()
+          closeModal()
 
-    // if (error) {
-    //   console.error(error.message)
-    // } else {
-    //   closeModal()
-    //   // update to log table
-    //   const { error } = await supabase.from('players_log').insert({
-    //     ref_id: player.id,
-    //     is_male: model === 'players_male',
-    //     name: data.name,
-    //     max: data.max,
-    //     min: data.min,
-    //   })
-    //   if (error) {
-    //     alert('Failed to log changes to table players_log')
-    //   }
-    // }
-    setIsEditting(false)
+          setIsEditting(false)
+        } finally {
+          setIsEditting(false)
+          span?.end()
+        }
+      }
+    )
   }
 
   function closeModal() {

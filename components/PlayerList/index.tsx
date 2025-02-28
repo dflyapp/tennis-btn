@@ -1,5 +1,6 @@
 'use client'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
+import * as Sentry from '@sentry/nextjs'
 
 import TableClient from './TableClient'
 import CreatePlayer from './CreatePlayer'
@@ -18,13 +19,25 @@ export default function PlayerList({ MODEL, API }: PlayerListProps) {
   })
   const queryClient = useQueryClient()
   const clearCacheAndRefetch = async () => {
-    queryClient.removeQueries({ queryKey: [MODEL] })
-    await refetch()
-    const searchInput = document.getElementById(
-      'search-input'
-    ) as HTMLInputElement
+    return Sentry.startSpan(
+      {
+        name: 'clearCacheAndRefetch',
+        op: 'function',
+      },
+      async (span) => {
+        try {
+          queryClient.removeQueries({ queryKey: [MODEL] })
+          await refetch()
+          const searchInput = document.getElementById(
+            'search-input'
+          ) as HTMLInputElement
 
-    if (searchInput) searchInput.value = ''
+          if (searchInput) searchInput.value = ''
+        } finally {
+          span?.end()
+        }
+      }
+    )
   }
 
   if (error) return <div>failed to load</div>

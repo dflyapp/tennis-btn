@@ -23,3 +23,8 @@ Drizzle is for types, migration, create tables and relationship...
 [ ] migrate to app router /giai-dau and /giai-dau/:id
 [ ] use server action as much as possible, together with Suspense
 [ ] use Supabase Storage (while migrating giai-dau)
+
+## Span name
+
+- editPlayer
+- clearCacheAndRefetch
