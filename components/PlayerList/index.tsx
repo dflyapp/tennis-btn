@@ -1,5 +1,5 @@
 'use client'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 
 import TableClient from './TableClient'
 import CreatePlayer from './CreatePlayer'
@@ -16,8 +16,19 @@ export default function PlayerList({ MODEL, API }: PlayerListProps) {
     queryKey: [MODEL],
     queryFn: () => fetch(API).then((res) => res.json()),
   })
+  const queryClient = useQueryClient()
+  const clearCacheAndRefetch = async () => {
+    queryClient.removeQueries({ queryKey: [MODEL] })
+    await refetch()
+    const searchInput = document.getElementById(
+      'search-input'
+    ) as HTMLInputElement
+
+    if (searchInput) searchInput.value = ''
+  }
 
   if (error) return <div>failed to load</div>
+
   if (isPending)
     return (
       <div className="flex mt-12 flex-col gap-4">
@@ -29,26 +40,11 @@ export default function PlayerList({ MODEL, API }: PlayerListProps) {
 
   return (
     <>
-      <CreatePlayer
-        model={MODEL}
-        updateCache={async () => {
-          await refetch()
-          const searchInput = document.getElementById(
-            'search-input'
-          ) as HTMLInputElement
-          searchInput.value = ''
-        }}
-      />
+      <CreatePlayer model={MODEL} updateCache={clearCacheAndRefetch} />
       <TableClient
         model={MODEL}
         dataSet={data?.players}
-        updateCache={async () => {
-          await refetch()
-          const searchInput = document.getElementById(
-            'search-input'
-          ) as HTMLInputElement
-          searchInput.value = ''
-        }}
+        updateCache={clearCacheAndRefetch}
       />
     </>
   )
