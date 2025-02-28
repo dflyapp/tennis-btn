@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
+import * as Sentry from '@sentry/nextjs'
 
 import { createClient } from 'utils/supabase/client'
 import { ModelType } from '.'
@@ -33,40 +34,35 @@ export default function CreatePlayer({
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const SECRET = localStorage.getItem('secret')
-    if (SECRET === null || SECRET !== process.env.NEXT_PUBLIC_SECRET) {
-      alert('Sai mật mã, vui lòng thử lại sau')
-      return
-    }
+    return Sentry.startSpan(
+      {
+        name: 'createPlayer',
+        op: 'function',
+      },
+      async (span) => {
+        try {
+          const SECRET = localStorage.getItem('secret')
+          if (SECRET === null || SECRET !== process.env.NEXT_PUBLIC_SECRET) {
+            alert('Sai mật mã, vui lòng thử lại sau')
+            return
+          }
 
-    setIsEditting(true)
+          setIsEditting(true)
 
-    const largestId = await getLargestId(model)
-    await addPlayer(model, {
-      ...data,
-      id: largestId ? largestId + 1 : 1,
-    })
-
-    // const { error } = await supabase.from(model).insert({
-    //   id: largestId ? largestId + 1 : 1,
-    //   name: data.name,
-    //   max: data.max,
-    //   min: data.min,
-    //   updated_at: new Date(),
-    // })
-
-    // invalidate caches: SWR and Tanksack Query
-    updateCache?.()
-    // invalidateQuery?.()
-    closeModal()
-
-    // if (error) {
-    //   console.error(error.message)
-    // } else {
-    //   closeModal()
-    //   reset()
-    // }
-    setIsEditting(false)
+          const largestId = await getLargestId(model)
+          await addPlayer(model, {
+            ...data,
+            id: largestId ? largestId + 1 : 1,
+          })
+          updateCache?.()
+          closeModal()
+          setIsEditting(false)
+        } finally {
+          setIsEditting(false)
+          span?.end()
+        }
+      }
+    )
   }
 
   async function getLargestId(tableName: string) {

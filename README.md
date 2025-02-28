@@ -27,4 +27,5 @@ Drizzle is for types, migration, create tables and relationship...
 ## Span name
 
 - editPlayer
+- createPlayer
 - clearCacheAndRefetch
