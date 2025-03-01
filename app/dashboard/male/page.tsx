@@ -1,4 +1,4 @@
-import PlayerList, { ModelType } from 'components/PlayerList'
+import PlayerList from 'components/PlayerList'
 
 export default async function Dashboard() {
   return (

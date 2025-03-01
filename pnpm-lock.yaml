@@ -4,6 +4,7 @@ specifiers:
   '@faker-js/faker': ^8.4.1
   '@heroicons/react': ^1.0.6
   '@honeycombio/opentelemetry-web': ^0.12.1
+  '@netlify/functions': ^3.0.0
   '@opentelemetry/auto-instrumentations-node': ^0.56.0
   '@opentelemetry/auto-instrumentations-web': ^0.45.0
   '@opentelemetry/exporter-trace-otlp-http': ^0.57.1
@@ -48,6 +49,7 @@ specifiers:
 dependencies:
   '@faker-js/faker': 8.4.1
   '@heroicons/react': 1.0.6_react@19.0.0
+  '@netlify/functions': 3.0.0
   '@sentry/nextjs': 8.55.0_next@15.1.6+react@19.0.0
   '@supabase/supabase-js': 2.48.1
   '@tanstack/match-sorter-utils': 8.19.4
@@ -1021,6 +1023,26 @@ packages:
   /@js-sdsl/ordered-map/4.4.2:
     resolution: {integrity: sha512-iUKgm52T8HOE/makSxjqoWhe95ZJA1/G1sYsGev2JDKUSS14KAgg1LHb+Ba+IPow0xflbnSkOsZcO08C7w1gYw==}
     dev: true
+
+  /@netlify/functions/3.0.0:
+    resolution: {integrity: sha512-XXf9mNw4+fkxUzukDpJtzc32bl1+YlXZwEhc5ZgMcTbJPLpgRLDs5WWSPJ4eY/Mv1ZFvtxmMwmfgoQYVt68Qog==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@netlify/serverless-functions-api': 1.30.1
+    dev: false
+
+  /@netlify/node-cookies/0.1.0:
+    resolution: {integrity: sha512-OAs1xG+FfLX0LoRASpqzVntVV/RpYkgpI0VrUnw2u0Q1qiZUzcPffxRK8HF3gc4GjuhG5ahOEMJ9bswBiZPq0g==}
+    engines: {node: ^14.16.0 || >=16.0.0}
+    dev: false
+
+  /@netlify/serverless-functions-api/1.30.1:
+    resolution: {integrity: sha512-JkbaWFeydQdeDHz1mAy4rw+E3bl9YtbCgkntfTxq+IlNX/aIMv2/b1kZnQZcil4/sPoZGL831Dq6E374qRpU1A==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@netlify/node-cookies': 0.1.0
+      urlpattern-polyfill: 8.0.2
+    dev: false
 
   /@next/env/13.5.8:
     resolution: {integrity: sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==}
@@ -7472,6 +7494,10 @@ packages:
     dependencies:
       punycode: 2.3.1
     dev: true
+
+  /urlpattern-polyfill/8.0.2:
+    resolution: {integrity: sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==}
+    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}

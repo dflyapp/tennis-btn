@@ -29,3 +29,10 @@ Drizzle is for types, migration, create tables and relationship...
 - editPlayer
 - createPlayer
 - clearCacheAndRefetch
+
+## Start with Netlify Localhost
+
+- install Netlify CLI: `npm install -g netlify-cli`
+- link with project: `netlify link`
+- start localhost: `netlify dev` (will start on port 3000 and 8888 proxy)
+- build local: `netlify build`

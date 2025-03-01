@@ -1,5 +1,7 @@
 'use server'
 
+import { purgeCache } from '@netlify/functions'
+
 import {
   addFemalePlayer,
   addMalePlayer,
@@ -25,4 +27,9 @@ export async function addPlayer(model: string, data: any) {
   if (model === 'players_male') {
     await addMalePlayer(data)
   }
+}
+
+export async function manualClearCache() {
+  console.log('Purging everything')
+  await purgeCache()
 }

@@ -4,6 +4,7 @@ import * as Sentry from '@sentry/nextjs'
 
 import TableClient from './TableClient'
 import CreatePlayer from './CreatePlayer'
+import { manualClearCache } from './actions'
 
 export type ModelType = 'players_male' | 'players_female'
 
@@ -27,6 +28,7 @@ export default function PlayerList({ MODEL, API }: PlayerListProps) {
       async (span) => {
         try {
           queryClient.removeQueries({ queryKey: [MODEL] })
+          await manualClearCache()
           await refetch()
           const searchInput = document.getElementById(
             'search-input'
