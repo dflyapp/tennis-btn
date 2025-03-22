@@ -23,6 +23,11 @@ Drizzle is for types, migration, create tables and relationship...
 [ ] migrate to app router /giai-dau and /giai-dau/:id
 [ ] use server action as much as possible, together with Suspense
 [ ] use Supabase Storage (while migrating giai-dau)
+[ ] remove drizzle and use type from supabase: https://supabase.com/docs/guides/api/rest/generating-types
+[ ] content management with Tiptap:
+
+    - https://tiptap.dev/docs/guides/output-json-html (save to JSON)
+    - design database and image management
 
 ## Span name
 
