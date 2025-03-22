@@ -42,6 +42,7 @@ module.exports = withSentryConfig(
 
     // Upload a larger set of source maps for prettier stack traces (increases build time)
     widenClientFileUpload: true,
+    authToken: process.env.SENTRY_AUTH_TOKEN,
 
     // Automatically annotate React components to show their full name in breadcrumbs and session replay
     reactComponentAnnotation: {

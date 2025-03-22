@@ -10,7 +10,7 @@ export default async function LoginPage() {
   if (error || !data?.user) {
     return (
       <div className="h-screen flex items-center justify-center">
-        <form className="px-2 flex flex-col gap-y-4">
+        {/* <form className="px-2 flex flex-col gap-y-4">
           <h1>Đăng nhập vào hệ thống:</h1>
           <div>
             <label className="block text-xs" htmlFor="email">
@@ -40,11 +40,8 @@ export default async function LoginPage() {
             <button className="btn btn-primary" formAction={login}>
               Đăng nhập
             </button>
-            {/* <button className="btn btn-active btn-link" formAction={signup}>
-          Tạo tài khoản
-        </button> */}
           </div>
-        </form>
+        </form> */}
       </div>
     )
   }
