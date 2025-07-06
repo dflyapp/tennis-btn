@@ -7,11 +7,13 @@ import { ModelType } from '.'
 interface ViewPlayerProps {
   model: ModelType
   refId: number
+  playerName: string
 }
 
 export default function ViewPlayer({
   model,
   refId,
+  playerName,
   children,
 }: ViewPlayerProps & PropsWithChildren) {
   const supabase = createClient()
@@ -65,7 +67,9 @@ export default function ViewPlayer({
       <dialog ref={ref} id="modal-view-player" className="modal">
         <div className="modal-box min-h-[350px]">
           <div className="flex justify-between">
-            <h3 className="font-bold text-lg">Lịch sử chỉnh sửa:</h3>
+            <h3 className="font-bold text-lg">
+              Lịch sử chỉnh sửa: {playerName}
+            </h3>
             <button
               onClick={() => {
                 closeModal()

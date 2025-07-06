@@ -74,7 +74,11 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
             />
             <div className="ml-3">
               {/* <strong>{info.getValue()}</strong> */}
-              <ViewPlayer model={model} refId={info.cell.row.original.id}>
+              <ViewPlayer
+                model={model}
+                refId={info.cell.row.original.id}
+                playerName={info.cell.row.original.name}
+              >
                 <p className="text-xs">{info.cell.row.original.name}</p>
               </ViewPlayer>
               <p className="text-xs">{info.cell.row.original.phone}</p>
@@ -98,7 +102,11 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
         accessorKey: 'history',
         cell: (info) => (
           <div className="flex items-center justify-center">
-            <ViewPlayer model={model} refId={info.cell.row.original.id}>
+            <ViewPlayer
+              model={model}
+              refId={info.cell.row.original.id}
+              playerName={info.cell.row.original.name}
+            >
               <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
