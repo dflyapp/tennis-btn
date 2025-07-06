@@ -153,11 +153,11 @@ export default function CreatePlayer({
             </div>
 
             {errors.name && (
-              <span className="text-error">Name is required</span>
+              <span className="text-error text-xs">Tên bắc buộc phải điền, điền khoảng cách nếu xóa.</span>
             )}
-            {errors.max && <span className="text-error">Max is required</span>}
+            {errors.max && <span className="text-error text-xs">Max bắc buộc phải điền, điền 0 nếu xóa.</span>}
 
-            {errors.min && <span className="text-error">Min is required</span>}
+            {errors.min && <span className="text-error text-xs">Min bắc buộc phải điền, điền 0 nếu xóa.</span>}
 
             <div className="mt-4 flex gap-x-4 justify-end">
               <button
