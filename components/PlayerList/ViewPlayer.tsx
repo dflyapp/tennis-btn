@@ -1,4 +1,4 @@
-import { PropsWithChildren, useRef, useState } from 'react'
+import { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import dayjs from 'dayjs'
 
 import { createClient } from 'utils/supabase/client'
@@ -17,6 +17,7 @@ export default function ViewPlayer({
   const supabase = createClient()
   const ref = useRef<HTMLDialogElement>(null)
   const [logs, setLogs] = useState<any[]>()
+  const [modifiedLogs, setModifiedLogs] = useState<any[]>()
   const [loading, setLoading] = useState(false)
 
   function closeModal() {
@@ -38,6 +39,18 @@ export default function ViewPlayer({
     setLoading(false)
   }
 
+  useEffect(() => {
+    if (logs && logs?.length > 0) {
+      setModifiedLogs(
+        logs?.filter((f) => {
+          const startLogDate = dayjs('2025-07-05')
+          if (dayjs(f.created_at).isAfter(startLogDate)) return true
+          return false
+        })
+      )
+    }
+  }, [logs])
+
   return (
     <>
       <span
@@ -51,7 +64,7 @@ export default function ViewPlayer({
       </span>
       <dialog ref={ref} id="modal-view-player" className="modal">
         <div className="modal-box min-h-[350px]">
-          <div className='flex justify-between'>
+          <div className="flex justify-between">
             <h3 className="font-bold text-lg">Lịch sử chỉnh sửa:</h3>
             <button
               onClick={() => {
@@ -71,7 +84,7 @@ export default function ViewPlayer({
               <span className="loading loading-dots loading-md"></span>
             </div>
           ) : (
-            <ShowLogs logs={logs} />
+            <ShowLogs logs={modifiedLogs} />
           )}
         </div>
       </dialog>
@@ -81,7 +94,12 @@ export default function ViewPlayer({
 
 function ShowLogs({ logs }: { logs?: any[] }) {
   if (logs === undefined || logs?.length == 0) {
-    return <p className="text-left py-4">chưa từng chỉnh điểm</p>
+    return (
+      <div>
+        <p className="text-left pt-4">chưa từng chỉnh điểm</p>
+        <p className="text-left text-xs">--tính từ ngày 5 tháng 7 năm 2025--</p>
+      </div>
+    )
   }
 
   return (
@@ -95,12 +113,12 @@ function ShowLogs({ logs }: { logs?: any[] }) {
         </tr>
       </thead>
       <tbody>
-        {logs?.map((l) => (
+        {logs.map((l) => (
           <tr key={l.id}>
             <td>{l.name}</td>
             <td>{l.max}</td>
             <td>{l.min}</td>
-            <td>{dayjs(l.createdAt).format('DD/MM/YYYY')}</td>
+            <td>{dayjs(l.created_at).format('DD/MM/YYYY')}</td>
           </tr>
         ))}
       </tbody>
