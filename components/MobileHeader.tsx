@@ -22,7 +22,7 @@ export default function MobileHeader() {
         <form>
           <input
             type="password"
-            className="input input-bordered w-64"
+            className="input input-bordered w-24 md:w-64 text-sm"
             placeholder="số bí mật"
             onChange={(e) => setSecret(e.target.value)}
             value={secret || ''}

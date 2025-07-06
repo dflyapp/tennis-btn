@@ -66,13 +66,13 @@ export default function TableClient({ dataSet, updateCache, model }: Props) {
           <div className="flex items-center">
             <Image
               alt="players"
-              className="rounded-full"
+              className="rounded-full hidden md:block"
               width={40}
               height={40}
               key={info.cell.row.original.id}
               src={Ball?.src}
             />
-            <div className="ml-3">
+            <div className="ml-0 md:ml-3">
               {/* <strong>{info.getValue()}</strong> */}
               <ViewPlayer
                 model={model}

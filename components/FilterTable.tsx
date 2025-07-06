@@ -64,13 +64,13 @@ export default function FilterTable({ dataSet }: Props) {
           <div className="flex items-center">
             <Image
               alt="players"
-              className="rounded-full"
+              className="rounded-full hidden md:block"
               width={40}
               height={40}
               key={info.cell.row.original.id}
               src={Ball?.src}
             />
-            <div className="ml-3">
+            <div className="ml-0 md:ml-3">
               <strong>{info.cell.row.original.name}</strong>
               <p className="text-xs">{info.cell.row.original.phone}</p>
             </div>
