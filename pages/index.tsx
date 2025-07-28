@@ -10,7 +10,7 @@ import matter from 'gray-matter'
 import classNames from 'classnames'
 
 import { Sponsors } from 'components'
-import Cover from 'assets/cover-main.jpeg'
+import Cover from 'assets/cover-logo.png'
 import LeaderboardBg from 'assets/leaderboard-bg.jpg'
 import { sortByDate } from 'utils'
 import Founders from 'components/Founders'
@@ -31,7 +31,8 @@ const Home: NextPage = ({ events, players }: any) => {
       </Head>
       <Header />
       <main className="container mx-auto">
-        <Image
+        <div className="bg-[#98ba02]">
+          <Image
           src={Cover}
           placeholder="blur"
           alt="Nhà tài trợ diễn đàn tennis BTN"
@@ -39,6 +40,7 @@ const Home: NextPage = ({ events, players }: any) => {
           width={100}
           height={100}
         />
+        </div>
 
         {/* founders */}
         <div className="mt-6">
