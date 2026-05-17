@@ -11,7 +11,7 @@ export default function MobileFooter() {
         >
           Nam
         </Link>
-        <Link href="/login">
+        <Link href="/dashboard">
           <House size={40} color="white" />
         </Link>
         <Link
